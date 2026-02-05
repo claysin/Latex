@@ -6,9 +6,12 @@
 \contentsline {chapter}{\chapternumberline {1}\bfseries \MakeTextUppercase []{INTRODUÇÃO}}{3}{chapter.1}%
 \addvspace {-3\p@ }
 \contentsline {section}{\numberline {1.1}Objetivos}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Gerais}{3}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Específicos}{3}{subsection.1.1.2}%
 \addvspace {-12\p@ }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\bfseries \MakeTextUppercase []{DESENVOLVIMENTO}}{4}{chapter.2}%
+\contentsline {chapter}{\chapternumberline {2}\bfseries \MakeTextUppercase []{DESCRIÇÃO DE PROJETO}}{4}{chapter.2}%
+\contentsline {subsection}{\numberline {2.0.1}PÚBLICO ALVO}{4}{subsection.2.0.1}%
 \vspace {\cftbeforechapterskip }
 \vspace {-6pt}
 \vspace {4pt}
