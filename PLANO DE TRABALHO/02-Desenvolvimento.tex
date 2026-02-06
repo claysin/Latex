@@ -11,4 +11,57 @@ Para a implementação das etapas propostas no objetivo, seria necessário os se
 \end{itemize}
 
 \section{RESULTADOS FUNDAMENTAIS A SEREM ATINGIDOS}
-Para a parte de resultados, o que se espera é obtermos os mesmos resultados apresentados no trabalhos xxx, porém agora implementados em uma FPGA. Assim, será avaliado o eficácio do filtro com coeficientes otimizados, que poderão ser comparados com os resultados já obtidos anteriormente
+Para a parte de resultados, o que se espera é obtermos os mesmos resultados apresentados no trabalhos xxx, porém agora implementados em uma FPGA. Assim, será avaliado o eficácio do filtro com coeficientes otimizados, que poderão ser comparados com os resultados já obtidos anteriormente.
+
+\section{CONTRIBUIÇÃO ESPERADA PARA A ÊNFASE E IMPORTÂNCIA PARA A FORMAÇÃO DO AUTOR}
+Como contribuição, o trabalho tem a premissa de desenvolver um método para minimizar o espalhamento espectral causado pela saturação da envoltória do sinal, contribuindo para que o PA trabalha na sua região mais eficiente. Quanto a parte da formação do autor, a implicação do desenvolvimento do trabalho de conclusão de curso envolve áreas como: processamento digital de sinais, sinais e sistemas e programação em python e VHDL, todos focados na aréa de sistemas embarcados, implementando na prática aquilo que foi visto de forma teórica no decorrer do curso.
+
+\newpage
+\section{CRONOGRAMA}
+\noindent
+\begin{center}
+	\begin{ganttchart}[
+		expand chart=\textwidth,
+		vgrid, % Linhas verticais
+		hgrid, % Linhas horizontais
+		x unit=5cm, % Largura de cada unidade (mês)
+		y unit title=1cm,
+		y unit chart=1cm,
+		title label font=\bfseries\footnotesize,
+		canvas/.style={draw=black!50, dotted},
+		bar/.style={fill=blue!70}, % Cor das barras
+		bar height=0.6,
+		group right shift=0,
+		group top shift=0.7,
+		group height=.3,
+		group peaks tip position=0,
+		]{1}{10} % Define o intervalo 
+		
+		% Títulos das Colunas (Meses)
+		\gantttitle{2026}{10} \\
+		\gantttitle{Mar}{1} 
+		\gantttitle{Abr}{1} 
+		\gantttitle{Mai}{1} 
+		\gantttitle{Jun}{1} 
+		\gantttitle{Jul}{1} 
+		\gantttitle{Ago}{1} 
+		\gantttitle{Set}{1} 
+		\gantttitle{Out}{1} 
+		\gantttitle{Nov}{1} 
+		\gantttitle{Dez}{1} \\
+		
+		% Elementos do Cronograma
+		\ganttbar{Pesquisa Bibliográfica}{1}{3} \\
+		\ganttbar[bar label font=\footnotesize\color{black}, 
+		bar label node/.append style={align=right}] % Define o alinhamento
+		{Conversão dos códigos em\\Python para VHDL}{2}{5} \\
+		\ganttbar{Implementação prática}{6}{7} \\
+		\ganttbar{Análise de Resultados}{7}{8} \\
+		\ganttbar{Escrita da Monografia}{8}{9} \\
+		\ganttmilestone{Entrega Final}{10} 
+		
+		% Conexões (opcional)
+		\ganttlink{elem1}{elem2}
+		
+	\end{ganttchart}
+\end{center}

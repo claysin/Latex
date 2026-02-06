@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.23)  5 FEB 2026 20:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.23)  6 FEB 2026 17:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1249,59 +1249,155 @@ File: pppdftex.def 2025/07/23 v0.6g Pdfpages driver for pdfTeX (AM)
 \c@AM@survey=\count458
 \AM@templatesizebox=\box75
 )
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/pgfgantt\pgfgantt.sty
+Package: pgfgantt 2024/06/19 v5.0a Draw Gantt diagrams with TikZ
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
+/libraries\tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibra
+ryarrows.code.tex
+File: pgflibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\arrowsize=\dimen326
+))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
+/libraries\tikzlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@layerbox@background=\box76
+\pgf@layerboxsaved@background=\box77
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
+/libraries\tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
+/libraries\tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibra
+rypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
+/libraries\tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
+/libraries\tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\p
+gflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfcalenda
+r.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfcalen
+dar.code.tex
+File: pgfcalendar.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfcalendarcurrentjulian=\count459
+\pgf@cal@easter@Y=\count460
+\pgf@cal@easter@G=\count461
+\pgf@cal@easter@C=\count462
+\pgf@cal@easter@X=\count463
+\pgf@cal@easter@Z=\count464
+\pgf@cal@easter@D=\count465
+\pgf@cal@easter@E=\count466
+\pgf@cal@easter@N=\count467
+\pgf@cal@easter@M=\count468
+\pgf@cal@easter@julianday=\count469
+))
+\gtt@currentline=\count470
+\gtt@lasttitleline=\count471
+\gtt@currgrid=\count472
+\gtt@chartwidth=\count473
+\gtt@lasttitleslot=\count474
+\gtt@elementid=\count475
+\gtt@today@slot=\count476
+\gtt@startjulian=\count477
+\gtt@endjulian=\count478
+\gtt@chartid=\count479
+\gtt@vrule@slot=\count480
+\gtt@calendar@slots=\count481
+\gtt@calendar@weeknumber=\count482
+\gtt@calendar@startofweek=\count483
+\gtt@left@slot=\count484
+\gtt@right@slot=\count485
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count486
+\Gm@cntv=\count487
+\c@Gm@tempcnt=\count488
+\Gm@bindingoffset=\dimen327
+\Gm@wd@mp=\dimen328
+\Gm@odd@mp=\dimen329
+\Gm@even@mp=\dimen330
+\Gm@layoutwidth=\dimen331
+\Gm@layoutheight=\dimen332
+\Gm@layouthoffset=\dimen333
+\Gm@layoutvoffset=\dimen334
+\Gm@dimlist=\toks68
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count459
+\lrq@indent=\count489
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count460
-\c@listtotal=\count461
-\c@listcount=\count462
-\c@liststart=\count463
-\c@liststop=\count464
-\c@citecount=\count465
-\c@citetotal=\count466
-\c@multicitecount=\count467
-\c@multicitetotal=\count468
-\c@instcount=\count469
-\c@maxnames=\count470
-\c@minnames=\count471
-\c@maxitems=\count472
-\c@minitems=\count473
-\c@citecounter=\count474
-\c@maxcitecounter=\count475
-\c@savedcitecounter=\count476
-\c@uniquelist=\count477
-\c@uniquename=\count478
-\c@refsection=\count479
-\c@refsegment=\count480
-\c@maxextratitle=\count481
-\c@maxextratitleyear=\count482
-\c@maxextraname=\count483
-\c@maxextradate=\count484
-\c@maxextraalpha=\count485
-\c@abbrvpenalty=\count486
-\c@highnamepenalty=\count487
-\c@lownamepenalty=\count488
-\c@maxparens=\count489
-\c@parenlevel=\count490
-\blx@tempcnta=\count491
-\blx@tempcntb=\count492
-\blx@tempcntc=\count493
-\c@blx@maxsection=\count494
-\blx@maxsegment@0=\count495
-\blx@notetype=\count496
-\blx@parenlevel@text=\count497
-\blx@parenlevel@foot=\count498
-\blx@sectionciteorder@0=\count499
-\blx@sectionciteorderinternal@0=\count500
-\blx@entrysetcounter=\count501
-\blx@biblioinstance=\count502
+\c@tabx@nest=\count490
+\c@listtotal=\count491
+\c@listcount=\count492
+\c@liststart=\count493
+\c@liststop=\count494
+\c@citecount=\count495
+\c@citetotal=\count496
+\c@multicitecount=\count497
+\c@multicitetotal=\count498
+\c@instcount=\count499
+\c@maxnames=\count500
+\c@minnames=\count501
+\c@maxitems=\count502
+\c@minitems=\count503
+\c@citecounter=\count504
+\c@maxcitecounter=\count505
+\c@savedcitecounter=\count506
+\c@uniquelist=\count507
+\c@uniquename=\count508
+\c@refsection=\count509
+\c@refsegment=\count510
+\c@maxextratitle=\count511
+\c@maxextratitleyear=\count512
+\c@maxextraname=\count513
+\c@maxextradate=\count514
+\c@maxextraalpha=\count515
+\c@abbrvpenalty=\count516
+\c@highnamepenalty=\count517
+\c@lownamepenalty=\count518
+\c@maxparens=\count519
+\c@parenlevel=\count520
+\blx@tempcnta=\count521
+\blx@tempcntb=\count522
+\blx@tempcntc=\count523
+\c@blx@maxsection=\count524
+\blx@maxsegment@0=\count525
+\blx@notetype=\count526
+\blx@parenlevel@text=\count527
+\blx@parenlevel@foot=\count528
+\blx@sectionciteorder@0=\count529
+\blx@sectionciteorderinternal@0=\count530
+\blx@entrysetcounter=\count531
+\blx@biblioinstance=\count532
 \labelnumberwidth=\skip263
 \labelalphawidth=\skip264
 \biblabelsep=\skip265
@@ -1312,9 +1408,9 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \blx@bcfin=\read5
 \blx@bcfout=\write5
 \blx@langwohyphens=\language80
-\c@mincomprange=\count503
-\c@maxcomprange=\count504
-\c@mincompwidth=\count505
+\c@mincomprange=\count533
+\c@maxcomprange=\count534
+\c@mincompwidth=\count535
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1325,74 +1421,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'abnt.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count506
-\c@savedafterword=\count507
-\c@annotator=\count508
-\c@savedannotator=\count509
-\c@author=\count510
-\c@savedauthor=\count511
-\c@bookauthor=\count512
-\c@savedbookauthor=\count513
-\c@commentator=\count514
-\c@savedcommentator=\count515
-\c@editor=\count516
-\c@savededitor=\count517
-\c@editora=\count518
-\c@savededitora=\count519
-\c@editorb=\count520
-\c@savededitorb=\count521
-\c@editorc=\count522
-\c@savededitorc=\count523
-\c@foreword=\count524
-\c@savedforeword=\count525
-\c@holder=\count526
-\c@savedholder=\count527
-\c@introduction=\count528
-\c@savedintroduction=\count529
-\c@namea=\count530
-\c@savednamea=\count531
-\c@nameb=\count532
-\c@savednameb=\count533
-\c@namec=\count534
-\c@savednamec=\count535
-\c@translator=\count536
-\c@savedtranslator=\count537
-\c@shortauthor=\count538
-\c@savedshortauthor=\count539
-\c@shorteditor=\count540
-\c@savedshorteditor=\count541
-\c@labelname=\count542
-\c@savedlabelname=\count543
-\c@institution=\count544
-\c@savedinstitution=\count545
-\c@lista=\count546
-\c@savedlista=\count547
-\c@listb=\count548
-\c@savedlistb=\count549
-\c@listc=\count550
-\c@savedlistc=\count551
-\c@listd=\count552
-\c@savedlistd=\count553
-\c@liste=\count554
-\c@savedliste=\count555
-\c@listf=\count556
-\c@savedlistf=\count557
-\c@location=\count558
-\c@savedlocation=\count559
-\c@organization=\count560
-\c@savedorganization=\count561
-\c@origlocation=\count562
-\c@savedoriglocation=\count563
-\c@origpublisher=\count564
-\c@savedorigpublisher=\count565
-\c@publisher=\count566
-\c@savedpublisher=\count567
-\c@language=\count568
-\c@savedlanguage=\count569
-\c@origlanguage=\count570
-\c@savedoriglanguage=\count571
-\c@pageref=\count572
-\c@savedpageref=\count573
+\c@afterword=\count536
+\c@savedafterword=\count537
+\c@annotator=\count538
+\c@savedannotator=\count539
+\c@author=\count540
+\c@savedauthor=\count541
+\c@bookauthor=\count542
+\c@savedbookauthor=\count543
+\c@commentator=\count544
+\c@savedcommentator=\count545
+\c@editor=\count546
+\c@savededitor=\count547
+\c@editora=\count548
+\c@savededitora=\count549
+\c@editorb=\count550
+\c@savededitorb=\count551
+\c@editorc=\count552
+\c@savededitorc=\count553
+\c@foreword=\count554
+\c@savedforeword=\count555
+\c@holder=\count556
+\c@savedholder=\count557
+\c@introduction=\count558
+\c@savedintroduction=\count559
+\c@namea=\count560
+\c@savednamea=\count561
+\c@nameb=\count562
+\c@savednameb=\count563
+\c@namec=\count564
+\c@savednamec=\count565
+\c@translator=\count566
+\c@savedtranslator=\count567
+\c@shortauthor=\count568
+\c@savedshortauthor=\count569
+\c@shorteditor=\count570
+\c@savedshorteditor=\count571
+\c@labelname=\count572
+\c@savedlabelname=\count573
+\c@institution=\count574
+\c@savedinstitution=\count575
+\c@lista=\count576
+\c@savedlista=\count577
+\c@listb=\count578
+\c@savedlistb=\count579
+\c@listc=\count580
+\c@savedlistc=\count581
+\c@listd=\count582
+\c@savedlistd=\count583
+\c@liste=\count584
+\c@savedliste=\count585
+\c@listf=\count586
+\c@savedlistf=\count587
+\c@location=\count588
+\c@savedlocation=\count589
+\c@organization=\count590
+\c@savedorganization=\count591
+\c@origlocation=\count592
+\c@savedoriglocation=\count593
+\c@origpublisher=\count594
+\c@savedorigpublisher=\count595
+\c@publisher=\count596
+\c@savedpublisher=\count597
+\c@language=\count598
+\c@savedlanguage=\count599
+\c@origlanguage=\count600
+\c@savedoriglanguage=\count601
+\c@pageref=\count602
+\c@savedpageref=\count603
 \shorthandwidth=\skip270
 \shortjournalwidth=\skip271
 \shortserieswidth=\skip272
@@ -1417,19 +1513,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
-\c@textcitecount=\count574
-\c@textcitetotal=\count575
-\c@textcitemaxnames=\count576
-\c@biburlbigbreakpenalty=\count577
-\c@biburlbreakpenalty=\count578
-\c@biburlnumpenalty=\count579
-\c@biburlucpenalty=\count580
-\c@biburllcpenalty=\count581
+\c@textcitecount=\count604
+\c@textcitetotal=\count605
+\c@textcitemaxnames=\count606
+\c@biburlbigbreakpenalty=\count607
+\c@biburlbreakpenalty=\count608
+\c@biburlnumpenalty=\count609
+\c@biburlucpenalty=\count610
+\c@biburllcpenalty=\count611
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count582
+\c@smartand=\count612
 )
 Package biblatex Info: Trying to load bibliography style 'abnt'...
 Package biblatex Info: ... file 'abnt.bbx' found.
@@ -1443,8 +1539,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bb
 x
 File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count583
-\c@bbx:relatedtotal=\count584
+\c@bbx:relatedcount=\count613
+\c@bbx:relatedtotal=\count614
 ))
 Package biblatex Info: Trying to load citation style 'abnt'...
 Package biblatex Info: ... file 'abnt.cbx' found.
@@ -1497,27 +1593,27 @@ Package biblatex Info: ... and expl3
 sty
 Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
 ))
-Package biblatex Info: Redefining '\fullcite' on input line 132.
+Package biblatex Info: Redefining '\fullcite' on input line 134.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3ke
 ys2e.sty
 Package: l3keys2e 2025-10-09 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count585
-\l__lipsum_a_int=\count586
-\l__lipsum_b_int=\count587
+\g__lipsum_par_int=\count615
+\l__lipsum_a_int=\count616
+\l__lipsum_b_int=\count617
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
 Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
-\csq@reset=\count588
-\csq@gtype=\count589
-\csq@glevel=\count590
-\csq@qlevel=\count591
-\csq@maxlvl=\count592
-\csq@tshold=\count593
-\csq@ltx@everypar=\toks68
+\csq@reset=\count618
+\csq@gtype=\count619
+\csq@glevel=\count620
+\csq@qlevel=\count621
+\csq@maxlvl=\count622
+\csq@tshold=\count623
+\csq@ltx@everypar=\toks69
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
 File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
@@ -1538,20 +1634,10 @@ m lists of items.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
-\xs_counta=\count594
-\xs_countb=\count595
+\xs_counta=\count624
+\xs_countb=\count625
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
-)
-(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
-/libraries\tikzlibrarybackgrounds.code.tex
-File: tikzlibrarybackgrounds.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@layerbox@background=\box76
-\pgf@layerboxsaved@background=\box77
-)
-(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
-/libraries\tikzlibrarycalc.code.tex
-File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
 /libraries\tikzlibraryfadings.code.tex
@@ -1599,42 +1685,42 @@ Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \LTright=\skip285
 \LTpre=\skip286
 \LTpost=\skip287
-\LTchunksize=\count596
-\LTcapwidth=\dimen326
+\LTchunksize=\count626
+\LTcapwidth=\dimen335
 \LT@head=\box80
 \LT@firsthead=\box81
 \LT@foot=\box82
 \LT@lastfoot=\box83
 \LT@gbox=\box84
-\LT@cols=\count597
-\LT@rows=\count598
-\c@LT@tables=\count599
-\c@LT@chunks=\count600
-\LT@p@ftn=\toks69
+\LT@cols=\count627
+\LT@rows=\count628
+\c@LT@tables=\count629
+\c@LT@chunks=\count630
+\LT@p@ftn=\toks70
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
 Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
-\c@tracingmulticols=\count601
+\c@tracingmulticols=\count631
 \mult@box=\box85
-\multicol@leftmargin=\dimen327
-\c@unbalance=\count602
-\c@collectmore=\count603
-\doublecol@number=\count604
-\multicoltolerance=\count605
-\multicolpretolerance=\count606
-\full@width=\dimen328
-\page@free=\dimen329
-\premulticols=\dimen330
-\postmulticols=\dimen331
+\multicol@leftmargin=\dimen336
+\c@unbalance=\count632
+\c@collectmore=\count633
+\doublecol@number=\count634
+\multicoltolerance=\count635
+\multicolpretolerance=\count636
+\full@width=\dimen337
+\page@free=\dimen338
+\premulticols=\dimen339
+\postmulticols=\dimen340
 \multicolsep=\skip288
 \multicolbaselineskip=\skip289
 \partial@page=\box86
 \last@line=\box87
 \mc@boxedresult=\box88
-\maxbalancingoverflow=\dimen332
+\maxbalancingoverflow=\dimen341
 \mult@rightbox=\box89
 \mult@grightbox=\box90
 \mult@firstbox=\box91
@@ -1675,44 +1761,27 @@ Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \@tempa=\box126
 \@tempa=\box127
 \@tempa=\box128
-\c@minrows=\count607
-\c@columnbadness=\count608
-\c@finalcolumnbadness=\count609
-\last@try=\dimen333
-\multicolovershoot=\dimen334
-\multicolundershoot=\dimen335
+\c@minrows=\count637
+\c@columnbadness=\count638
+\c@finalcolumnbadness=\count639
+\last@try=\dimen342
+\multicolovershoot=\dimen343
+\multicolundershoot=\dimen344
 \mult@nat@firstbox=\box129
 \colbreak@box=\box130
-\mc@col@check@num=\count610
-\g__mc_curr_col_int=\count611
+\mc@col@check@num=\count640
+\g__mc_curr_col_int=\count641
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip290
-\multirow@cntb=\count612
+\multirow@cntb=\count642
 \multirow@dima=\skip291
-\bigstrutjot=\dimen336
+\bigstrutjot=\dimen345
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/newfloat\newfloat.sty
 Package: newfloat 2023/10/01 v1.2 Defining new floating environments (AR)
 )
-(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
-/libraries\tikzlibraryarrows.code.tex
-File: tikzlibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibra
-ryarrows.code.tex
-File: pgflibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\arrowsize=\dimen337
-))
-(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
-/libraries\tikzlibrarypatterns.code.tex
-File: tikzlibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibra
-rypatterns.code.tex
-File: pgflibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
 /libraries\tikzlibraryangles.code.tex
 File: tikzlibraryangles.code.tex 2025-08-29 v3.1.11a (3.1.11a)
@@ -1730,12 +1799,12 @@ Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
 .tex
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscore.
 code.tex
-\t@pgfplots@toka=\toks70
-\t@pgfplots@tokb=\toks71
-\t@pgfplots@tokc=\toks72
-\pgfplots@tmpa=\dimen338
-\c@pgfplots@coordindex=\count613
-\c@pgfplots@scanlineindex=\count614
+\t@pgfplots@toka=\toks71
+\t@pgfplots@tokb=\toks72
+\t@pgfplots@tokc=\toks73
+\pgfplots@tmpa=\dimen346
+\c@pgfplots@coordindex=\count643
+\c@pgfplots@scanlineindex=\count644
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplotss
 ysgeneric.code.tex))
@@ -1746,9 +1815,9 @@ b\pgfplotsoldpgfsupp_loader.code.tex
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibra
 ryfpu.code.tex)
 Package pgfplots: loading complementary utilities for your pgf version...
-\t@pgf@toka=\toks73
-\t@pgf@tokb=\toks74
-\t@pgf@tokc=\toks75
+\t@pgf@toka=\toks74
+\t@pgf@tokb=\toks75
+\t@pgf@tokc=\toks76
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompati
 b\pgfplotsoldpgfsupp_pgfutil-common-lists.tex))
@@ -1760,14 +1829,14 @@ util.code.tex
 \pgfplotsliststructureext.code.tex)
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure
 \pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count615
+\c@pgfplotsarray@tmp=\count645
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure
 \pgfplotsmatrix.code.tex)
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\pgfp
 lotstableshared.code.tex
-\c@pgfplotstable@counta=\count616
-\t@pgfplotstable@a=\toks76
+\c@pgfplotstable@counta=\count646
+\t@pgfplotstable@a=\toks77
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure
 \pgfplotsdeque.code.tex)
@@ -1779,7 +1848,7 @@ binary.data.code.tex))
 util.verb.code.tex)
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflibra
 rypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count617
+\c@pgfplotslibrarysurf@no=\count647
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibrar
 ypgfplots.surfshading.pgfsys-pdftex.def)))
@@ -1811,14 +1880,14 @@ s.code.tex)
 /libraries\tikzlibrarydecorations.code.tex
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduled
 ecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen339
-\pgfdecoratedremainingdistance=\dimen340
-\pgfdecoratedinputsegmentcompleteddistance=\dimen341
-\pgfdecoratedinputsegmentremainingdistance=\dimen342
-\pgf@decorate@distancetomove=\dimen343
-\pgf@decorate@repeatstate=\count618
-\pgfdecorationsegmentamplitude=\dimen344
-\pgfdecorationsegmentlength=\dimen345
+\pgfdecoratedcompleteddistance=\dimen347
+\pgfdecoratedremainingdistance=\dimen348
+\pgfdecoratedinputsegmentcompleteddistance=\dimen349
+\pgfdecoratedinputsegmentremainingdistance=\dimen350
+\pgf@decorate@distancetomove=\dimen351
+\pgf@decorate@repeatstate=\count648
+\pgfdecorationsegmentamplitude=\dimen352
+\pgfdecorationsegmentlength=\dimen353
 )
 \tikz@lib@dec@box=\box131
 )
@@ -1832,13 +1901,13 @@ ons\pgflibrarydecorations.pathmorphing.code.tex))
 ons\pgflibrarydecorations.pathreplacing.code.tex))
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibr
 arypgfplots.contourlua.code.tex)
-\pgfplots@numplots=\count619
-\pgfplots@xmin@reg=\dimen346
-\pgfplots@xmax@reg=\dimen347
-\pgfplots@ymin@reg=\dimen348
-\pgfplots@ymax@reg=\dimen349
-\pgfplots@zmin@reg=\dimen350
-\pgfplots@zmax@reg=\dimen351
+\pgfplots@numplots=\count649
+\pgfplots@xmin@reg=\dimen354
+\pgfplots@xmax@reg=\dimen355
+\pgfplots@ymin@reg=\dimen356
+\pgfplots@ymax@reg=\dimen357
+\pgfplots@zmin@reg=\dimen358
+\pgfplots@zmax@reg=\dimen359
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
 /libraries\tikzlibraryplotmarks.code.tex
@@ -1849,26 +1918,26 @@ ryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )))
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count620
+\lst@mode=\count650
 \lst@gtempboxa=\box132
-\lst@token=\toks77
-\lst@length=\count621
-\lst@currlwidth=\dimen352
-\lst@column=\count622
-\lst@pos=\count623
-\lst@lostspace=\dimen353
-\lst@width=\dimen354
-\lst@newlines=\count624
-\lst@lineno=\count625
-\lst@maxwidth=\dimen355
+\lst@token=\toks78
+\lst@length=\count651
+\lst@currlwidth=\dimen360
+\lst@column=\count652
+\lst@pos=\count653
+\lst@lostspace=\dimen361
+\lst@width=\dimen362
+\lst@newlines=\count654
+\lst@lineno=\count655
+\lst@maxwidth=\dimen363
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
 File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-\c@lstnumber=\count626
-\lst@skipnumbers=\count627
+\c@lstnumber=\count656
+\lst@skipnumbers=\count657
 \lst@framebox=\box133
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
@@ -1886,8 +1955,8 @@ Package: listings 2025/11/14 1.11b (Carsten Heinz)
 \myboxlena=\skip292
 \mybox=\box135
 \myboxlen=\skip293
-\c@quadro=\count628
-\c@quadrosdepth=\count629
+\c@quadro=\count658
+\c@quadrosdepth=\count659
 \cftbeforequadroskip=\skip294
 \cftquadroindent=\skip295
 \cftquadronumwidth=\skip296
@@ -1934,17 +2003,17 @@ Package hyperref Info: Link coloring ON on input line 9.
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
 i
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count630
-\scratchdimen=\dimen356
+\scratchcounter=\count660
+\scratchdimen=\dimen364
 \scratchbox=\box138
-\nofMPsegments=\count631
-\nofMParguments=\count632
-\everyMPshowfont=\toks78
-\MPscratchCnt=\count633
-\MPscratchDim=\dimen357
-\MPnumerator=\count634
-\makeMPintoPDFobject=\count635
-\everyMPtoPDFconversion=\toks79
+\nofMPsegments=\count661
+\nofMParguments=\count662
+\everyMPshowfont=\toks79
+\MPscratchCnt=\count663
+\MPscratchDim=\dimen365
+\MPnumerator=\count664
+\makeMPintoPDFobject=\count665
+\everyMPtoPDFconversion=\toks80
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
 se.sty
@@ -1987,6 +2056,40 @@ Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
 F (HO)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(73.71613pt, 430.00462pt, 110.57425pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=1.44614pt
+* \evensidemargin=38.30426pt
+* \topmargin=-6.94011pt
+* \headheight=12.0pt
+* \headsep=18.06749pt
+* \topskip=10.0pt
+* \footskip=25.29494pt
+* \marginparwidth=42.9055pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=12.0pt plus 4.0pt minus 4.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
 Package biblatex Info: Trying to load language 'brazil' -> 'brazil-abnt'...
 Package biblatex Info: ... file 'brazil-abnt.lbx' found.
 
@@ -2090,7 +2193,7 @@ Package biblatex Info: Reference segment=0 on input line 9.
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.18} (current compat level: 1.15).
 
-\c@lstlisting=\count636
+\c@lstlisting=\count666
 (00-detalhes_da_capa.tex
 <fig/capaufpr.png, id=33, 125.5089pt x 142.3719pt>
 File: fig/capaufpr.png Graphic file (type png)
@@ -2139,17 +2242,18 @@ Cap\'{\i }tulo 1.
 
 ]
 Cap\'{\i }tulo 2.
-)
-
-LaTeX Warning: Empty bibliography on input line 37.
-
-
-Package biblatex Warning: Keyword 'consulta' not found on input line 39.
-
-
-LaTeX Warning: Empty bibliography on input line 39.
-
 [4
+
+]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 61.
+) [5]
+
+Package biblatex Warning: Month out of range or not an integer
+(biblatex)                at entry 'oliveira2025fir_complete' on input line 38.
+
+
+[6
 
 ]
 \tf@toc=\write7
@@ -2162,24 +2266,34 @@ enddocument/afterlastpage (AED): lastpage setting LastPage.
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56806 strings out of 467871
- 1269045 string characters out of 5418860
- 2450546 words of memory out of 5000000
- 84789 multiletter control sequences out of 15000+600000
- 643029 words of font info for 94 fonts, out of 8000000 for 9000
+ 59052 strings out of 467871
+ 1319968 string characters out of 5418860
+ 2513714 words of memory out of 5000000
+ 86948 multiletter control sequences out of 15000+600000
+ 650910 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,12n,121p,1199b,4312s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.
 pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8
-a.pfb>
-Output written on main.pdf (6 pages, 342078 bytes).
+a.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhv
+ro8a.pfb>
+Output written on main.pdf (8 pages, 359964 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 15 named destinations out of 1000 (max. 500000)
- 26806 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 161 PDF objects out of 1000 (max. 8388607)
+ 26 named destinations out of 1000 (max. 500000)
+ 35038 words of extra memory for PDF output out of 35830 (max. 10000000)
 
