@@ -1,0 +1,30 @@
+\chapter{MATERIAIS E MÉTODOS}
+
+Este capítulo descreve as ferramentas e etapas empregadas no desenvolvimento do trabalho, com foco nos recursos computacionais utilizados e na metodologia adotada para o tratamento e análise dos sinais.
+Os materiais utilizados consistem em ferramentas computacionais, com destaque para a linguagem de programação Python, escolhida para a implementação do comportamento de saturação do DPD. Foram utilizadas bibliotecas amplamente reconhecidas na comunidade científica, como \texttt{NumPy}, \texttt{Matplotlib}, \texttt{SciPy} e \texttt{Pandas}, que proporcionam suporte ao processamento numérico, visualização gráfica e manipulação de dados.
+
+Os dados utilizados foram fornecidos pela universidade, sendo obtidos por meio da plataforma Spectre RF da Cadence Virtuoso. Esses dados incluem sinais nos padrões LTE e Wi-Fi. O tratamento dos sinais envolveu diversas etapas, como a construção da envoltória equivalente (implementada em Python), aplicação de saturação, e uso de filtros digitais. Para isso, foram empregadas funções da biblioteca \texttt{SciPy}, como \texttt{ifilter} e \texttt{firwin}. Toda a codificação foi realizada na IDE \textit{PyCharm}, garantindo organização e eficiência no desenvolvimento.
+
+A visualização dos resultados foi feita com o auxílio da ferramenta Octave — uma alternativa de código aberto ao MATLAB —, utilizada principalmente para a plotagem e análise gráfica das respostas ao janelamento aplicado.
+Para a avaliação da qualidade do filtro proposto, foi analisado o erro vetorial médio (EVM), cuja extração foi realizada diretamente na plataforma Spectre RF da Cadence Virtuoso, que já incorpora essa funcionalidade, o que facilitou a obtenção dos resultados.
+
+\section{Metodologia}
+
+A seguir, apresenta-se a sequência de etapas executadas para a obtenção dos resultados deste trabalho:
+
+\begin{enumerate}
+  \item \textbf{Aquisição dos dados:} Realizada no Spectre RF da Cadence Virtuoso, considerando sinais com largura de banda de 20 MHz, frequência de amostragem de 120 MHz e nos padrões LTE e Wi-Fi.
+  
+  \item \textbf{Tratamento dos sinais em Python:} As etapas incluíram:
+    \begin{itemize}
+      \item Interpolação e reamostragem dos sinais;
+      \item Definição dos parâmetros dos filtros;
+      \item Cálculo da envoltória equivalente;
+      \item Aplicação do modelo de saturação;
+      \item Separação do sinal pelo método da soma;
+      \item Aplicação de filtros digitais via janelamento;
+      \item Geração dos arquivos de saída no formato \texttt{.csv}.
+    \end{itemize}
+  
+  \item \textbf{Análise e visualização dos resultados:} Realizadas no Octave, com foco na interpretação gráfica do comportamento dos sinais após o processamento.
+\end{enumerate}

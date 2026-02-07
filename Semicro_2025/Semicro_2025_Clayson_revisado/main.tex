@@ -1,0 +1,269 @@
+\documentclass[twocolumn, a4paper]{article}
+\fontsize{10.5}{10}\selectfont
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{indentfirst}
+\usepackage{icomma}
+\usepackage[brazil]{babel}  
+\usepackage[utf8]{inputenc}   
+\usepackage[T1]{fontenc} 
+
+
+
+% ------------------------------------------------------------------
+% Importação do arquivo de definições
+\input{Definicoes}
+% ------------------------------------------------------------------
+% Início do documento
+\begin{document}
+
+% ------------------------------------------------------------------
+% Definição da parte do titulo do arquivo 
+\begin{}
+  \vspace*{\dimexpr-\baselineskip-\stripsep\relax}
+  %\centering
+   \maketitle
+  \vskip\baselineskip
+\noindent %\makebox[\textwidth]{\rule{1.1\paperwidth}{0.4pt}} Linha horizontal
+  \vskip\baselineskip
+\end{}
+
+% ------------------------------------------------------------------
+% Nota de rodapé da primeira página
+\thispagestyle{specialfooter}
+% ------------------------------------------------------------------
+% Resumo (definição em itálico e negrito)
+\vspace{3pt}\noindent \textbf{\textit{Com o avanço das comunicações sem fio, a busca por maior eficiência e linearidade nos amplificadores de potência (PAs) torna-se fundamental. Em transmissão de banda dupla concorrente, o uso da pré-distorição digital combinada com a saturação do sinal e a aplicação de um filtro permite otimizar a eficiência do PA. Contudo, o filtro ainda é objeto de exploração pois deve ser efetivo e eficiente. Este trabalho propõe a implementação e otimização de um filtro FIR pós-saturação para reduzir o espalhamento espectral causado pela saturação preservando as características do sinal. Utilizando o método de \textit{Powell}, os coeficientes ótimos foram determinados com base no erro quadrático médio. Os resultados indicam expressiva redução do espalhamento espectral, com degradação do EVM inferior a 0,5~p.p. e aumento de cerca de 1~dB na razão entre potência de pico e potência média (PAPR), mantendo baixa complexidade e conformidade espectral.}}
+\section{INTRODUÇÃO}
+Com o avanço das tecnologias de comunicação, a transmissão de sinais tornou-se cada vez mais relevante, exigindo maior linearidade e eficiência dos sistemas. Nesse contexto, o amplificador de potência (PA) assume papel fundamental, pois é o maior consumidor de potência do transmissor~\cite{1}. Para maximizar a eficiência, o PA deve operar em alto ponto de compressão, e para compensar as distorções, emprega-se o pré-distorsor digital (DPD), que gera uma distorção inversa à do PA, desde que o PA não esteja na saturação. A fim de otimizar a eficiência, antes da pré-distorção, o sinal passa por um processo de saturação (\textit{hard clipping}) para limitar a envoltória em um limiar \(L\). Esse controle permite elevar a potência média sem extrapolar o modelo do DPD.  
+
+
+Apesar de atenuar o picos de sinal, a saturação de banda dupla concorrente provoca espalhamento espectral, podendo violar limites regulamentares do espectro~\cite{2}. Em~\cite{3} foi proposta a utilização de filtros FIR para mitigação dos efeitos da saturação em sistemas de banda dupla concorrente com DPD, entretanto os filtros possuem tamanho impraticável nesse sistema. Dessa forma, o objetivo deste trabalho é reduzir o tamanho do filtro sem comprometer a funcionalidade utilizando técnicas de síntese dos filtros com base nas restrições das normas e em otimização não linear.
+
+\section{DESENVOLVIMENTO TEÓRICO}
+\subsection{Saturação para banda dupla concorrente}
+Para obter-se uma maior eficiência do PA, aplica-se a saturação do sinal~\cite{4}. Tal procedimento é importante para limitar o sinal em um limiar $L$ escolhido. O primeiro passo é a realização da envoltória equivalente $x$ dos sinais de entrada $x_1$ e $x_2$, levando em consideração a diferença $\Delta \omega = (\omega_2-\omega_1)/2$ entre as portadoras e a frequência de amostragem $f_s$, conforme: 
+ 
+\begin{equation}
+	x(n)=x_1(n) e^{\frac{-j\Delta \omega \left(n-1\right)}{f_s}}+x_2(n)e^{\frac{j\Delta \omega \left(n-1\right)}{f_s}}.
+	\label{eq1}
+\end{equation}
+
+Na envoltória equivalente do sinal, aplica-se o limiar $L$, definido de acordo com as restrições máximas de distorção das normas. Para a reinserção do sinal ceifado, a técnica de repartição proporcional de soma é adequada, sendo definida como:
+
+\begin{equation}
+	x_{ic}(n) = 
+	\begin{cases}
+		x_i(n), & \text{se } |x(n)| \leq L \\[6pt]
+		\left( |x_i(n)| - \dfrac{z(n)}{2} \right) \exp(j\angle x_i(n)), & \text{se } |x(n)| > L
+	\end{cases}
+\end{equation}
+\noindent onde $z(n)$ é o excedente de $x(n)$, se comparado ao limiar. Se a envoltória equivalente for maior que o limiar ($|x(n)| > L$) a amplitude do canal é reduzida subtraindo metade do excedente ($\frac{z(n)}{2}$ sendo $z(n) = |x(n)| - L$) da sua amplitude original $|x_i(n)|$, mantendo a sua fase intacta, preservando as suas características espectrais fundamentais dos canais transmitidos. 
+
+Ao definir o limiar de saturação em $L$, estabelece-se um limite coerente com a tensão máxima que o PA pode fornecer sem atingir a saturação. Essa imposição evita que picos de amplitude desconhecidos cheguem ao PA por extrapolar o domínio conhecido do modelo aplicado no DPD.
+Consequentemente, a potência do sinal emitido pelo PA está relacionada à amplitude média do sinal, caracterizada como a amplitude de pico menos a PAPR. Uma vez que o DPD limita a amplitude em um nível máximo que, no melhor dos casos, atinge a saturação do PA, quanto menor for a PAPR da envoltória equivalente, maior serão a potência média e o rendimento do PA. 
+
+\subsection{Filtro FIR}
+A implementação do filtro pós-saturação tem como principal objetivo conferir seletividade em frequência ao sinal processado~\cite{3}. 
+Filtros digitais são realizados por meio de algoritmos matemáticos, o que possibilita uma aplicação flexível e reprodutível, diferentemente dos filtros analógicos, que apresentam maior especificidade e podem introduzir distorções de fase~\cite{1}. 
+
+O filtro de resposta ao impulso finita (FIR) é empregado para mitigar o espalhamento espectral decorrente da saturação, atuando como um filtro passa-baixa~\cite{3} que atenua as componentes de alta frequência e preserva as de menor ordem. 
+O número de coeficientes do filtro é dado por~\cite{6}
+\begin{equation}
+	C = M + 1,
+\end{equation}
+
+\noindent onde \( M \) representa a ordem do filtro, correspondente ao número de amostras passadas utilizadas no cálculo da saída atual. 
+Deve-se manter \( M \) reduzido, a fim de limitar a complexidade computacional do processamento, proporcionando, assim, uma possibilidade de implementação física da solução.
+Matematicamente, o sinal filtrado \( x_{kf}(n) \) é obtido pela convolução do sinal saturado \( x_{kc}(n) \) com a resposta ao impulso \( h[n] \)~\cite{5}:
+\begin{equation}
+	x_{kf}[n] = x_{kc}[n] * h_k[n],
+\end{equation}
+
+\noindent onde o operador ($*$) indica convolução.
+\section{PROPOSTA DO TRABALHO}
+
+\subsection{Síntese por resposta em Frequência}
+Para projetar a resposta em frequência foi estabelecido utilizar os limites de distorção espectral de cada norma regulamentadora, ou seja, a resposta ao impulso do filtro é a própria máscara. A figura~\ref{fig:mascara} apresenta duas restrições de distorção espectral para sinais LTE e IEEE082.11n (Wi-Fi). O comportamento das máscaras são diferentes, assim, os filtros também serão distintos. 
+
+\begin{figure}[htp!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figuras/Máscaras_unidas.pdf}
+	\caption{Máscara LTE e Wi-Fi}
+	\label{fig:mascara}
+\end{figure}
+
+A obtenção da resposta ao impulso $h[n]$ do filtro segue os seguintes critérios. A máscara é normalizada com ganho unitário na banda passante, a frequência de amostragem é de 120~MHz, a frequência de corte $f_c$ foi estabelecida graficamente observando a curva de densidade espectral de potência (PSD) do sinal de entrada em ambos os casos, e definida como 20 MHz. Por fim, o filtro é obtido realizando a transformada inversa de Fourier, conforme~\cite{6}:
+
+\begin{equation}
+	x[n] \;=\; \frac{1}{N}\sum_{k=0}^{N-1} X[k]\,e^{j\frac{2\pi}{N}kn},\qquad n=0,1,\dots,N-1,
+\end{equation} 
+
+\noindent onde $X[k]$ são os coeficientes do filtro, e $N$ é a ordem do filtro.
+
+O resultado é um conjunto de valores no tempo que representam a resposta ao impulso de cada filtro. A figura~\ref{fig:resposta_ao_impulso} apresenta as respostas ao impulso de cada filtro.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{Figuras/resposta_ao_impulso.pdf}
+	\caption{Resposta ao impulso $h[n]$ de ambas as máscaras.}
+	\label{fig:resposta_ao_impulso}
+\end{figure}
+
+A resposta em frequência deixa claro o esperado de um filtro passa-baixa: permitir a passagem de frequência menores, enquanto atenua as maiores; idealmente, sem a alteração de fase e amplitude, mantendo as configurações espectrais originais, mas proporcionando uma seletividade no domínio da frequência. Uma das formas de se monitorar o impacto do filtro no processo de filtragem é garantir que a presença do filtro não provoque atenuações significativas na envoltória equivalente do sinal, acompanhando o formato do sinal saturado, mas limitando o espalhamento espectral indesejado.
+
+
+
+\subsection{Síntese por otimização}
+
+O filtro é aplicado após ao \textit{hard-clipping}, contudo, quanto mais seletivo é o filtro, maior é a tendência de que o sinal volte ao seu formato antes do \textit{clipping}. Contudo, em~\cite{3}, foi apresentado que é possível haver um ponto de equilíbrio entre aplicar um filtro e manter a envoltória ceifada. Por outro lado, utilizando filtro com ordens pequenas, a seletividade começa a ser mais efetiva dentro da banda de interesse. Portanto, adaptar o filtro por meio da otimização é a opção proposta.
+
+Para garantir que a envoltória equivalente mantenha a curva mais próxima da original, foi estabelecido um erro quadrático médio, definido como
+
+\begin{equation}
+e[n] = (f[n] - s[n])^{2},
+\end{equation}
+
+\noindent onde $f[n]$ é a amostra da envoltória equivalente após a aplicação do filtro, $s[n]$ é a envoltória equivalente aplicando o filtro, e $e[n]$ é o erro para cada amostra. 
+A função objetivo utilizada na otimização é (6), essa métrica reflete o impacto do filtro na forma temporal e, indiretamente, na distribuição espectral do sinal. 
+Valores menores da função objetivo indicam que a envoltória filtrada se mantém próxima da saturada, evidenciando a redução do espalhamento espectral sem distorções significativas na banda útil.
+
+A figura~\ref{fig:compara_envoltoria} mostra uma comparação entre as envoltórias original, saturada e após a aplicação do filtro em um cenário não otimizado, cujo filtro aplicou atenuação suficiente para que a informação útil perca amplitude. Além disso, também está apresentado o erro ponto a ponto, utilizado como critério de otimização.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{Figuras/compara_envoltoria.pdf}
+	\caption{Comparação entre as envoltórias equivalentes e erro de comparação.}
+	\label{fig:compara_envoltoria}
+\end{figure}
+
+Por se tratar da aplicação de um algoritmo de otimização, é necessário um conjunto inicial. Para isso a proposta é começar com o filtro obtido pela síntese por resposta em frequência considerando a máscara da norma. Utilizando um método de otimização, minimizar o erro ajustando os parâmetros do filtro. O método adotado nesse trabalho é o de \textit{Powell}. Esse método realiza a minimização de uma função multivariável sem necessidade de derivadas, por meio de buscas unidimensionais ao longo de direções conjugadas~\cite{7}. O vetor inicial foi definido pela média das respostas ao impulso das máscaras LTE e Wi-Fi, com nove coeficientes como variáveis de ajuste. 
+O processo iterativo foi conduzido até a convergência do critério de parada baseado na variação mínima do erro médio quadrático entre iterações sucessivas, sem imposição explícita de restrições aos coeficientes.
+Tal abordagem é adequada ao problema, pois a função objetivo envolve operações não lineares e não diferenciáveis, como a saturação e o cálculo de envoltórias de sinais complexos.
+ 
+
+
+
+\section{RESULTADOS}
+ 
+\subsection{Metodologia de testes}
+
+Para a aplicação de banda dupla concorrente foram utilizados os sinais Wi-Fi na frequência de portadora 2,4 GHz, com largura de banda de 20~MHz, modulação 64-QAM e amostrado em 120~MHz, e LTE, centrado em 3,5~GHz, com largura de banda de 20~MHz, modulação de 64-QAM e amostrado em 120~MHz. Ambos os sinais e suas respectivas máscaras de restrição de espectro foram extraídos do \textit{software} Cadence Virtuoso. Todo o processamento referente à aplicação do filtro FIR e o método de otimização foram desenvolvidos em Python, ambiente no qual também foram gerados e analisados os gráficos de resposta e desempenho do sistema.
+Para a avaliação do comportamento espectral e da qualidade do sinal resultante, foram empregadas as métricas EVM (\textit{Error Vector Magnitude}), que permite comparar quantitativamente o sinal obtido com o de referência; a PAPR (\textit{Peak-to-Average Power Ratio}), utilizada para avaliar a relação entre as potências de pico e média; e a densidade espectral de potência (PSD), que possibilita visualizar a distribuição da energia do sinal em frequência, verificando a conformidade com as máscaras regulamentares.
+
+\subsection{Resultados da aplicação do filtro sintetizado pela resposta em frequência}
+
+O filtro obtido utilizando como referências as máscaras das normas amostradas em frequência e convertidas para tempo desempenharam resultado satisfatório nas frequências laterais, contudo, comprometem a banda desejada do sinal e aumentaram significativamente a amplitude da envoltória equivalente. 
+Embora o filtro sintetizado apresente bom desempenho na atenuação das componentes fora da banda, ele causa leve degradação na banda útil do sinal. 
+Na Figura~\ref{fig:psd_mascara}, esse efeito pode ser observado pela redução do nível de potência do sinal filtrado em torno de 0 a ±20~MHz.
+
+A figura \ref{fig:psd_mascara} apresenta os resultados antes do filtro e após o filtro da PSD dos sinais.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=1\linewidth]{Figuras/psd_mascara.pdf}
+	\caption{PSDs de cada sinal antes e após aplicação do filtro sintetizado pela resposta em frequência.}
+	\label{fig:psd_mascara}
+\end{figure}
+
+\subsection{Resultados da aplicação do filtro otimizado}
+
+Para garantir uma inicialização equilibrada e generalizar a aplicação do filtro, os coeficientes iniciais foram definidos como a média aritmética entre as respostas ao impulso das máscaras LTE e Wi-Fi, adotando-se $C = 9$ coeficientes para equilibrar resolução espectral e custo computacional. Durante o processo iterativo, os coeficientes foram ajustados para minimizar a métrica de erro médio quadrático (MSE) entre a envoltória filtrada e a referência saturada, até a convergência do critério de parada, resultando em um conjunto otimizado que reproduz com maior fidelidade o comportamento de saturação desejado.
+
+Com a otimização realizada através do método de \textit{Powell}, e obtido novamente os nove coeficientes, aplicou-se a convolução do sinal de entrada em ambos os sinal. Os mesmos coeficientes são aplicados para os dois canais e podem ser conferidos na figura~\ref{fig:coeficientes_otimizados}.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figuras/coeficientes_otimizados.pdf}
+	\caption{Coeficientes resultantes da otimização}
+	\label{fig:coeficientes_otimizados}
+\end{figure}
+
+As figuras de PSD são obtidas pela análise espectral dos sinais antes e depois da aplicação da saturação. A Figura~\ref{fig:psd} apresenta a PSD dos sinais. Os sinais de entrada não possuem distorção e, portanto, representam a condição mais linear possível do sistema. As máscaras indicam as restrições máximas de distorção permitidas pelas respectivas normas. Os sinais saturados correspondem à aplicação do \textit{hard clipping} em um limiar máximo que atende às bandas adjacentes próximas ao canal principal; contudo, não atendem às restrições à medida que o espectro se afasta do canal principal. Por fim, os sinais filtrados representam o desempenho do filtro em reduzir o elevado espalhamento espectral dos dois canais.
+
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=1\linewidth]{Figuras/psd_otimizado.pdf}
+	\caption{Densidade espectral de potência dos sinais saturados e após a otimização da filtro projetado}
+	\label{fig:psd}
+\end{figure}
+
+A figura~\ref{fig:compara_envoltoria_otimizada} apresenta a comparação entre as envoltórias equivalentes dos sinais e o erro obtido entre os sinais saturado e filtrado após a implementação do filtro. Os sinais mantiveram a saturação muito próximo do desejado, reduzindo consideravelmente o erro.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=1\linewidth]{Figuras/compara_envoltoria_otimizada.pdf}
+	\caption{Comparação no tempo das envoltórias equivalentes dos sinais e resultado do erro após a aplicação do método de \textit{Powell}}
+	\label{fig:compara_envoltoria_otimizada}
+\end{figure}
+
+As tabelas \ref{tab1} e \ref{tab2} apresentam os resultados de EVM e de PAPR dos sinais saturado e filtrado. Em ambos os comparativos houve melhora significativa no tratamento do sinal. O parâmetro de EVM indica que não houve degeneração na qualidade do sinal, quando comparado ao sinal saturado cuja redução do EVM aconteceu apenas para o Wi-Fi com redução de 0,13 p.p. Enquanto na PAPR, verificando os sinais de cada canal, houve mudança desprezível, o que indica integralidade das informações, por outro lado, verificando a envoltória equivalente houve aumento de 1,03 dB na PAPR. O filtro recupera parte da PAPR original, contudo, permite atingir alto nível de saturação o que pode otimizar a eficiência do PA.
+
+\renewcommand{\arraystretch}{1.3} 
+\begin{table}[ht!]
+	\centering
+	\small
+	\caption{Resultados do EVM para os sinais saturados e filtrados dos canais 1 e 2.}
+	\begin{tabular}{cccc}
+		\toprule
+		& \textbf{Com filtro} & \textbf{Sem filtro} \\
+		\midrule
+		\textbf{Canal 1} & 7,13\% & 7,26\% \\
+		\textbf{Canal 2} & 8,02\% & 8,02\% \\
+		\bottomrule
+	\end{tabular}
+	\label{tab1}
+\end{table}
+
+\begin{table}[ht!]
+	\centering
+	\small
+	\caption{PAPR dos sinais não-saturado, saturado e filtrado dos canais 1, 2 e envoltória equivalente.}
+	\begin{tabular}{c|ccc} \toprule
+		& \textbf{\begin{tabular}[c]{@{}c@{}}PAPR\\ Canal 1\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}PAPR\\ Canal 2\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}PAPR\\ Envoltória Eq.\end{tabular}} \\ \midrule
+		\textbf{Não-saturado} & 8,43 dB & 8,24 dB & 9,09 dB \\
+		\textbf{Saturado} & 8,89 dB & 8,03 dB & 5,28 dB \\
+		\textbf{Filtrado} & 8,09 dB & 7,29 dB & 6,31 dB \\  \bottomrule
+	\end{tabular}
+	\label{tab2}
+\end{table}
+
+
+\section{CONCLUSÃO}
+
+Diante do espalhamento espectral causado pela saturação do sinal, visando um aumento da potência média para que assim seja possível obter uma maior eficiência do PA, a inserção do filtro acaba por atender as necessidades diante da limitação do espalhamento, sem comprometer as características fundamentais de fase e amplitude do sinal. A otimização do filtro proporcionou reduzir o filtro para ordem 9, onde quanto menor o número de coeficientes, menor é a demanda computacional alocada para fins de processamento. A degradação do EVM foi menor do que 0,5 p.p, por outro lado, houve um aumento na PAPR da envoltória equivalente em aproximadamente 1~dB.
+
+%\section*{AGRADECIMENTOS}
+%Agradeço primeiramente a Deus, por ter me dado tudo que possuo e me guiado em tudo que tenho trilhado. Agradeço ao meu professor,e amigo, Dr. Prof.Luis Schuartz, pela orientação no trabalho e paciência nas dúvidas que tanto tive. Agradeço aos meus pais, por terem depositado fé, e torcido intensamento por mim. E agradeço ao meu irmão, simplesmente porque sim.
+
+\section*{REFERÊNCIAS}
+\begingroup
+\renewcommand{\section}[2]{}%
+\begin{thebibliography}{}
+	
+	\footnotesize
+	\bibitem{1} SEDRA, A.; SMITH, K. \textit{Microeletrônica}. [S.l.]: Pearson Makron Books, 2000.
+	
+	\bibitem{2} MILIAVACCA, L.; SCHUARTZ, L. \textit{Análise dos efeitos da saturação do DPD de banda dupla concorrente}. SeMicro-PR, jun. 2024.
+	
+	\bibitem{3} OLIVEIRA, C.; SCHUARTZ, L. \textit{"FIR Filters for DPD Saturation Improvement"}. Emicro, Brasil, 2025.
+	
+	\bibitem{4} SCHUARTZ, L. \textit{Saturation Approach for Dual-Band Transmission with Pre-Distortion for PA Efficiency Increase}. Jun. 2018. Diss. (Mestrado) – Universidade Federal do Paraná, Curitiba, Brasil.
+	
+	\bibitem{5} LATHI, B. \textit{Sinais e Sistemas Lineares} – 2.ed. [S.l.]: Bookman, 2006.
+	
+	\bibitem{6} OPPENHEIM, A.; SCHAFER, R. \textit{Processamento em Tempo Discreto de Sinais}. Pearson Universidades, 2013.
+	
+	\bibitem{7} VASSILIADIS, V. S.; CONEJEROS, R. (2025). \textit{Powell Method}. In: Pardalos, P. M.; Prokopyev, O. A. (eds) \textit{Encyclopedia of Optimization}.
+	
+\end{thebibliography}
+\endgroup
+
+
+\end{document}

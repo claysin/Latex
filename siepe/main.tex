@@ -1,0 +1,341 @@
+\documentclass[25pt, a0paper, portrait, debug=false]{tikzposter}
+
+% Pacotes necessários
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{lipsum}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows, positioning, shapes}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{booktabs}
+
+% Configurações de tema
+\usetheme{Simple}
+
+% Definir cores personalizadas (cores da UFPR)
+\definecolor{ufprblue}{HTML}{003366}
+\definecolor{ufprgold}{HTML}{FFD700}
+\definecolor{lightblue}{HTML}{E6F3FF}
+\definecolor{darkgray}{HTML}{333333}
+
+% Configurar cores do tema
+\colorlet{backgroundcolor}{white}
+\colorlet{framecolor}{ufprblue}
+\colorlet{titlefgcolor}{white}
+\colorlet{titlebgcolor}{ufprblue}
+\colorlet{blocktitlefgcolor}{ufprblue}
+\colorlet{blocktitlebgcolor}{lightblue}
+\colorlet{blockbodyfgcolor}{darkgray}
+\colorlet{blockbodybgcolor}{white}
+
+\tikzposterlatexaffectionproofoff
+
+
+
+% Aumentar a altura do cabeçalho
+\makeatletter
+\settitle{ \centering
+	\vbox{
+		\color{titlefgcolor}
+		{\bfseries \Huge \@title} \\[1.2em]
+		{\LARGE \@author} \\[0.5em]
+		{\Large \@institute}
+	}
+}
+\makeatother
+
+\title{
+	\parbox{\linewidth}{\centering
+		Análise e aplicação de saturação de DPD de banda dupla \\ incluindo filtros
+	}
+} 
+
+
+
+\author{Clayson G. S. de Oliveira$^1$, Luis Schuartz$^1$}
+\institute{$^1$Departamento de engenharia elétrica, Universidade Federal do Paraná (UFPR)\\
+	$^2$Group of Integrated Circuits and Systems (GICS)\\
+	\texttt{clayson@ufpr.br}}
+
+% Logos (descomente e ajuste os caminhos quando tiver as imagens)
+% \titlegraphic{\includegraphics[width=6cm]{logo-ufpr.png}\hfill\includegraphics[width=6cm]{logo-evento.png}}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{columns}
+		% Primeira coluna
+		\column{0.33}
+		
+		\block{Resumo}{
+			\vspace{-5mm}
+			O desenvolvimento de sistemas sem fio de última geração exige alta linearidade e eficiência energética, desafio intensificado em transmissões de bandas múltiplas concorrentes. Amplificadores de potência (PA), embora essenciais, introduzem não linearidades que degradam a qualidade do sinal. A pré-distorção digital (DPD) é amplamente usada para mitigá-las, mas limita a otimização da eficiência por limitação da modelagem. Nesse cenário, a saturação do DPD surge como alternativa para ampliar a eficiência, ainda que com aumento do fundo espectral, especialmente em sistemas  de bandas múltiplas concorrentes.
+			
+			Este trabalho avalia o uso de filtros FIR para conter esse crescimento espectral em transmissões de banda dupla. Projetados com frequência de corte igual ao dobro da largura de banda e ordem otimizada por janelamento, os filtros Hamming — ordem 51 para IEEE 802.11n (2,4 GHz) e ordem 81 para LTE (3,5 GHz) — reduziram significativamente o fundo espectral. As simulações em Python, Cadence Virtuoso e Octave confirmam a conformidade com limites de PSD, preservação do EVM e apenas um acréscimo de 0,6 dB no PAPR, demonstrando a eficácia da proposta.
+			
+			\textbf{Palavras-chave:} DPD, saturação, filtros FIR, banda dupla, eficiência espectral
+			\vspace{-15mm}
+		}
+		
+		\block{Introdução}{
+			\vspace{-5mm}
+			Atualmente, sistemas sem fio como 4G e 5G exigem alta eficiência espectral, linearidade e baixo consumo. A complexidade cresce em transmissões em bandas múltiplas concorrentes e multiprotocolo, onde o amplificador de potência (PA) é o principal responsável pelo consumo e distorções, compensadas pelo pré-distorcedor digital (DPD). Porém, limitar a amplitude reduz a eficiência do sistema. A técnica de saturação do DPD aplica um corte no limiar $L$, mantendo a fase e elevando a eficiência, mas em banda dupla aumenta o piso de ruído, demandando soluções adicionais.
+			
+			A Figura 1 ilustra a cadeia de processamento proposta, destacando a saturação, filtragem e aplicação do DPD para sinais concorrentes. 
+			\vspace{10mm}
+			
+			\begin{center}
+				\small{\textbf{Figura 1:} Cadeia de processamento proposta para o sistema de DPD de banda dupla com filtragem.}
+			\begin{tikzpicture}[scale = 2.1]
+				\node[draw,line width = 1pt,minimum size = 0.5cm,circle] at(-3,1) (in1) {$\sim$};
+				\node[draw,line width = 1pt,minimum size = 0.5cm,circle] at(-3,-1) (in2) {$\sim$};
+				
+				
+				\node[draw,line width = 1pt,minimum size = 0.8cm] at(-2,0) (z) {Env};
+				
+				
+				\node[draw,line width = 1pt,minimum size = 0.8cm] at(-0.7,1) (sat1) {Sat};
+				\node[draw,line width = 1pt,minimum size = 0.8cm] at(-0.7,-1) (sat2) {Sat};
+				
+				\node[draw,line width = 1pt,minimum size = 0.8cm] at(1.1,1) (F1) {Fil};
+				\node[draw,line width = 1pt,minimum size = 0.8cm] at(1.1,-1) (F2) {Fil};
+				
+				
+				\node[draw,line width = 1pt,minimum size = 0.8cm] at(3.5,1) (dpd1) {DPD};
+				\node[draw,line width = 1pt,minimum size = 0.8cm] at(3.5,-1) (dpd2) {DPD};
+				
+				
+				\draw [->,line width = 1pt] (-3,0) -- (z.west);
+				
+				
+				\draw [->,line width = 1pt] (in1.east) -- (-2,1) -- (z.north);
+				\draw [->,line width = 1pt] (in2.east) -- (-2,-1) -- (z.south);
+				
+				
+				\draw [->,line width = 1pt] (z.east) -- (-0.7,0) -- (sat1.south);
+				\draw [->,line width = 1pt] (-0.7,0) -- (sat2.north);
+				
+				
+				\draw [->,line width = 1pt] (-2,1) -- (sat1.west);
+				\draw [->,line width = 1pt] (-2,-1) -- (sat2.west);
+				
+				
+				\draw [->,line width = 1pt] (sat1.east) -- (F1.west);
+				\draw [->,line width = 1pt] (sat2.east) -- (F2.west);
+				
+				\draw [->,line width = 1pt] (F1.east) -- (dpd1.west);
+				\draw [->,line width = 1pt] (F2.east) -- (dpd2.west);
+				
+				
+				\draw [->,line width = 1pt] (2.5,1) -- (2.8,0.5) -- (3.5,-0.5) -- (dpd2.north);
+				\draw [->,line width = 1pt] (2.5,-1) -- (2.8,-0.5) -- (3.5,0.5) -- (dpd1.south);
+				
+				
+				\draw [->,line width = 1pt] (dpd1.east) -- (5,1);
+				\draw [->,line width = 1pt] (dpd2.east) -- (5,-1);
+				
+				
+				\filldraw [black] (-2,1) circle (2pt);
+				\filldraw [black] (-2,-1) circle (2pt);
+				\filldraw [black] (-0.7,0) circle (2pt);
+				\filldraw [black] (2.5,1) circle (2pt);
+				\filldraw [black] (2.5,-1) circle (2pt);
+				
+				
+				\node[above right]at(-3,0){$L$};
+				
+				
+				\node[above]at(-2,1){\small $x_1(n)$};
+				\node[below]at(-2,-1){\small $x_2(n)$};
+				\node[right]at(-0.7,0){\small $z(n)$};
+				
+				
+				\node[above]at(0.2,1){\small $x_{1c}(n)$};
+				\node[above]at(0.2,-1){\small $x_{2c}(n)$};
+				
+				\node[above]at(2,1){\small $x_{1f}(n)$};
+				\node[above]at(2,-1){\small $x_{2f}(n)$};
+				
+				
+				\node[above]at(4.5,1){\small $x'_{1f}(n)$};
+				\node[above]at(4.5,-1){\small $x'_{2f}(n)$};
+			\end{tikzpicture}
+			
+			\small{\textbf{FONTE:} AUTOR }
+		\end{center}
+			\vspace{10mm}
+			
+			Já a Figura 2 mostra experimentalmente a relação entre entrada e saída do PA e do DPD, evidenciando a importância da linearização para manter o sinal dentro das normas espectrais.
+			\vspace*{10mm}
+			\begin{center}
+				\small{\textbf{Figura 2:} Característica de linearidade do PA e do sistema com DPD.}
+				\includegraphics[width=0.2\columnwidth]{Linearidade_PA_DPD.pdf}
+				
+				\small{\textbf{FONTE:} AUTOR }
+			\end{center}
+			\vspace{-15mm}
+		}
+		\block{Objetivos}{
+			\vspace{-5mm}
+			O presente trabalho tem como objetivos principais a implementação de um filtro FIR, com o intuito
+			de mitigar o espalhamento espectral decorrente da saturação do sinal em banda dupla concorrente, e a
+			redução do PAPR do sinal equivalente, o que possibilita o aumento da potência média transmitida.	
+		}
+		
+		
+		
+		% Segunda coluna
+		\column{0.33}
+		
+		
+		
+		\block{Saturação}{
+			\vspace{-5mm}
+			A saturação aumenta a eficiência e controla o PAPR de amplificadores de potência (PA), limitando a amplitude do sinal e preservando a fase. Em banda dupla, dois canais são transmitidos simultaneamente, e cortar o excesso direto pode gerar intermodulação, sendo $z(n) = |x(n)| - L$ :
+			
+			\begin{equation}
+				\resizebox{0.9\hsize}{!}{$
+					x_{ic}(n) =
+					\begin{cases}
+						x_i(n), & \text{se } |x(n)| \leq L \\[6pt]
+						\left( \frac{|x_i(n)| - z(n)}{2} \right) \exp(j\angle x_i(n)), & \text{se } |x(n)| > L
+					\end{cases}
+					$}
+			\end{equation}
+			
+		\vspace*{10mm}
+		A técnica de repartição proporcional de soma redistribui o excesso entre os canais, mantendo a integridade e as características espectrais.
+		 Esse controle refinado permite aumentar a potência média do sinal sem degradar a qualidade. O DPD em banda dupla otimiza eficiência e linearidade para sistemas de alta taxa de transmissão.
+		 
+		 Porém a realização da saturação na envoltória acaba por induzir um espalhamento espectral, ultrapassando as normas estabelecidas, conforme é possível observar na figura 3: 
+		 
+		 \vspace*{5mm}
+		 \begin{center}
+		 	\small{\textbf{Figura 3:} Espalhamento espectral causado pela saturação da envoltória equivalente.}
+		 	
+		 	\includegraphics[width=0.2\columnwidth]{saturado_grafico.pdf}
+		 	\label{fig3}
+		 	
+		 	\small{\textbf{FONTE:} AUTOR}
+		 
+		 	
+		 \end{center}
+		 \vspace{-20mm}	
+		}
+		
+		\block{Filtros FIR}{
+			\vspace{-5mm}
+			Filtros FIR são filtros digitais com resposta finita, projetados ao aplicar uma janela a um filtro ideal para torná-lo prático. A ordem do filtro ($M$) dita seu desempenho e custo: ordens maiores permitem uma separação de frequência mais nítida, mas aumentam a complexidade computacional. O projeto busca um balanço entre a precisão e os recursos disponíveis. Sua principal vantagem é a capacidade de manter uma fase perfeitamente linear, o que é crucial para preservar a forma de onda do sinal sem introduzir distorções de atraso.
+			
+			Na figura 4, é exemplificado um filtro passa-baixa, o mesmo tipo utilizado para a aplicação do janelamento.
+			\vspace*{10mm}
+			\begin{center}
+				\small{\textbf{Figura 4:} Exemplificação de um filtro passa baixa.}
+				
+				\includegraphics[width=0.22\columnwidth]{transição_filtro_ideal_real.pdf}
+				
+				\small{\textbf{FONTE:} (Oppenheim; Schafer, 2013) }
+				
+				
+			\end{center}
+			\vspace{-15mm}		
+		}
+		
+		\block{Resultados e Discussão}{
+			\vspace{-5mm}
+			Este estudo aplicou um filtro digital em sinais Wi-Fi (2.4~GHz) e LTE (3.5 GHz) com 20 MHz de banda. Primeiramente, os sinais foram submetidos a um processo de saturação com limiar de 1.25V.
+			\vspace{10mm}
+			
+			\begin{center}
+				\captionof{table}{Resultados dos testes de EVM em ambos os canais}
+				\label{tab2}
+				\begin{tabular}{ccc} % Removi uma coluna 'c' extra que estava sobrando
+					\toprule
+					& \textbf{Com filtro} & \textbf{Sem filtro} \\ % Removido o '\' extra no final
+					\midrule
+					\textbf{Canal 1} & 7.1138\% & 7.2607\% \\ % Removido o '\' extra no final
+					\textbf{Canal 2} & 8.0275\% & 8.0285\% \\ % Removido o '\' extra no final
+					\bottomrule
+				\end{tabular}
+			\end{center}
+			
+			\vspace{-15mm}
+			}
+		
+		
+		\column{0.33}
+		
+		\block{}{
+			
+			\begin{center}
+				\small{\textbf{Figura 5:} Resultado da aplicação do filtro do sinal LTE.}
+				
+				\includegraphics[width=0.23\columnwidth]{LTE.pdf}
+				
+				\small{\textbf{FONTE:} AUTOR}
+			
+				
+			\end{center}
+			\vspace{10mm}
+			
+			A ordem do filtro foi definida arbitrariamente em 50 para o Wi-Fi, figura 6, e 80 para o LTE, figura 5, sendo que a ordem maior resultou em uma transição de frequência mais abrupta no sinal LTE. Diferentes janelas foram comparadas, e a janela de Hamming demonstrou ser a mais eficaz, com uma atenuação mais limitante e próxima da frequência de corte desejada. Devido a esse desempenho, o janelamento Hamming foi o selecionado para as análises tanto de EVM e PAPR, e seus resultados podem ser vistos na tabela 1 e 2, respectivamente.
+			\vspace{10mm}
+			
+			\begin{center}
+				\small{\textbf{Figura 6:} Resultado da aplicação do filtro do sinal Wifi.}
+				
+				\includegraphics[width=0.23\columnwidth]{wifi.pdf}
+				
+				\small{\textbf{FONTE:} AUTOR}
+			
+			\end{center}
+			
+			\vspace{10mm}
+			
+			\begin{center}
+				\captionof{table}{\small Resultados de PAPR para os canais 1, 2 e para a envoltória equivalente, considerando as condições: sem saturação, saturado e filtrado}
+				\label{tab1}
+				\begin{tabular}{c|ccc} 
+					\toprule
+					& \textbf{\begin{tabular}[c]{@{}c@{}}PAPR\\ Canal 1\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}PAPR\\ Canal 2\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}PAPR\\ Envoltória Eq.\end{tabular}} \\ 
+					\midrule
+					\textbf{Sem saturação} & 8,43 dB & 8,24 dB & 9,09 dB \\
+					\textbf{Saturado}      & 8,89 dB & 8,03 dB & 5,28 dB \\
+					\textbf{Filtrado}      & 8,35 dB & 7,27 dB & 5,90 dB \\  
+					\bottomrule
+				\end{tabular}
+			\end{center}
+			\vspace{-15mm}
+		}
+		
+		\block{Conclusões}{
+			\vspace{-5mm}
+			A implementação de um filtro FIR em um sistema DPD+PA, combinada com a saturação do pré-distorcedor, aumenta significativamente a eficiência. Essa técnica permite que o amplificador opere mais próximo de sua região de saturação, elevando a potência média do sinal, conforme a tabela 2. Os resultados mostram uma redução no pico de potência da envoltória do sinal após a filtragem. Crucialmente, essa melhoria é alcançada sem degradação relevante na qualidade do sinal(EVM), conforme a tabela 1, confirmando o efeito positivo do filtro no sistema.
+			\vspace{-15mm}
+		}
+		
+		\block{Referências}{
+			\vspace{-5mm}
+			\begin{enumerate}[leftmargin=*]
+				\item OPPENHEIM, A.; SCHAFER, R. Processamento em Tempo Discreto de Sinais. [S.l.]: Pearson
+				Universidades, 2013. ISBN 9788581431024
+				\item SCHUARTZ, L.; LIMA, E. Saturation Approach for Dual-Band Transmission with Pre-Distortion for PA
+				Efficiency Increase. Brazilian Archives of Biology and Technology, v. 67, jun. 2024.
+				\item MILIAVACCA, L.; SCHUARTZ, L. Análise dos efeitos da saturação do DPD de banda dupla concorrente.
+				SeMicro-PR, jun. 2024.
+				
+			\end{enumerate}
+		}
+		
+	\end{columns}
+	
+\end{document}

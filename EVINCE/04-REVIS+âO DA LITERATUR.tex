@@ -1,0 +1,186 @@
+\chapter{REVISÃO DA LITERATURA}
+
+\section{Saturação}
+O processo de saturação é uma estratégia utilizada para aumentar a eficiência e o PAPR de saída de um amplificador (PA) \cite{mili}. Quando os PAs são analisados, percebe-se que a sua maior eficiência se encontra em pontos de alta compressão de ganho, porém distorções são introduzidas quando operando de tal maneira. O problema principal é que amplificadores de potência amplificam o sinal de forma linear até um certo limite; se a potência do sinal de entrada for muito elevada, o próprio amplificador satura (corta esses picos), o que acaba gerando distorções. Dado que a linearização do PA resulta, muitas vezes, em um desempenho melhor do que aquele exigido pelas normas, a tendência é de se ter uma margem de distorção. A saturação do DPD trabalha em cima dessa margem, mirando no aumento de potência média do sinal.
+
+\begin{figure}[!htpb]
+	\centering
+	\caption{ESPALHAMENTO ESPECTRAL CAUSADO PELA SATURAÇÃO}
+	\includegraphics[width=0.75\linewidth]{fig/saturado_grafico.pdf}
+	\caption*{FONTE: AUTOR}
+	\label{espalhamento}
+\end{figure}
+
+\subsection{Banda única}
+No processo de banda única (1D), a saturação é relativamente mais simples, pois, nesse caso, a amplitude do sinal pode ser representada pela própria envoltória de banda base. 
+
+\begin{equation}
+    x_{c}(n) =
+\begin{cases}
+  x(n), & \text{se } |x(n)| \le L \\
+  L \exp j\angle x(n), & \text{se } |x(n)| > L
+\end{cases}
+\end{equation}
+
+\begin{itemize}
+    \item $x(n)$: É a envoltória equivalente do sinal.
+    \item $L$: Nível máximo escolhido de amplitude.
+    \item $|x(n)|$: Amplitude instantânea do sinal.
+    \item $\angle x(n)$: Fase instantânea do sinal.
+\end{itemize}
+
+Com a fórmula acima pode-se verificar o processo de saturação ocorrendo. A cada instante $n$ o sistema olha a amplitude do sinal e verifica se a mesma se encontra dentro do limite escolhido $L$; se for detectado um sinal menor ou igual, a amplitude original do sinal é preservada. Caso seja detectada uma amplitude maior, o sinal é cortado e forçado a ter uma nova amplitude $L$. Vale muito bem ressaltar que nesse processo a fase $\angle x(n)$ é preservada; isso é muito importante para não corromper a informação do que está sendo transmitido. 
+O sinal cortado no processo acaba sendo perdido; no fundo o processo de saturação altera a forma de onda, e a informação contida ali é removida, tendo essa energia perdida convertida em distorções. Quando se opta pelo processo de saturação, se acaba tendo um controle do processo, pois ao invés de enviar os picos altos para o amplificador, que então irá saturá-los e ceifá-los, gerando um processo caótico no PA, que pode até mesmo distorcer a fase do sinal , prefere-se controlar esse "achatamento" e manter a fase da informação, mesmo que para isso uma parte do sinal seja perdida.
+
+\subsection{Banda Dupla}
+A transmissão em banda dupla (2D) é uma técnica que permite utilizar um único amplificador de potência para transmitir simultaneamente múltiplos canais de comunicação em duas frequências portadoras distintas. Esta abordagem tem ganhado destaque por sua capacidade de suprir as altas taxas de transmissão demandadas pelos sistemas modernos, oferecendo maior eficiência espectral e energética.
+
+O processo de saturação em banda dupla segue os mesmos princípios já estabelecidos para transmissão em banda única. Inicialmente, é realizada a envoltória complexa equivalente, que considera as contribuições de fase e frequência de cada portadora. O sinal resultante pode ser expresso matematicamente pela equação \cite{Artigo1}:
+
+\begin{equation}
+x(n) = x_1(n) \exp\left( \frac{-j\Delta\omega(n-1)}{f_s} \right) + x_2(n) \exp\left( \frac{j\Delta\omega(n-1)}{f_s} \right).
+\end{equation}
+
+\noindent onde $x_1(n)$ e $x_2(n)$ representam os sinais de banda base dos dois canais, $f_1$ e $f_2$ são as frequências portadoras, e $f_s$ é a frequência de amostragem.
+
+Após o ceifamento do sinal em um limiar $L$ é realizado um procedimento diferente quanto a parte excedente do sinal - aquele que foi cortado. Como já comentado anteriormente, no caso de 1D existe somente uma única portadora, com isso a distorção causada pelo ceifamento acaba por impactar somente aquele sinal. Já em banda dupla é diferente, há dois sinais modulados em frequências diferentes, descartar a parte excedente, nesse caso, impactaria o sinal de uma forma não controlada, podendo gerar intermodulação entre bandas e até a perda da integridade de cada banda. Para contornar este problema, pode-se utilizar técnicas de reintrodução do excedente nas bandas \cite{artigo2}. 
+Uma abordagem eficaz é a aplicação da \textbf{técnica de repartição proporcional de soma}, definida por:
+
+\begin{equation}
+x_{ic}(n) = 
+\begin{cases}
+x_i(n), & \text{se } |x(n)| \leq L \\[6pt]
+\left( \frac{|x_i(n)| - z(n)}{2} \right) \exp(j\angle x_i(n)), & \text{se } |x(n)| > L
+\end{cases}
+\end{equation}
+
+Na aplicação da soma, temos a regra de que se a envoltória equivalente for maior que o limiar ( $|x(n)| > L$) a amplitude do canal é reduzida subtraindo metade do excedente ($\frac{z(n)}{2}$ sendo $z(n) = |x(n)| - L$) da sua amplitude original $|x_i(n)|$. É importante destacar que a fase do sinal é mantida constante durante este processo, preservando as características espectrais fundamentais dos canais transmitidos. Esta abordagem permite um controle mais refinado da distorção introduzida pelo processo de limitação de amplitude, mantendo a qualidade dos sinais transmitidos em ambas as bandas de frequência.
+
+
+\begin{figure}[!htpb]
+	\centering
+	\caption{ENVOLTÓRIA EM BANDA DUPLA SATURADA}
+	\includegraphics[width=0.75\linewidth]{fig/saturado.pdf}
+	\caption*{FONTE: AUTOR}
+	\label{sat}
+\end{figure}
+
+\section{Filtros FIR}
+Quando o tema processamento de sinais é abordado, um tema de suma importância sempre acaba sendo mencionado: filtros seletivos em frequência. Tais componentes são projetados levando em consideração a sua função de permitir a passagem da frequência em um determinado intervalo e rejeitar as demais. Filtros em tempo discreto são algoritmos matemáticos que operam em cima de sinais discretos(sinais amostrados em tempo contínuo), diferente dos filtros analógicos, que lidam com sinais contínuos no tempo usando componentes eletrônicos \cite{sedra2000microeletrônica}. Para um filtro digital, o sinal analógico é primeiro convertido em uma sequência digital, através de um ADC, que então processada em um filtro; na saída tem-se outra sequência que pode ser convertida para um sinal analógico por um DAC, fazendo o caminho contrário. O funcionamento no seu cerne é regido por equações matemáticas , como convolução, equações diferenciais, transformadas de Fourier, que definem a sua saída, podendo se basear na entrada instantânea ou até mesmo em anteriores \cite{oppenheim2013processamento}. 
+
+Os filtros FIR (\textit{finite impulse response}) são uma classe de filtro que tem como característica sua resposta ao impulso $h[n]$ de duração finita, ou seja, fora de um intervalo finito $h[n]$ é zero. São implementados através de uma equação diferencial linear com coeficientes constantes, que resulta em uma aproximação polinomial da função de sistemas. Sua ordem é denominada pela letra $M$, e o comprimento, entende-se duração, da resposta ao impulso é $C=M+1$. Antes de se iniciar o projeto do filtro, é importante estabelecer certas aproximações que regerão o comportamento do mesmo. Conforme a figura \ref{transição} é possível ver o comportamento de um filtro passa-baixa (o mesmo que será implementado no presente trabalho); no eixo $Y$ temos a magnitude da resposta em frequência (pode variar de 0 a $\pi$) e no eixo $X$ temos a frequência normalizada. Na faixa de passagem temos o intervalo de frequência que queremos manter, que pode ir até a faixa de passagem. Idealmente não deveria se ter atenuação do sinal nessa região, porém na prática o percebe-se é uma ondulação $\delta_p$, conhecida como ripple; assim, para um projeto busca-se ter variações pequenas nessa faixa. Logo depois vem a faixa de transição, que ocorre de forma gradual, ou seja, tem-se um certo intervalo de tempo para que o filtro possa atenuar o sinal desejado. Por último vem a faixa de rejeição, responsável por rejeitar a frequência não desejada; idealmente serial possível atenuar por completo, na realidade são atenuadas, porém não bloqueadas por completo, tendo uma faixa de rejeição limitada por um ripple $\delta_r$. 
+
+
+\begin{figure}[!htpb]
+	\centering
+	\caption{TRANSIÇÃO DE UM FILTRO DIGITAL PASSA-BAIXA}
+	\includegraphics[width=0.75\linewidth]{fig/transição_filtro_ideal_real.pdf}
+	\caption*{FONTE: \cite{oppenheim2013processamento}}
+	\label{transição}
+\end{figure}
+
+\subsection{Projeto de um filtro FIR}
+O método abordado neste trabalho para o projeto do filtro de resposta ao impulso finito (FIR) foi baseado no \textit{método do janelamento}. 
+Tal abordagem se inicia com uma resposta em frequência desejada, que pode ser representada por uma série de Fourier como:
+
+\begin{equation}
+H_d(e^{j\omega}) = \sum_{n=-\infty}^{\infty} h_d[n] \, e^{-j\omega n}
+\end{equation}
+
+A equação acima indica que, conhecendo-se a sequência de resposta ao impulso $h_d[n]$, pode-se determinar sua forma em frequência $H_d(e^{j\omega})$ por meio da soma de todas as amostras multiplicadas pelas exponenciais complexas $e^{-j\omega n}$. 
+A resposta ao impulso ideal, por sua vez, pode ser obtida a partir de $H_d(e^{j\omega})$ através da transformada inversa de Fourier discreta, dada por:
+
+\begin{equation}
+h_d[n] = \frac{1}{2\pi} \int_{-\pi}^{\pi} H_d(e^{j\omega}) \, e^{j\omega n} \, d\omega
+\end{equation}
+
+As equações acima formam um par transformada-inversa, isto é, uma é o inverso da outra. 
+Como na prática não é possível ter $n$ variando de $-\infty$ até $\infty$, 
+utiliza-se um processo de truncamento de $h_d[n]$ para obter um filtro FIR causal e de duração finita. 
+Esse truncamento é realizado multiplicando-se $h_d[n]$ por uma função \textit{janela} $w[n]$, resultando em:
+
+\begin{equation}
+h[n] = h_d[n] \, w[n]
+\end{equation}
+
+\noindent
+No domínio da frequência, essa operação de multiplicação no tempo corresponde a uma convolução entre a resposta em frequência ideal $H_d(e^{j\omega})$ 
+e a transformada de Fourier da janela $W(e^{j\omega})$ \cite{lathi2006sinais}. 
+Como $W(e^{j\omega})$ apresenta um \textit{lóbulo principal} e vários \textit{lóbulos laterais}, o efeito do janelamento é suavizar a transição entre as regiões de passagem e rejeição do filtro (aumentando a largura da banda de transição), 
+e introduzir ondulações(\textit{ripples}) na banda de passagem e na banda de rejeição.
+
+Em termos práticos:
+\begin{itemize}
+    \item Janelas mais largas no tempo $\Rightarrow$ lóbulos principais mais estreitos $\Rightarrow$ transição mais abrupta na frequência.
+    \item Janelas com menor nível de lóbulos laterais $\Rightarrow$ menor ondulação na resposta em frequência.
+\end{itemize}
+
+Assim, a escolha da janela (retangular, Hamming, Hann, Blackman, etc.) define o compromisso entre largura da banda de transição e nível de rejeição fora da banda.
+
+\subsection{Ordem do filtro e número de coeficientes}
+No contexto de filtros FIR, a ordem do filtro $M$ está diretamente relacionada ao número de coeficientes $C$ por:
+\[
+C = M + 1
+\]
+A ordem $M$ representa o maior atraso (em amostras) presente no filtro. 
+Quanto maior $M$, mais estreita será a banda de transição e maior a capacidade de rejeitar frequências indesejadas. 
+No entanto, filtros de maior ordem também possuem mais coeficientes, o que implica:
+\begin{itemize}
+    \item \textbf{Maior custo computacional:} cada saída do filtro requer $C$ multiplicações e $(C-1)$ somas.
+    \item \textbf{Maior latência:} o tempo de resposta aumenta, o que pode ser crítico em aplicações de tempo real.
+    \item \textbf{Maior uso de memória:} é necessário armazenar mais amostras anteriores para o cálculo da saída.
+\end{itemize}
+
+Assim, o projeto do filtro requer um equilíbrio entre desempenho espectral (largura da transição e rejeição fora de banda) e custo de implementação (processamento e memória). A escolha adequada de $M$ e da janela $w[n]$ permite equilibrar essas necessidades conforme a aplicação.
+
+\subsection{Janelamento}
+
+O projeto de filtros digitais frequentemente parte de um filtro ideal, cuja resposta em frequência possui uma transição perfeitamente abrupta entre a banda de passagem e a banda de rejeição. Um filtro ideal, no entanto, exige uma resposta ao impulso, $h_d[n]$, de comprimento infinito, o que o torna impraticável para implementação em sistemas reais. O \emph{método de janelamento} é uma técnica utilizada para obter uma resposta ao impulso finita (FIR) a partir de uma resposta ao impulso ideal infinita (IIR).
+
+A abordagem mais direta para tornar a resposta ao impulso finita é o \emph{truncamento}, que consiste em manter apenas os $M$ coeficientes centrais de $h_d[n]$ e zerar todos os outros.Embora simples, o truncamento abrupto introduz efeitos indesejáveis no domínio da frequência. A multiplicação no domínio do tempo corresponde a uma convolução no domínio da frequência. 
+
+Para mitigar os efeitos, utilizam-se funções de janela que possuem uma transição mais suave de um para zero em suas bordas \cite{oppenheim2013processamento}. Essas janelas "suavizadas" reduzem a amplitude das descontinuidades no início e no fim do sinal, o que resulta em lóbulos laterais com menor energia na frequência. No entanto, a escolha de uma janela implica em uma troca fundamental entre a resolução em frequência e a supressão do vazamento espectral.
+Geralmente, janelas que oferecem maior atenuação nos lóbulos laterais o fazem ao custo de um lóbulo principal mais largo, e vice-versa.
+
+Existem diversas janelas aplicadas ao contexto de filtragem de sinais, cada uma oferecendo um equilíbrio diferente nesta troca. Algumas das mais comuns incluem:
+\begin{itemize}
+	\item \textbf{Retangular:} Possui o lóbulo principal mais estreito (melhor resolução), mas a pior atenuação de lóbulo lateral (maior vazamento espectral).
+	\item \textbf{Hanning e Hamming:} Oferecem um bom compromisso entre resolução e atenuação. Elas reduzem significativamente o vazamento espectral em comparação com a janela retangular, ao custo de um lóbulo principal aproximadamente duas vezes mais largo.
+	\item \textbf{Bartlett (Triangular):} Apresenta uma atenuação de lóbulo lateral melhor que a retangular, mas pior que a de Hanning e Hamming.
+	\item \textbf{Blackman:} Proporciona uma excelente atenuação de lóbulo lateral, mas com um lóbulo principal ainda mais largo, sacrificando mais a resolução em frequência.
+\end{itemize}
+
+
+\begin{figure}[H]
+	\centering
+	\caption{JANELAS NO DOMÍNIO DA FREQUÊNCIA}
+	\includegraphics[width=0.75\linewidth]{fig/janelas.pdf}
+	\caption*{FONTE: AUTOR}
+	\label{janelas}
+\end{figure}
+
+
+\subsection{Parâmetros de qualidade}
+O primeiro parâmetro utilizado para analise da qualidade da implementação no sistema é o PAPR. Com essa analise a relação da potência de pico do sinal em relação a sua potência média, em termos matemáticos:
+
+\begin{equation}
+	\text{PAPR}_{\text{dB}} = 10 \cdot \log_{10} \left( \frac{\max(|x[n]|^2)}{E[|x[n]|^2]} \right)
+\end{equation}
+
+Na analise, é buscado uma diminuição do valor do PAPR, pela equação é possível perceber que a relação é inversamente proporcional ao valor da potência média, como seu aumento é o desejado, esperá-se ter uma redução do valor final, normalmente medido em decibéis.
+
+O segundo parâmetro analisado é o de EVM, magnitude do vetor de erro, sua métrica mede a diferença entre o sinal ideal, que deveria se ter, e o sinal real. Sua visualização é dada a partir de um diagrama de constelações, uma representação visual dos símbolos de um sinal digital, Em um sistema ideal, cada ponto de dados estaria exatamente em sua posição perfeita no diagrama, mas devido a imperfeições no sistema, tais pontos se encontram em uma posição deslocada da ideal. O vetor de erro é o vetor que liga o ponto real ao seu ponto ideal correspondente.
+
+
+\begin{equation}
+	\text{EVM}_{\text{RMS}} = \sqrt{\frac{\frac{1}{N}\sum_{n=1}^{N}|S_{\text{real}}[n] - S_{\text{ideal}}[n]|^2}{\frac{1}{N}\sum_{n=1}^{N}|S_{\text{ideal}}[n]|^2}}
+\end{equation}
+
+O EVM leva em conta diversas imperfeições do sinal, dentre elas: Ruido de fase, distorções de amplitude e fase, vazamento de portadora. Quanto menor o valor, fica indicado que o sinal transmitido ou recebido é muito próximo do ideal. Em contrapartida, um EVM alto sugere que muitas imperfeições estão presentes no sinal, o que pode levar a erros na decodificação do mesmo.
+
+
+
+
+
+
+

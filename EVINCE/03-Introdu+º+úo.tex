@@ -1,0 +1,38 @@
+
+\chapter{INTRODUÇÃO}
+Com o avanço contínuo da tecnologia nos últimos anos, a comunicação e a transmissão de dados tornaram-se demandas cada vez mais presentes em nossa sociedade para atender às altas taxas de transferência de dados e eficiência dos sistemas mais modernos, especialmente no contexto da comunicação sem fio. Nesse cenário, a transmissão de bandas múltiplas concorrentes - transmissão de dois ou mais sinais ao mesmo tempo - vem sendo uma estratégia adotada para aumentar as taxas de transmissão de dados, reduzir custo e ter uma maior eficiência espectral\cite{8070682}. Sob essa perspectiva, os amplificadores de potência (\acs{pa}) desempenham um papel fundamental, pois são responsáveis por amplificar o sinal antes da antena de transmissão, permitindo sua propagação a longas distâncias.
+Apesar de sua importância, os amplificadores de potência são considerados elementos críticos no sistema \cite{martins2011eficiencia}, uma vez que consomem uma quantidade significativa de energia, apresentam baixa eficiência e podem introduzir distorções quando operam fora de sua região linear. Na transmissão de sinais, é desejável garantir a linearidade — para preservar a integridade do sinal — e, ao mesmo tempo, alcançar uma boa eficiência energética.
+Para melhorar a eficiência operacional, é comum utilizar o \acs{pa} próximo ao seu ponto de saturação. No entanto, essa prática acentua os efeitos de não linearidade, comprometendo a qualidade do sinal transmitido. Para mitigar esses efeitos indesejados, uma das técnicas amplamente adotadas é a pré-distorção digital (\acs{dpd})\cite{9427989}, que visa compensar as distorções introduzidas pelo amplificador, restaurando a linearidade do sistema de transmissão.
+
+O \acs{dpd} é um modelo implementado digitalmente e posicionado antes do amplificador de potência (PA) na cadeia de transmissão. Sua principal função é compensar as não linearidades introduzidas pelo PA, modelando uma função característica inversa àquela do amplificador. Em termos práticos, o DPD introduz uma distorção controlada e deliberada no sinal de entrada, de forma que, após passar pelas não linearidades do PA, o sinal resultante na saída apresente um comportamento mais linear e fiel ao sinal original \cite{alvarado2019papr} Esse processo é fundamental para garantir a integridade espectral do sinal transmitido, reduzindo a distorção harmônica e os produtos de intermodulação, que podem causar interferência em canais adjacentes e violar os requisitos regulatórios de espectro. Além disso, a linearização promovida pelo DPD permite operar o PA em regiões de maior eficiência, próximas à saturação, sem comprometer significativamente a qualidade do sinal, contribuindo para a redução do consumo de energia.
+
+\begin{figure}[!htpb]
+	\centering
+	\caption{LINEARIDADE DPD E PA}
+	\includegraphics[width=0.75\linewidth]{fig/Linearidade_PA_DPD.pdf}
+	\caption*{FONTE: AUTOR}
+	\label{dpd_pa}
+\end{figure}
+
+Conforme a figura \ref{dpd_pa}, podemos observar os três estágios principais deste processo: o DPD aplicando a pré-distorção, o PA introduzindo sua distorção natural e, por fim, a saída resultante, que idealmente se aproxima de uma resposta linear. A atuação do DPD como uma função inversa do PA é o que possibilita essa linearização, sendo, portanto, uma técnica essencial para o cumprimento de requisitos de qualidade de transmissão e eficiência energética em sistemas de comunicação modernos.
+Para operar o amplificador de potência (\acs{pa}) com níveis de eficiência energeticamente aceitáveis, diversas técnicas são empregadas com o objetivo de otimizar seu desempenho. Dentre essas, destacam-se os métodos voltados à redução da Relação entre Potência de Pico e Potência Média (\acs{papr}, do inglês Peak-to-Average Power Ratio), uma métrica fundamental em sistemas de comunicação.
+
+Uma das abordagens para a mitigação o mesmo consiste na aplicação de técnicas de saturação do sinal, previamente à inserção do mesmo no pré-distorcedor digital (\acs{dpd}). Essa técnica baseia-se no \textit{hard clipping} do sinal em um determinado limiar de tensão. Quando lidado com um caso de transmissão de banda única, podemos considerar a amplitude do sinal como sendo representada pela envoltória da própria banda, o que simplifica a aplicação da saturação. Já em bandas múltiplas, no caso do presente trabalho sendo representada por um sinal Wi-Fi de 2,4 GHz, e um sinal LTE de 3,5 GHz, a amplitude do sinal é a contribuição de mais de uma banda; com isso, não podemos considerar a amplitude de uma única portadora. Logo, utiliza-se de duas abordagens principais para solucionar essa questão: abordagem da soma e abordagem da divisão. Entretanto, a introdução do processo de saturação pode ocasionar o fenômeno de espalhamento espectral, o qual consiste na expansão do espectro do sinal além da sua largura de banda originalmente designada. Essa expansão pode violar as restrições impostas por órgãos reguladores, resultando na interferência em bandas adjacentes e, consequentemente, degradação do desempenho de sistemas vizinhos.
+
+\begin{figure}[H]
+	\centering
+	\caption{SISTEMA PROPOSTO COM FILTROS.}
+	\input{tik.tex}
+	\caption*{FONTE: AUTOR}
+	\label{SISTEMA PROPOSTO COM FILTROS.}
+\end{figure}
+
+
+
+
+A imagem acima exemplifica a implementação proposta, dado que a saturação do sinal ocasiona um espalhamento espectral, espalhando a frequência além dos limites impostos, a solução é a implementação de um filtro de impulso finito(localizado antes do pré-distorsor) para conter o sinal dentro de uma faixa especificada, para que assim possa ser garantido as regras impostas por normas e para que o sinal não interfira em bandas adjacentes
+
+\section{Objetivos}
+O presente trabalho tem como objetivos principais a implementação de um filtro FIR, com o intuito de mitigar o espalhamento espectral decorrente da saturação do sinal em banda dupla concorrente, e a redução do PAPR do sinal equivalente, o que possibilita o aumento da potência média transmitida.
+
+

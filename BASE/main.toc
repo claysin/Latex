@@ -1,0 +1,12 @@
+\changetocdepth {4}
+\babel@toc {brazil}{}\relax 
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\addvspace {-10\p@ }
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {1}\bfseries \MakeTextUppercase []{INTRODUÇÃO}}{4}{chapter.1}%
+\vspace {\cftbeforechapterskip }
+\vspace {-6pt}
+\addvspace {-10\p@ }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\contentsline {chapter}{REFERÊNCIAS}{5}{section*.6}%
+\vspace {4pt}

@@ -1,0 +1,475 @@
+\usepackage[T1]{fontenc}		
+\usepackage[utf8]{inputenc}		
+\usepackage{lastpage}		
+\usepackage{indentfirst}	
+\usepackage{microtype} 		
+\usepackage{ifthen}		    
+\usepackage[brazil]{babel}	
+\usepackage[final]{pdfpages}
+\usepackage{amsmath}		
+\usepackage{acronym}
+\usepackage{amsmath, amssymb}
+\usepackage{tikz}
+\usepackage{etoolbox}
+\usepackage{textcase}
+\usepackage{titlesec}
+\usepackage{tocloft}
+
+% Pacotes de citações BibLaTeX
+% ----------------------------------------------------------
+\usepackage[style=abnt,
+	backref=true,
+	backend=biber,
+	citecounter=true,
+	backrefstyle=three, 
+ 	repeatfields=true,
+	url=true,
+	maxbibnames=99,
+    mincitenames=1,
+    maxcitenames=2,
+    backref=true,
+    hyperref=true,
+    giveninits=true,
+    uniquename=false,
+    uniquelist=false]{biblatex}
+
+\renewcommand*{\mkbibnamefamily}[1]{#1}%
+% ----------------------------------------------------------
+\setlength\bibitemsep{\baselineskip}
+% ----------------------------------------------------------
+\DefineBibliographyStrings{brazil}{%
+	 backrefpage  = {Citado \arabic{citecounter} vez na página},		% originally "cited on page"
+	 backrefpages = {Citado \arabic{citecounter} vezes nas páginas},	% originally "cited on pages"
+	 urlfrom      = {Dispon\'ivel em},
+}
+% ----------------------------------------------------------
+\defbibheading{bay}[\bibname]{%
+  \chapter*{\MakeTextUppercase{#1}}%
+  \markboth{\MakeTextUppercase{#1}}{\MakeTextUppercase{#1}}%
+  \addcontentsline{toc}{chapter}{\MakeTextUppercase{\bibname}}
+  %{\protect\numberline{}\bibname}
+  {\bibname}
+}
+% ----------------------------------------------------------
+\makeatletter
+    \pretocmd{\chapter}{\addtocontents{toc}{\protect\addvspace{-10\p@}}}{}{}
+    \pretocmd{\section}{\addtocontents{toc}{\protect\addvspace{0\p@}}}{}{}
+    
+\makeatother
+
+\makeatletter
+\let\oldcontentsline\contentsline
+\def\contentsline#1#2{%
+    \expandafter\ifx\csname l@#1\endcsname\l@section
+    \expandafter\@firstoftwo
+    \else
+    \expandafter\@secondoftwo
+    \fi
+    {%
+        \oldcontentsline{#1}{\MakeTextUppercase{#2}}%
+    }{%
+        \oldcontentsline{#1}{#2}%
+    }%
+}
+\makeatother
+% ----------------------------------------------------------
+\DeclareFieldFormat{illustrated}{\addspace #1\isdot}%
+\DeclareFieldFormat{url}{\bibstring{urlfrom}\addcolon \space\addspace{#1}} 
+% ----------------------------------------------------------
+\DeclareFieldFormat{urldate}{\bibstring{urlseen}\addcolon\addspace #1}%
+\DeclareFieldFormat*{note}{\addspace #1}% 
+% ----------------------------------------------------------
+\makepagestyle{chapfirst}
+\makeoddhead{chapfirst}{}{}{\footnotesize{\thepage}}
+\makepagestyle{simplestextual}
+  \makeevenhead{simplestextual} 
+     {}{}{\footnotesize \thepage}
+     
+  \makeoddhead{simplestextual} 
+     {}{}{\footnotesize \thepage}
+  \makeevenfoot{simplestextual}
+     {}{}{} 
+      
+  \makeoddfoot{simplestextual} 
+     {}{}{}
+     
+
+\renewcommand*{\mkbibnamefamily}[1]{#1}%
+\makeatletter
+\newcommand{\tempmaxup}[1]{\def\blx@maxcitenames{99}#1}
+\makeatother
+
+\DeclareCiteCommand{\fullcite}[\tempmaxup]
+{\usebibmacro{prenote}}
+{\usedriver
+	{}
+	{\thefield{entrytype}}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
+
+
+%-------------------------------------------------------------------------
+\usepackage{color}		    	% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{lipsum}				% para geração de dummy text
+\usepackage{csquotes}
+
+%\usepackage[style=long]{glossaries}
+%\usepackage{abntex2glossaries}
+
+\usepackage{cancel} 		% permite representar o cancelamento de termos em texto ou equacoes	
+\usepackage{xcolor} 		% cores extendidas	
+\usepackage{smartdiagram}   	% gera diagramas a partir de listas
+\usepackage{float} 		% Para a figura ficar na posição correta	    
+\usepackage{textcomp} 		% supporte para fontes da Text Companion 
+\usepackage{longtable}		% uso de longtable
+
+\usepackage{lscape}		% páginas em paisagem
+\usepackage{multicol}		% mescla de colunas em tabelas
+\usepackage{multirow}		% mescla de linhas em tabelas
+\usepackage{newfloat} 		% criação do indice de quadros
+\usepackage{caption} 		% configura legenda 
+[format=plain]
+\renewcommand\caption[1]{%
+	\captionsetup{font=small}
+	\caption{\uppercase{#1}}}
+\captionsetup{width=0.8\textwidth}
+\captiondelim{-- }
+\captiontitlefont{\small}
+\captionnamefont{\small}
+
+
+
+
+
+% uso do tikz e pgfplots
+% ----------------------------------------------------------
+\usetikzlibrary{external}
+\usetikzlibrary{arrows,calc,patterns,angles,quotes}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+
+
+% Define o comando para citação de fontes em elementos gráficos (s, imagens,...).
+% ----------------------------------------------------------
+%  AUTOR(ano)
+%
+% parâmetro é a bibkey da fonte
+
+\newcommand{\citefig}[2]{~\Citeauthor*{#1}\citeyear{#1}}
+
+% Define os operadores matemáticos em portugues
+% ----------------------------------------------------------
+%
+
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\senh}{senh}
+%\DeclareMathOperator{\tag}{tag}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\tagh}{tagh}
+\DeclareMathOperator{\tgh}{tgh}
+\DeclareMathOperator{\cossec}{cossec}
+%\DeclareMathOperator{\sen}{sen}
+
+% Para fazer a listagem de codigos LaTeX na documentação
+% ----------------------------------------------------------
+\usepackage{listings}
+
+% Comando para fazer 
+%    a citação de documentos não publicados e informais e 
+%    colocar as referências nas notas de rodapé
+% ----------------------------------------------------------
+
+\newcommand{\citenp}[1]{
+	\cite{#1}\footnote{\fullcite{#1}}}
+
+\newcommand{\textcitenp}[1]{
+	\textcite{#1}\footnote{\fullcite{#1}}}
+
+
+% para comentarios e sugestões
+% ----------------------------------------------------------
+\newcommand{\sugest}[1]{\textcolor{red!40}{#1}}
+
+
+% simplificação para colocar figuras
+% ----------------------------------------------------------
+%   Parametros
+%    1 caption
+%    2 percent textwidth
+%    3 arquivo da figura
+%    4 fonte
+%    5 fig:label
+%    6 nota
+%    7 legenda
+
+\newcommand{\figura}[7]{
+  {\centering
+   \footnotesize
+   \begin{figure}[!htpb]
+   \centering
+        \caption{\uppercase{#1}}
+        \includegraphics[width=#2\textwidth]{#3}
+        \label{fig:#5}
+    
+    %ajustado p/ a largura da imagem
+    \begin{minipage}{#2\textwidth} 
+        %\vspace{2mm}
+       \centering
+        %\begin{flushleft}
+            \par FONTE:~#4
+            \ifthenelse{\equal{#6}{}}{}
+            { \par\hangindent=14mm NOTA: #6 }
+            
+            \ifthenelse{\equal{#7}{}}{}
+            { \par\hangindent=14mm LEGENDA: #7 }
+        %\end{flushleft}
+    \end{minipage}
+    \end{figure}
+    }
+}
+
+
+% simplificação para colocar figuras cortadas
+% ----------------------------------------------------------
+%   Parametros
+%    1 caption
+%    2 percent textwidth
+%    3 arquivo da figura
+%    4 fonte
+%    5 fig:label
+%    6 nota
+%    7 legenda
+%    8 recorte esquerda direita em mm
+%    9 recorte inferior superior em mm
+
+\newcommand{\figurac}[9]{
+ \centering\footnotesize
+    \begin{figure}[!htbp]
+    {\centering
+        \caption{\uppercase{#1}}
+        \includegraphics[width=#2\textwidth, trim={#8mm #9 #8 #9},clip]{#3}
+        \label{fig:#5}
+        
+    %ajustado p/ a largura da imagem
+    \begin{minipage}{#2\textwidth} 
+        \vspace{2mm}\centering
+        %\begin{flushleft}
+            \par FONTE:~#4
+            \ifthenelse{\equal{#6}{}}{}
+            {\par \hangindent=14mm NOTA: #6 }
+          
+            \ifthenelse{\equal{#7}{}}{}
+            {\par \hangindent=14mm   LEGENDA: #7 }
+        %\end{flushleft}
+    \end{minipage}
+    }
+    \end{figure}
+ 
+}
+
+% simplificação para colocar imagens
+% ----------------------------------------------------------
+%   Parametros
+%    1 caption
+%    2 tabela
+%    3 fonte
+%    4 tab:label
+%    5 nota
+%    6 legenda
+
+\newsavebox{\myboxa}
+\newlength{\myboxlena}
+
+\newcommand{\imagem}[6]{
+	{
+	\centering\footnotesize
+  	    \sbox{\myboxa}{#2}
+		\settowidth{\myboxlena}{\usebox{\myboxa}}
+		\noindent
+		\begin{figure}[!ht]
+			\centering
+			\caption{\uppercase{#1}}
+			#2
+			\label{fig:#4}
+			
+			%ajustado p/ a largura da imagem
+			\begin{minipage}{\myboxlena} \footnotesize
+				\vspace{2mm}\centering
+				%\begin{flushleft}
+				\par FONTE:~#3
+				\ifthenelse{\equal{#5}{}}{}
+				{ \par\hangindent=14mm NOTA: #5 }
+				
+				\ifthenelse{\equal{#6}{}}{}
+				{ \par\hangindent=14mm LEGENDA: #6 }
+				%\end{flushleft}
+			\end{minipage}
+		\end{figure}
+	}
+}
+
+% simplificação para colocar tabelas
+% ----------------------------------------------------------
+%   Parametros
+%    1 caption
+%    2 tabela
+%    3 fonte
+%    4 tab:label
+%    5 nota
+%    6 legenda
+
+\newsavebox{\mybox}
+\newlength{\myboxlen}
+
+\newcommand{\tabela}[6]
+{
+  \sbox{\mybox}{#2}
+  \settowidth{\myboxlen}{\usebox{\mybox}}
+  \noindent
+  %\rule{\myboxlen}{1pt}\\
+  \begin{table}[!ht]
+    \centering\footnotesize
+    \par\caption{\uppercase{#1}}
+    
+    \par  #2
+ 
+    \label{tab:#4}
+ 
+     \begin{minipage}{\myboxlen} 
+        \vspace{2mm}\footnotesize
+        %\begin{flushleft}
+            FONTE:~ #3
+            
+            \ifthenelse{\equal{#5}{}}{}
+            {\hangindent=14mm NOTA: #5 }
+            
+            \ifthenelse{\equal{#6}{}}{}
+            {\hangindent=14mm LEGENDA: #6}
+        %\end{flushleft}
+    \end{minipage}
+\end{table}
+  % \centering
+  % \usebox{\mybox}
+  % box size: \the\myboxlen.
+}
+
+% Ambiente e lista de quadros
+% ----------------------------------------------------------
+\newfloat{quadro}{quadros}{QUADRO}
+\newlistof{listofquadros}{quadros}{Lista de Quadros}
+\newlistentry{quadro}{quadros}{0}
+\cftsetindents{quadro}{0mm}{13mm}
+
+%\PrepareListOf{quadro}{%
+\renewcommand{\cftquadropresnum}{\normalsize{QUADRO}~}
+\setlength{\cftquadronumwidth}{28mm}
+%\renewcommand{\cftquadroname}{\quadroname\space} 
+\renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
+%}
+
+\newsavebox{\myboxq}
+\newlength{\myboxlenq}
+
+% ----------------------------------------------------------
+%   Parametros
+%    1 caption
+%    2 tabela/quadro
+%    3 fonte
+%    4 qua:label
+%    5 nota
+%    6 legenda
+
+\newcommand{\qquadro}[6]
+  {
+   
+   %\begin{center}
+   \sbox{\myboxq}{#2}
+   \settowidth{\myboxlenq}{\usebox{\myboxq}}
+   \begin{quadro} \footnotesize
+        \caption{\uppercase{#1}}
+	\label{qua:#4}
+        \noindent 
+        
+        #2 %placed inside the environment
+	
+   			
+        %ajustado p/ a largura da tabela (quadro) se menor que 30mm a largura é ajustada para .5\linewidth
+	 
+        \ifdimcomp {\myboxlenq}{<}{30mm}{\settowidth{\myboxlenq}{\hspace{.5\linewidth}}}{}
+    	
+	\begin{minipage}{\myboxlenq} \footnotesize
+    	    \vspace{2mm}\centering
+    		%\begin{flushleft}
+    		\par FONTE:~#3
+    		\ifthenelse{\equal{#5}{}}{}
+    		{ \par\hangindent=14mm NOTA: #5 }
+    				
+    		\ifthenelse{\equal{#6}{}}{}
+    		{ \par\hangindent=14mm LEGENDA: #6 }
+    		%\end{flushleft}
+    	\end{minipage}
+    %\end{center}
+    \label{qua:#4}
+  \end{quadro}
+  } 
+ 
+ 
+  \titleformat{\section}
+  {\normalfont\MakeUppercase}
+  {\thesection}{1em}{}
+  
+  \addto\captionsbrazil{%
+  	\renewcommand{\contentsname}{\MakeUppercase{Sumário}}%
+  }
+  
+  \addto\captionsbrazil{%
+  	\renewcommand{\listfigurename}{LISTA DE FIGURAS}%
+  }
+  
+  \addto\captionsbrazil{%
+  	\renewcommand{\resumoname}{RESUMO}%
+  }
+  
+  \addto\captionsenglish{%
+  	\renewcommand{\abstractname}{ABSTRACT}%
+  }
+  
+  \DefineBibliographyStrings{brazil}{%
+  	references = {REFERÊNCIAS},
+  }
+  
+  
+  
+
+
+\captionsetup[figure]{
+	labelfont=normal,
+	textfont=normal,
+	justification=centering,
+	singlelinecheck=false,
+	font={small},
+	name=FIGURA
+}
+
+\DeclareCaptionFormat{abntupper}{#1\MakeTextUppercase{#2}#3}
+\captionsetup[figure]{format=abntupper}
+
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+
+
+

@@ -1,0 +1,150 @@
+\chapter{RESULTADOS E DISCUSSÕES}
+Para a aplicação e aquisição dos resultados, utilizou-se de dois sinais com largura de banda de 20 MHz e amostrados a uma frequência de 120 MHz: o sinal wifi, no padrão 802.11(2,4 GHz) e o sinal LTE (3,5 GHz). Na implementação da saturação, foi atribuído um limiar $L$ igual a $1.25V$, escolhido de forma a maximizar a largura de banda resultante do nosso sinal pós filtro, sendo esse o valor limite que permitiu que o sinal resultante se encontrasse sob o limiar. 
+ 
+ \begin{figure}[!htpb]
+ 	\centering
+ 	\caption{SATURAÇÃO APLICADA A ENVOLTÓRIA EQUIVALENTE}
+ 	\includegraphics[width=0.75\linewidth]{fig/saturado_projeto.pdf}
+ 	\caption*{FONTE: AUTOR}
+ 	\label{sat_pro}
+ \end{figure}
+ 
+Nas figuras \ref{wifi} e \ref{LTE} é possível identificar, através de um gráfico de densidade de potência média, a atuação do filtro na atenuação do espalhamento espectral. Em ambos os gráficos o contorno em amarelo indica os limites impostos por normas, os mesmos que não se devem ultrapassar; também é possível notar que em apensa a linha vermelha acaba por ultrapassar os limites, tal linha representa o sinal saturado. 
+
+\begin{figure}[!htpb]
+	\centering
+	\caption{FILTRO FIR NO SINAL WIFI}
+	\includegraphics[width=0.75\linewidth]{fig/wifi.pdf}
+	\caption*{FONTE: AUTOR}
+	\label{wifi}
+\end{figure}
+
+A atuação do filtro é clara, cada janelamento possui uma característica na transição do sinal, e ao comparar diversos é possível identificar como cada um responde. Em cada caso o sinal saturado é atenuado a tal ponto que possibilita que o sinal fique enclausurado e respeite as normas regulamentadoras. 
+Nas configurações do filtro, no momento de projeto para aplicação, a escolha da ordem, e consequentemente do número de coeficientes, foi arbitrária. Para os resultados apresentados, optou-se nas janelas do sinal Wifi 
+uma ordem de 50, e para o do sinal LTE de 80. Com a diferença de 30 na ordem dos filtro, é possível notar que no caso do LTE o janelamento é levemente mais abrupto, devido a justamente ter um número de coeficientes maior.
+
+\begin{figure}[!htpb]
+	\centering
+	\caption{FILTRO FIR NO SINAL LTE}
+	\includegraphics[width=0.75\linewidth]{fig/LTE.pdf}
+	\caption*{FONTE: AUTOR}
+	\label{LTE}
+\end{figure}
+
+Ao analisar a característica de cada janelamento temos que as janelas Bartlett e triangular apresentam uma atenuação mais sutil, quando comparado as demais. Tomando como exemplo o Hamming, é possível ver que sua resposta acaba sendo mais limitante, reduzindo o sinal saturado a um frequência de corte próxima dos 20 MHz, estabelecida a \textit{priori}. Levando isso em conta, para os cálculos de PAPR e EVM que se seguem, foi utilizado o janelamento Hamming como exemplo para as análises.
+
+\section{Análise no tempo}
+
+Para a análise no domínio do tempo, observa-se que a fase do sinal permanece constante ao longo de todo o processo, garantindo que a informação modulada não tenha sido comprometida. Conforme ilustrado na figura \ref{LTE_tempo} e na figura \ref{wifi_tempo}, o formato da onda se mantém inalterado nos três estágios avaliados — sinal de entrada, sinal saturado e sinal filtrado. A única modificação perceptível ocorre na amplitude, que é reduzida após a aplicação da saturação e, posteriormente, suavizada pelo filtro.
+
+No caso do sinal LTE, a redução de amplitude é mais gradual, com transições suaves entre os três estágios, evidenciando uma menor distorção instantânea. Já no sinal WiFi, embora o formato da onda também seja preservado, a saturação provoca cortes mais abruptos nos picos de amplitude, que são atenuados pela filtragem subsequente. Essa diferença decorre da natureza espectral e temporal distinta entre as duas formas de modulação.
+	 
+
+\begin{figure}[H]
+	\centering
+	\caption{ANÁLISE DO SINAL LTE NO TEMPO}
+	\includegraphics[width=0.6\linewidth]{fig/LTE_tempo.pdf}
+	\caption*{FONTE: AUTOR}
+	\label{LTE_tempo}
+\end{figure}
+
+A preservação do formato temporal em ambos os casos confirma que o processamento aplicado atua majoritariamente na magnitude do sinal, sem introduzir distorções significativas na fase. Além disso, a filtragem desempenha papel importante na mitigação dos efeitos adversos da saturação, garantindo conformidade com requisitos espectrais ao mesmo tempo em que preserva a integridade da informação transmitida.
+
+
+
+\begin{figure}[H]
+	\centering
+	\caption{ANÁLISE DO SINAL WIFI NO TEMPO}
+	\includegraphics[width=0.6\linewidth]{fig/tempo_wifi.pdf}
+	\caption*{FONTE: AUTOR}
+	\label{wifi_tempo}
+\end{figure}
+
+
+\section{PAPR e EVM}
+Na análise dos fatores de qualidade do sinal, a Tabela~\ref{tab1} apresenta as variações observadas no PAPR nas três etapas do processo: sinal original (sem saturação), sinal saturado e sinal filtrado.  
+É importante destacar que, devido à eficácia do filtro em atenuar o espalhamento espectral provocado pela saturação, espera-se uma redução no valor de PAPR, o que, por consequência, leva ao aumento da potência média do sinal.
+
+Observando os resultados, nota-se que para o \textit{Canal 1} o PAPR sofre um pequeno aumento na etapa de saturação (de 8,43 dB para 8,89 dB), possivelmente devido a alterações pontuais na forma de onda que ampliam momentaneamente a razão entre o pico e a potência média. Após a filtragem, o valor retorna para 8,35 dB, praticamente igual ao valor original, evidenciando que o processo remove os excessos introduzidos pela saturação.
+
+No \textit{Canal 2}, a tendência é diferente: o PAPR já sofre redução na etapa de saturação (8,24 dB para 8,03 dB) e cai ainda mais após a filtragem (7,27 dB), indicando que tanto a saturação quanto o filtro contribuem para a suavização dos picos de amplitude.
+
+Já na \textit{Envoltória Equivalente}, observa-se a maior variação, com o PAPR caindo de 9,09 dB no sinal original para apenas 5,28 dB após a saturação, e subindo levemente para 5,90 dB depois da filtragem. Essa redução significativa indica que a saturação limita fortemente os picos de amplitude, diminuindo a variabilidade instantânea do sinal. Embora a filtragem cause um pequeno aumento, este pode ser atribuído à recomposição de componentes espectrais necessárias para manter a integridade da informação.
+
+Do ponto de vista de eficiência do amplificador de potência, essas reduções no PAPR — especialmente na envoltória equivalente — são vantajosas, pois permitem operar mais próximo do ponto de saturação sem introduzir distorções excessivas. 
+
+
+\begin{table}[H]
+	\centering
+	\caption{Resultados de PAPR para os canais 1, 2 e para a envoltória equivalente, considerando as condições: sem saturação, saturado e filtrado}
+	\begin{tabular}{c|ccc} \toprule
+		& \textbf{\begin{tabular}[c]{@{}c@{}}PAPR\\ Canal 1 \end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}PAPR\\ Canal 2 \end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}PAPR\\ Envoltória Eq.\end{tabular}} \\ \midrule
+		\textbf{Sem saturação} & 8,43 dB & 8,24 dB & 9,09 dB \\
+		\textbf{Saturado} & 8,89 dB & 8,03 dB & 5,28 dB \\
+		\textbf{Filtrado} & 8,35 dB & 7,27 dB & 5,90 dB \\  \bottomrule
+	\end{tabular}
+	\label{tab1}
+\end{table}
+
+
+
+Para a análise da magnitude do vetor de erro, as imagens abaixo comparam os resultados do sinal de referência e o real, aquele que foi retirado após a aplicação do filtro. Para o sinal Wi-Fi, a aplicação do filtro mostrou-se perceptível. Sem o filtro, o EVM medido foi de 7,2607\%, conforme a figura~\ref{EVM_wifi_sem_filtro}, enquanto que com a aplicação do filtro o valor reduziu-se para 7,1138\%, conforme a figura ~\ref{EVM_wifi_com_filtro}. Embora a diferença ainda seja relativamente pequena, observa-se uma melhora mais evidente quando comparado ao LTE. Isso indica que, para o Wi-Fi, a filtragem contribuiu de maneira mais efetiva para a melhoria da qualidade do sinal.
+
+\begin{figure}[H]
+	\centering
+	\caption{EVM DO SINAL WIFI COM FILTRO}
+	\includegraphics[width=0.75\linewidth]{fig/EVM_wifi_com_Filtro.pdf}
+	\caption*{FONTE: AUTOR}
+	\label{EVM_wifi_com_filtro}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\caption{EVM DO SINAL WIFI SEM FILTRO}
+	\includegraphics[width=0.75\linewidth]{fig/EVM_wifi_sem_Filtro.pdf}
+	\caption*{FONTE: AUTOR}
+	\label{EVM_wifi_sem_filtro}
+\end{figure}
+
+Para o sinal LTE, o valor de EVM sem a aplicação do filtro foi de 8,0285\%, conforme a figura ~\ref{EVM_LTE_sem_filtro}, enquanto que, após a aplicação do filtro, observou-se uma leve redução para 8,0275\%, conforme a figura ~\ref{EVM_LTE_com_filtro}. Essa diferença é muito pequena, indicando que o processo de filtragem praticamente não alterou o desempenho em termos de erro vetorial neste caso. Isso sugere que o filtro atuou de forma eficiente na contenção do espectro, sem introduzir distorções significativas na constelação do sinal LTE.
+
+\begin{figure}[H]
+	\centering
+	\caption{EVM DO SINAL LTE COM FILTRO}
+	\includegraphics[width=0.75\linewidth]{fig/EVM_LTE_com_Filtro.pdf}
+	\caption*{FONTE: AUTOR}
+	\label{EVM_LTE_com_filtro}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\caption{EVM DO SINAL LTE SEM FILTRO}
+	\includegraphics[width=0.75\linewidth]{fig/EVM_LTE_sem_Filtro.pdf}
+	\caption*{FONTE: AUTOR}
+	\label{EVM_LTE_sem_filtro}
+\end{figure}
+
+
+\begin{table}[htpb!]
+	\centering
+	\caption{Resultados dos testes de EVM em ambos os canais}
+	\begin{tabular}{cccc}
+		\toprule
+		& \textbf{Com filtro} & \textbf{Sem filtro} \\
+		\midrule
+		\textbf{Canal 1} & 7.1138\% & 7.2607\% \\
+		\textbf{Canal 2} & 8.0275\% & 8.0285\% \\
+		\bottomrule
+	\end{tabular}
+	\label{tabela_evm}
+\end{table}
+
+De forma geral, os resultados confirmam que a aplicação do filtro cumpre seu papel de mitigar o espalhamento espectral sem comprometer a qualidade do sinal em termos de EVM. Em particular, o ganho observado no Wi-Fi evidencia a relevância do uso de técnicas de filtragem para sistemas que operam em canais mais suscetíveis a interferências adjacentes. Por outro lado, no LTE, a variação praticamente desprezível sugere que o sistema já apresentava robustez suficiente, sendo menos impactado pela presença ou ausência de filtragem.
+
+
+
+
+
+
+

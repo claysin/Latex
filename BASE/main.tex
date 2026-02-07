@@ -1,0 +1,119 @@
+\documentclass[openany]{abntex2}
+
+
+\usepackage{UFPR}
+\input{00-pacotes}
+\input{00-dados}
+
+\makeindex
+
+\renewcommand{\listfigurename}{Lista de Figuras}
+
+\begin{document}
+
+\renewcommand{\bibname}{{REFER\^ENCIAS}}
+\renewcommand{\tablename}{TABELA }
+\renewcommand{\figurename}{FIGURA }
+\renewcommand{\figureautorefname}{FIGURA}
+\renewcommand{\tableautorefname}{TABELA}
+\newcommand{\equationname}{equa\c{c}\~ao~}
+\renewcommand{\equationautorefname}{equa\c{c}\~ao~}
+\newcommand{\quadroautorefname}{QUADRO~}
+
+
+\aliaspagestyle{chapter}{chapfirst}% customizing chapter pagestyle
+
+\input{00-detalhes_da_capa}
+\textual 
+
+\pagestyle{simplestextual}
+
+%Inputs aqui!!!!!
+\input{00-Siglas}
+\input{03-Introdução}
+
+
+\postextual
+
+\addtocontents{toc}{\vspace{-6pt}}
+
+
+\begingroup
+\printbibliography
+\endgroup
+
+% ----------------------------------------------------------
+
+% Ajuste vertical dos titulos dos capitulos postextuais
+% ----------------------------------------------------------
+\addtocontents{toc}{\vspace{4pt}}
+
+% Glossário
+% ----------------------------------------------------------
+% Consulte o manual da classe abntex2 para orientações sobre o glossário.
+%
+%\glossary
+
+% Apêndices
+% ----------------------------------------------------------
+\ifthenelse{\equal{\terApendice}{Sim}}
+{\begin{apendicesenv}
+
+        % Numeração arábica para os apêndices
+        % --------------------------------------------------
+        \renewcommand{\thechapter}{\arabic{chapter}}
+        % Numeração Alfabética para os apêndices
+        % --------------------------------------------------
+        % \renewcommand{\thechapter}{\Alph{chapter}} %capitulos  com indicação Alfabética
+        %
+        % Imprime uma página indicando o início dos apêndices
+        % \partapendices
+
+        % Existem várias formas de se colocar anexos.
+        % O exemplo abaixo coloca 2 apêndices denominados de 
+        % DESENVOLVIMENTO DETALHADO DA PINTURA e 
+        % ESCOLHA DO MATERIAL DE IMPRESSÃO:
+        % ---
+        % --- insere um capítulo que é tratado como um apêndice
+        %\chapter{DESENVOLVIMENTO DETALHADO DA PINTURA}
+        % 
+        %\lipsum[29] % gera um parágrafo
+        %
+        % --- insere um capítulo que é tratado como um apêndice
+        %\chapter{ESCOLHA DO MATERIAL DE IMPRESSÃO}
+        % 
+        %\lipsum[30] % gera um parágrafo
+
+        % --- Insere o texto do arquivo ap01.tex
+        % 
+        % --- O conteúdo do arquivo pode ser vários anexos ou um único apêndices.
+        %     A vantagem de se utilizar este procedimento é de suprimi-lo
+        %     das compilações enquanto se processa o resto do documento.
+
+        \input{ap01}
+
+\end{apendicesenv}
+}{}
+
+% Anexos
+% ----------------------------------------------------------
+\ifthenelse{\equal{\terAnexo}{Sim}}{
+\begin{anexosenv}
+
+        % Numeração arábica para os apêndices
+        % --------------------------------------------------
+        \renewcommand{\thechapter}{\arabic{chapter}}
+
+
+         \input{ax01} 
+\end{anexosenv}
+}{}
+
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+\ifthenelse{\equal{\terIndiceR}{Sim}}{
+\phantompart
+\printindex
+}{}
+
+\end{document}
