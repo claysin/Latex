@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.2 $
+% $ biblatex bbl format version 3.3 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,8 +18,8 @@
 
 
 \refsection{0}
-  \datalist[entry]{nty/global//global/global}
-    \entry{8070682}{inproceedings}{}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{8070682}{inproceedings}{}{1}
       \name{author}{2}{}{%
         {{hash=7d1893415361f0b4bdf60884d3eaeace}{%
            family={Hasin},
@@ -34,10 +34,12 @@
       }
       \strng{namehash}{6da613ca2a5119a030ae9e1f21688bb6}
       \strng{fullhash}{6da613ca2a5119a030ae9e1f21688bb6}
+      \strng{fullhashraw}{6da613ca2a5119a030ae9e1f21688bb6}
       \strng{bibnamehash}{6da613ca2a5119a030ae9e1f21688bb6}
       \strng{authorbibnamehash}{6da613ca2a5119a030ae9e1f21688bb6}
       \strng{authornamehash}{6da613ca2a5119a030ae9e1f21688bb6}
       \strng{authorfullhash}{6da613ca2a5119a030ae9e1f21688bb6}
+      \strng{authorfullhashraw}{6da613ca2a5119a030ae9e1f21688bb6}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{extradatescope}{labelyear}
@@ -54,7 +56,7 @@
       \endverb
       \keyw{Power amplifiers;Gallium nitride;HEMTs;Linearity;Power generation;Gain;Distortion measurement;Class AB;GaN;HEMT;Power Amplifier;Linearity}
     \endentry
-    \entry{9427989}{article}{}
+    \entry{9427989}{article}{}{1}
       \name{author}{9}{}{%
         {{hash=8d9bf985c13c94c3ca654cadc78c75fe}{%
            family={Jaraut},
@@ -104,10 +106,12 @@
       }
       \strng{namehash}{51a72c1ddc6d19105b2dca9740b8f82b}
       \strng{fullhash}{177afa4556faa764986a379b1e907e04}
+      \strng{fullhashraw}{177afa4556faa764986a379b1e907e04}
       \strng{bibnamehash}{177afa4556faa764986a379b1e907e04}
       \strng{authorbibnamehash}{177afa4556faa764986a379b1e907e04}
       \strng{authornamehash}{51a72c1ddc6d19105b2dca9740b8f82b}
       \strng{authorfullhash}{177afa4556faa764986a379b1e907e04}
+      \strng{authorfullhashraw}{177afa4556faa764986a379b1e907e04}
       \field{sortinit}{J}
       \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
       \field{extradatescope}{labelyear}
@@ -126,7 +130,7 @@
       \endverb
       \keyw{Convolution;Complexity theory;Neurons;Predistortion;Convolutional neural networks;Training;Intermodulation distortion;Convolutional neural network (CNN);digital predistortion (DPD);intermodulation distortion (IMD);multiband transmitter;power amplifier (PA) nonlinearity}
     \endentry
-    \entry{lathi2006sinais}{book}{}
+    \entry{lathi2006sinais}{book}{}{1}
       \name{author}{1}{}{%
         {{hash=ba7069648b5a3d3ec32aa3112eaf6ff6}{%
            family={Lathi},
@@ -139,10 +143,12 @@
       }
       \strng{namehash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
       \strng{fullhash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
+      \strng{fullhashraw}{ba7069648b5a3d3ec32aa3112eaf6ff6}
       \strng{bibnamehash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
       \strng{authorbibnamehash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
       \strng{authornamehash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
       \strng{authorfullhash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
+      \strng{authorfullhashraw}{ba7069648b5a3d3ec32aa3112eaf6ff6}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{extradatescope}{labelyear}
@@ -153,7 +159,7 @@
       \field{title}{Sinais e Sistemas Lineares - 2.ed.}
       \field{year}{2006}
     \endentry
-    \entry{martins2011eficiencia}{thesis}{}
+    \entry{martins2011eficiencia}{thesis}{}{1}
       \name{author}{1}{}{%
         {{hash=08bfb0bdb7c27f50629597b3398da3cb}{%
            family={Martins},
@@ -169,10 +175,12 @@
       }
       \strng{namehash}{08bfb0bdb7c27f50629597b3398da3cb}
       \strng{fullhash}{08bfb0bdb7c27f50629597b3398da3cb}
+      \strng{fullhashraw}{08bfb0bdb7c27f50629597b3398da3cb}
       \strng{bibnamehash}{08bfb0bdb7c27f50629597b3398da3cb}
       \strng{authorbibnamehash}{08bfb0bdb7c27f50629597b3398da3cb}
       \strng{authornamehash}{08bfb0bdb7c27f50629597b3398da3cb}
       \strng{authorfullhash}{08bfb0bdb7c27f50629597b3398da3cb}
+      \strng{authorfullhashraw}{08bfb0bdb7c27f50629597b3398da3cb}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{extradatescope}{labelyear}
@@ -190,7 +198,7 @@
       \verb https://repositorio-aberto.up.pt/handle/10216/59438
       \endverb
     \endentry
-    \entry{mili}{article}{}
+    \entry{mili}{article}{}{1}
       \name{author}{2}{}{%
         {{hash=285216f576905fc7e5c46e3a33a4b23a}{%
            family={Miliavacca},
@@ -205,10 +213,12 @@
       }
       \strng{namehash}{be838796f4c756a334c69244b9cd876e}
       \strng{fullhash}{be838796f4c756a334c69244b9cd876e}
+      \strng{fullhashraw}{be838796f4c756a334c69244b9cd876e}
       \strng{bibnamehash}{be838796f4c756a334c69244b9cd876e}
       \strng{authorbibnamehash}{be838796f4c756a334c69244b9cd876e}
       \strng{authornamehash}{be838796f4c756a334c69244b9cd876e}
       \strng{authorfullhash}{be838796f4c756a334c69244b9cd876e}
+      \strng{authorfullhashraw}{be838796f4c756a334c69244b9cd876e}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{extradatescope}{labelyear}
@@ -220,7 +230,7 @@
       \field{title}{Análise dos efeitos da saturação do DPD de banda dupla concorrente}
       \field{year}{2024}
     \endentry
-    \entry{alvarado2019papr}{thesis}{}
+    \entry{alvarado2019papr}{thesis}{}{1}
       \name{author}{1}{}{%
         {{hash=0473900c5501e63878c0979a7447111d}{%
            family={Morales\bibnamedelima Alvarado},
@@ -236,10 +246,12 @@
       }
       \strng{namehash}{0473900c5501e63878c0979a7447111d}
       \strng{fullhash}{0473900c5501e63878c0979a7447111d}
+      \strng{fullhashraw}{0473900c5501e63878c0979a7447111d}
       \strng{bibnamehash}{0473900c5501e63878c0979a7447111d}
       \strng{authorbibnamehash}{0473900c5501e63878c0979a7447111d}
       \strng{authornamehash}{0473900c5501e63878c0979a7447111d}
       \strng{authorfullhash}{0473900c5501e63878c0979a7447111d}
+      \strng{authorfullhashraw}{0473900c5501e63878c0979a7447111d}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{extradatescope}{labelyear}
@@ -257,7 +269,7 @@
       \verb https://acervodigital.ufpr.br/handle/1884/63386
       \endverb
     \endentry
-    \entry{oppenheim2013processamento}{book}{}
+    \entry{oppenheim2013processamento}{book}{}{2}
       \name{author}{2}{}{%
         {{hash=91dbf9ff367cd6c6bb21dadfe228fb18}{%
            family={Oppenheim},
@@ -275,10 +287,12 @@
       }
       \strng{namehash}{1584e359ca2fac191866dec69fdf8322}
       \strng{fullhash}{1584e359ca2fac191866dec69fdf8322}
+      \strng{fullhashraw}{1584e359ca2fac191866dec69fdf8322}
       \strng{bibnamehash}{1584e359ca2fac191866dec69fdf8322}
       \strng{authorbibnamehash}{1584e359ca2fac191866dec69fdf8322}
       \strng{authornamehash}{1584e359ca2fac191866dec69fdf8322}
       \strng{authorfullhash}{1584e359ca2fac191866dec69fdf8322}
+      \strng{authorfullhashraw}{1584e359ca2fac191866dec69fdf8322}
       \field{sortinit}{O}
       \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
       \field{extradatescope}{labelyear}
@@ -289,7 +303,7 @@
       \field{title}{Processamento em Tempo Discreto de Sinais}
       \field{year}{2013}
     \endentry
-    \entry{artigo2}{thesis}{}
+    \entry{artigo2}{thesis}{}{1}
       \name{author}{1}{}{%
         {{hash=89ee97353337608734e9fd5894e1d3c8}{%
            family={Schuartz},
@@ -305,10 +319,12 @@
       }
       \strng{namehash}{89ee97353337608734e9fd5894e1d3c8}
       \strng{fullhash}{89ee97353337608734e9fd5894e1d3c8}
+      \strng{fullhashraw}{89ee97353337608734e9fd5894e1d3c8}
       \strng{bibnamehash}{89ee97353337608734e9fd5894e1d3c8}
       \strng{authorbibnamehash}{89ee97353337608734e9fd5894e1d3c8}
       \strng{authornamehash}{89ee97353337608734e9fd5894e1d3c8}
       \strng{authorfullhash}{89ee97353337608734e9fd5894e1d3c8}
+      \strng{authorfullhashraw}{89ee97353337608734e9fd5894e1d3c8}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{extradatescope}{labelyear}
@@ -328,7 +344,7 @@
       \verb https://acervodigital.ufpr.br/xmlui/handle/1884/57039
       \endverb
     \endentry
-    \entry{Artigo1}{article}{}
+    \entry{Artigo1}{article}{}{1}
       \name{author}{2}{}{%
         {{hash=89ee97353337608734e9fd5894e1d3c8}{%
            family={Schuartz},
@@ -343,10 +359,12 @@
       }
       \strng{namehash}{876df92bff2a49d7a4ee9bdc9ac02033}
       \strng{fullhash}{876df92bff2a49d7a4ee9bdc9ac02033}
+      \strng{fullhashraw}{876df92bff2a49d7a4ee9bdc9ac02033}
       \strng{bibnamehash}{876df92bff2a49d7a4ee9bdc9ac02033}
       \strng{authorbibnamehash}{876df92bff2a49d7a4ee9bdc9ac02033}
       \strng{authornamehash}{876df92bff2a49d7a4ee9bdc9ac02033}
       \strng{authorfullhash}{876df92bff2a49d7a4ee9bdc9ac02033}
+      \strng{authorfullhashraw}{876df92bff2a49d7a4ee9bdc9ac02033}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{extradatescope}{labelyear}
@@ -362,7 +380,7 @@
       \verb 10.1590/1678-4324-2024230610
       \endverb
     \endentry
-    \entry{sedra2000microeletrônica}{book}{}
+    \entry{sedra2000microeletrônica}{book}{}{1}
       \name{author}{2}{}{%
         {{hash=6a3b22fe544fa58cf6a67562f622e136}{%
            family={Sedra},
@@ -380,10 +398,12 @@
       }
       \strng{namehash}{7899d80d0ce5a88c33f764ff6238bd3e}
       \strng{fullhash}{7899d80d0ce5a88c33f764ff6238bd3e}
+      \strng{fullhashraw}{7899d80d0ce5a88c33f764ff6238bd3e}
       \strng{bibnamehash}{7899d80d0ce5a88c33f764ff6238bd3e}
       \strng{authorbibnamehash}{7899d80d0ce5a88c33f764ff6238bd3e}
       \strng{authornamehash}{7899d80d0ce5a88c33f764ff6238bd3e}
       \strng{authorfullhash}{7899d80d0ce5a88c33f764ff6238bd3e}
+      \strng{authorfullhashraw}{7899d80d0ce5a88c33f764ff6238bd3e}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{extradatescope}{labelyear}
