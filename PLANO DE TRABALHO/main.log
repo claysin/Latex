@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.7)  9 FEB 2026 19:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.7)  10 FEB 2026 16:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2241,7 +2241,7 @@ enefit from \pgfplotsset{compat=1.18} (current compat level: 1.15).
 <fig/capaufpr.png, id=33, 125.5089pt x 142.3719pt>
 File: fig/capaufpr.png Graphic file (type png)
 <use fig/capaufpr.png>
-Package pdftex.def Info: fig/capaufpr.png  used on input line 7.
+Package pdftex.def Info: fig/capaufpr.png  used on input line 23.
 (pdftex.def)             Requested size: 614.295pt x 696.87668pt.
  [1
 
@@ -2250,8 +2250,8 @@ s/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./fig/capaufpr.pn
 g>] [2
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
-2.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 2
+8.
 
 (C:\Users\clays\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
@@ -2269,7 +2269,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.12 
+l.28 
       [1
 
 
@@ -2281,7 +2281,7 @@ been already used, duplicate ignored
 l.1 \chapter
             {INTRODUÇÃO} [2]
 Cap\'{\i }tulo 1.
-<fig/Linearidade_PA_DPD.pdf, id=79, 982.87201pt x 361.35pt>
+<fig/Linearidade_PA_DPD.pdf, id=89, 982.87201pt x 361.35pt>
 File: fig/Linearidade_PA_DPD.pdf Graphic file (type pdf)
 <use fig/Linearidade_PA_DPD.pdf>
 Package pdftex.def Info: fig/Linearidade_PA_DPD.pdf  used on input line 11.
@@ -2302,7 +2302,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Cap\'{\i }tulo 2.
 [6
 
-]) [7]
+] [7] [8]) [9]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -2313,9 +2313,9 @@ Package biblatex Warning: Month out of range or not an integer
 (biblatex)                at entry 'oliveira2025fir_complete' on input line 39.
 
 
-[8
+[10
 
-] [9]
+] [11]
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
@@ -2340,11 +2340,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 60729 strings out of 467866
- 1353626 string characters out of 5418326
- 2535149 words of memory out of 5000000
- 88518 multiletter control sequences out of 15000+600000
- 656149 words of font info for 180 fonts, out of 8000000 for 9000
+ 60751 strings out of 467866
+ 1353829 string characters out of 5418326
+ 2535288 words of memory out of 5000000
+ 88524 multiletter control sequences out of 15000+600000
+ 656671 words of font info for 187 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,12n,121p,1360b,4312s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\clays\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
@@ -2359,9 +2359,9 @@ ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/clays/AppData
 /AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/cl
 ays/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users
 /clays/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (11 pages, 632957 bytes).
+Output written on main.pdf (13 pages, 657197 bytes).
 PDF statistics:
- 287 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
- 39651 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 323 PDF objects out of 1000 (max. 8388607)
+ 49 named destinations out of 1000 (max. 500000)
+ 39691 words of extra memory for PDF output out of 42996 (max. 10000000)
 

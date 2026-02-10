@@ -3,8 +3,17 @@
 % ----------------------------------------------------------
 % Capa
 % ----------------------------------------------------------
- \ifthenelse{\equal{\terCapa}{Sim}}{
-\imprimircapa}{}
+\ifthenelse{\equal{\terCapa}{Sim}}{
+	\let\localOriginal\imprimirlocal
+	
+		\small Orientador: Prof. Dr. Luis Schuartz \par
+		\vspace{2cm} 
+		\localOriginal}
+	
+	\imprimircapa
+	
+	\local{\localOriginal}
+}{}
 
 % Folha de rosto
 % ----------------------------------------------------------

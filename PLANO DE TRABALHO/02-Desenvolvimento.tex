@@ -1,20 +1,54 @@
 \chapter{DESCRIÇÃO DE PROJETO}
 \section{PÚBLICO ALVO}
-O trabalho estaria direcionado para profissionais da área de engenharia elétrica, estando especificado nas áreas de sistemas embarcados e telecomunicações.
+O público-alvo deste trabalho divide-se em dois âmbitos principais:
+\begin{itemize}
+	\item \textbf{Âmbito Técnico:} O projeto é direcionado a profissionais e pesquisadores da área de Engenharia Elétrica, com ênfase em sistemas embarcados e telecomunicações, que busquem soluções para a linearização de amplificadores e processamento de sinais em tempo real.
+	
+	\item \textbf{Âmbito Social e Ambiental:} De forma indireta, o trabalho beneficia a sociedade em geral por meio do desenvolvimento de tecnologias que aprimoram a infraestrutura de comunicação. A otimização do consumo de potência contribui diretamente para a sustentabilidade ambiental (redução do gasto energético), enquanto a melhoria na transmissão de sinais reflete em serviços de maior qualidade para setores essenciais como saúde (telemedicina), lazer e segurança.
+\end{itemize}
 
 \section{RECURSOS NECESSÁRIOS}
 Para a implementação das etapas propostas no objetivo, seria necessário os seguintes recursos:
 \begin{itemize}
-	\item 1(um) computador
+	\item 1(um) computador (disponível no GICS)
 	\item Software ISE na versão 14.7(disponível gratuitamente)
-	\item 1(uma) placa de desenvolvimento para programação em VHDL
+	\item 1(uma) placa de desenvolvimento para programação em VHDL (adquirido individualmente)
+	\item Software Python (disponível gratuitamente)
+	\item Software Cadence Virtuoso (Disponível no GICS)
+	
 \end{itemize}
 
 \section{RESULTADOS FUNDAMENTAIS A SEREM ATINGIDOS}
-Para a parte de resultados, o que se espera é obtermos os mesmos resultados apresentados no trabalhos \cite{oliveira2025otimizacao_emicro}, porém agora implementados em uma FPGA. Assim, será avaliado a eficácia do filtro com coeficientes otimizados, que poderão ser comparados com os resultados já obtidos anteriormente.
+Para a parte de resultados, o que se espera é obtermos os mesmos resultados apresentados no trabalhos \cite{oliveira2025otimizacao_emicro}, porém agora implementados em uma FPGA. Assim, será avaliado a eficácia do filtro com coeficientes otimizados, que poderão ser comparados com os resultados já obtidos anteriormente. Também espera-se conhecer a necessidade de hardware de um ASIC, o número de bits de precisão e o consumo de potência do sistema digital pós implementação.
+
 
 \section{CONTRIBUIÇÃO ESPERADA PARA A ÊNFASE E IMPORTÂNCIA PARA A FORMAÇÃO DO AUTOR}
-Como contribuição, o trabalho tem a premissa de desenvolver um método para minimizar o espalhamento espectral causado pela saturação da envoltória do sinal, contribuindo para que o PA trabalha na sua região mais eficiente. Quanto a parte da formação do autor, a implicação do desenvolvimento do trabalho de conclusão de curso envolve áreas como: processamento digital de sinais, sinais e sistemas e programação em python e VHDL, todos focados na área de sistemas embarcados, implementando na prática aquilo que foi visto de forma teórica no decorrer do curso.
+Como contribuição , este trabalho estabelece um método para minimizar o espalhamento espectral ocasionado pela saturação da envoltória do sinal. Tal abordagem permite que o Amplificador de Potência (PA) opere em sua região de maior eficiência energética, otimizando o desempenho do sistema.
+Sob a ótica da formação acadêmica, o desenvolvimento deste Trabalho de Conclusão de Curso promove a consolidação dos conhecimentos técnicos adquiridos ao longo da graduação e em atividades de Iniciação Científica (IC). A execução do projeto integra áreas fundamentais como Processamento Digital de Sinais (PDS), Sinais e Sistemas, e programação em Python e VHDL, com foco direto em sistemas embarcados. Assim, o trabalho cumpre o papel de transpor conceitos teóricos para a implementação prática e experimental.
+
+Adicionalmente, a pesquisa oferece uma relevante contribuição científica, não apenas por meio da formação de pessoal qualificado, mas também pela produção intelectual e potencial publicação de artigos científicos.
+
+\section{METODOLOGIA}
+A metodologia proposta para este trabalho divide-se em etapas sequenciais que abrangem desde o refinamento teórico e algorítmico até a validação em hardware, conforme as seguintes fases:
+
+\subsection{Decomposição e Modelagem do Sistema}
+Inicialmente, o sistema será segmentado em blocos funcionais para facilitar a análise individual de cada componente do método de redução de espalhamento espectral. Nesta etapa, será realizada a conversão de operações aritméticas complexas em representações de números reais equivalentes, visando a compatibilidade com a arquitetura da FPGA. 
+
+\subsection{Otimização e Análise de Precisão}
+Com o sistema dividido em blocos, será realizada uma análise de quantização para determinar o nível de precisão necessário (número de bits em ponto fixo). O objetivo é otimizar as operações para reduzir o consumo de recursos de hardware sem comprometer a integridade do sinal. As otimizações buscarão o equilíbrio entre o erro de truncamento e a complexidade lógica.
+
+
+
+\subsection{Implementação em Hardware (VHDL)}
+A fase de implementação consistirá na tradução dos modelos desenvolvidos em Python para a linguagem de descrição de hardware VHDL. Utilizando o software ISE 14.7, o sistema será sintetizado para a placa de desenvolvimento, onde a lógica será mapeada em blocos lógicos configuráveis.
+
+\subsection{Métodos de Validação e Análise de Resultados}
+Para verificar a eficácia da implementação, serão aplicados métodos de validação quantitativos e qualitativos:
+\begin{itemize}
+	\item \textbf{Métricas de Erro:} Serão calculados o \textit{Normalized Mean Square Error} (NMSE) e o \textit{Error Vector Magnitude} (EVM) para comparar a fidelidade do sinal processado na FPGA em relação ao modelo de referência.
+	\item \textbf{Análise Espectral:} Será avaliada a Densidade Espectral de Potência (PSD) para mensurar a redução do espalhamento espectral e a eficiência do Amplificador de Potência (PA).
+	\item \textbf{Métricas de Hardware:} O desempenho do sistema será avaliado quanto ao consumo de área (utilização de LUTs, flip-flops e multiplicadores) e estimativa de consumo de potência, utilizando as ferramentas de análise do software Cadence Virtuoso e ISE.
+\end{itemize}
 
 \newpage
 \section{CRONOGRAMA}
