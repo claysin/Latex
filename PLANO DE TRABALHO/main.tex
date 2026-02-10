@@ -4,7 +4,7 @@
 \usepackage{UFPR}
 \input{00-pacotes}
 \input{00-dados}
-
+\addbibresource{referencias.bib}
 \makeindex
 \begin{document}
 
@@ -33,9 +33,13 @@
 
 
 \begingroup
-%\printbibliography[heading=bay,notkeyword= {consulta}, notkeyword={npub-informal}]
 
-\printbibliography [title = REFERÊNCIAS, keyword=consulta]
+%\printbibliography [title = REFERÊNCIAS, keyword=consulta]
+\nocite{*}
+\printbibliography[title={REFERÊNCIAS DE CONSULTA }, keyword=imprimir]
+
+
+
 \endgroup
 
 % ----------------------------------------------------------

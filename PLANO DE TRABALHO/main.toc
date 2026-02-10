@@ -5,25 +5,25 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {1}\bfseries \MakeTextUppercase []{INTRODUÇÃO}}{3}{chapter.1}%
 \addvspace {-3\p@ }
-\contentsline {section}{\numberline {1.1}OBJETIVOS}{3}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Gerais}{3}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Específicos}{3}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.1}OBJETIVOS}{5}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Gerais}{5}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Específicos}{5}{subsection.1.1.2}%
 \addvspace {-12\p@ }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\bfseries \MakeTextUppercase []{DESCRIÇÃO DE PROJETO}}{4}{chapter.2}%
+\contentsline {chapter}{\chapternumberline {2}\bfseries \MakeTextUppercase []{DESCRIÇÃO DE PROJETO}}{6}{chapter.2}%
 \addvspace {-3\p@ }
-\contentsline {section}{\numberline {2.1}PÚBLICO ALVO}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.1}PÚBLICO ALVO}{6}{section.2.1}%
 \addvspace {-3\p@ }
-\contentsline {section}{\numberline {2.2}RECURSOS NECESSÁRIOS}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.2}RECURSOS NECESSÁRIOS}{6}{section.2.2}%
 \addvspace {-3\p@ }
-\contentsline {section}{\numberline {2.3}RESULTADOS FUNDAMENTAIS A SEREM ATINGIDOS}{4}{section.2.3}%
+\contentsline {section}{\numberline {2.3}RESULTADOS FUNDAMENTAIS A SEREM ATINGIDOS}{6}{section.2.3}%
 \addvspace {-3\p@ }
-\contentsline {section}{\numberline {2.4}CONTRIBUIÇÃO ESPERADA PARA A ÊNFASE E IMPORTÂNCIA PARA A FORMAÇÃO DO AUTOR}{4}{section.2.4}%
+\contentsline {section}{\numberline {2.4}CONTRIBUIÇÃO ESPERADA PARA A ÊNFASE E IMPORTÂNCIA PARA A FORMAÇÃO DO AUTOR}{6}{section.2.4}%
 \addvspace {-3\p@ }
-\contentsline {section}{\numberline {2.5}CRONOGRAMA}{5}{section.2.5}%
+\contentsline {section}{\numberline {2.5}CRONOGRAMA}{7}{section.2.5}%
 \vspace {\cftbeforechapterskip }
 \vspace {-6pt}
 \addvspace {-12\p@ }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{REFERÊNCIAS}{6}{section*.6}%
+\contentsline {chapter}{REFERÊNCIAS DE CONSULTA}{8}{section*.8}%
 \vspace {4pt}
