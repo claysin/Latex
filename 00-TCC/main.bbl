@@ -1,0 +1,579 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{7120369}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=8acff38bcce40df593740f52570f9643}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={Sheng-Lung},
+           giveni={S\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=1699aea776cf7606e51ef7980db8a2aa}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Wen-Rong},
+           giveni={W\bibinithyphendelim R\bibinitperiod}}}%
+        {{hash=dbd74017cdf011f9b111335748cfafa6}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Chun-Hsien},
+           giveni={C\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=63a89e390c60d41b12f12a3e568a938f}{%
+           family={Hsu},
+           familyi={H\bibinitperiod},
+           given={Chen-Jui},
+           giveni={C\bibinithyphendelim J\bibinitperiod}}}%
+        {{hash=b8fd6bf0d698b126eb59a8b084da38af}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{2d6f0a679c6dd69a12cb985bcba3f75a}
+      \strng{fullhash}{e3127e373e3d84ce803dfca2370ad654}
+      \strng{fullhashraw}{e3127e373e3d84ce803dfca2370ad654}
+      \strng{bibnamehash}{e3127e373e3d84ce803dfca2370ad654}
+      \strng{authorbibnamehash}{e3127e373e3d84ce803dfca2370ad654}
+      \strng{authornamehash}{2d6f0a679c6dd69a12cb985bcba3f75a}
+      \strng{authorfullhash}{e3127e373e3d84ce803dfca2370ad654}
+      \strng{authorfullhashraw}{e3127e373e3d84ce803dfca2370ad654}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 IEEE 16th Annual Wireless and Microwave Technology Conference (WAMICON)}
+      \field{title}{Digital predistortion for concurrent dual-band transmitter using a 2D LUT based method}
+      \field{year}{2015}
+      \true{nocite}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/WAMICON.2015.7120369
+      \endverb
+      \keyw{imprimir}
+    \endentry
+    \entry{8070682}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=7d1893415361f0b4bdf60884d3eaeace}{%
+           family={Hasin},
+           familyi={H\bibinitperiod},
+           given={Muhammad\bibnamedelima Ruhul},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=383be4f1a9aa48138f4a68183e0f7ed2}{%
+           family={Kitchen},
+           familyi={K\bibinitperiod},
+           given={Jennifer},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{6da613ca2a5119a030ae9e1f21688bb6}
+      \strng{fullhash}{6da613ca2a5119a030ae9e1f21688bb6}
+      \strng{fullhashraw}{6da613ca2a5119a030ae9e1f21688bb6}
+      \strng{bibnamehash}{6da613ca2a5119a030ae9e1f21688bb6}
+      \strng{authorbibnamehash}{6da613ca2a5119a030ae9e1f21688bb6}
+      \strng{authornamehash}{6da613ca2a5119a030ae9e1f21688bb6}
+      \strng{authorfullhash}{6da613ca2a5119a030ae9e1f21688bb6}
+      \strng{authorfullhashraw}{6da613ca2a5119a030ae9e1f21688bb6}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 Texas Symposium on Wireless and Microwave Circuits and Systems (WMCS)}
+      \field{title}{A compact watt-level GaN-on-Si class AB power amplifier for handset applications}
+      \field{year}{2017}
+      \true{nocite}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/WMCaS.2017.8070682
+      \endverb
+      \keyw{imprimir}
+    \endentry
+    \entry{9427989}{article}{}{}
+      \name{author}{9}{}{%
+        {{hash=8d9bf985c13c94c3ca654cadc78c75fe}{%
+           family={Jaraut},
+           familyi={J\bibinitperiod},
+           given={Praveen},
+           giveni={P\bibinitperiod}}}%
+        {{hash=46f5280d0cb0c2b4a04cf5ab372a35ab}{%
+           family={Abdelhafiz},
+           familyi={A\bibinitperiod},
+           given={Abubaker},
+           giveni={A\bibinitperiod}}}%
+        {{hash=898c4875c1d318dbe94fef031b857955}{%
+           family={Chenini},
+           familyi={C\bibinitperiod},
+           given={Hanen},
+           giveni={H\bibinitperiod}}}%
+        {{hash=dec05ef2afc1974a3fc09ea56673d76d}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Xin},
+           giveni={X\bibinitperiod}}}%
+        {{hash=659e007ac945bd3ed14975bf7d7b9498}{%
+           family={Helaoui},
+           familyi={H\bibinitperiod},
+           given={Mohamed},
+           giveni={M\bibinitperiod}}}%
+        {{hash=cd206ae8b30407da05b961d0e0d65426}{%
+           family={Rawat},
+           familyi={R\bibinitperiod},
+           given={Meenakshi},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3bf222f6c537131a2a8c41d1cb3def1b}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Wenhua},
+           giveni={W\bibinitperiod}}}%
+        {{hash=ed8ed233178835fd476d7d8fd237534a}{%
+           family={Boulejfen},
+           familyi={B\bibinitperiod},
+           given={Noureddine},
+           giveni={N\bibinitperiod}}}%
+        {{hash=26b7a0c33ca8b0c2dd4cdb7f57621711}{%
+           family={Ghannouchi},
+           familyi={G\bibinitperiod},
+           given={Fadhel\bibnamedelima M.},
+           giveni={F\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{51a72c1ddc6d19105b2dca9740b8f82b}
+      \strng{fullhash}{177afa4556faa764986a379b1e907e04}
+      \strng{fullhashraw}{177afa4556faa764986a379b1e907e04}
+      \strng{bibnamehash}{177afa4556faa764986a379b1e907e04}
+      \strng{authorbibnamehash}{177afa4556faa764986a379b1e907e04}
+      \strng{authornamehash}{51a72c1ddc6d19105b2dca9740b8f82b}
+      \strng{authorfullhash}{177afa4556faa764986a379b1e907e04}
+      \strng{authorfullhashraw}{177afa4556faa764986a379b1e907e04}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Microwave Theory and Techniques}
+      \field{number}{9}
+      \field{title}{Augmented Convolutional Neural Network for Behavioral Modeling and Digital Predistortion of Concurrent Multiband Power Amplifiers}
+      \field{volume}{69}
+      \field{year}{2021}
+      \true{nocite}
+      \field{pages}{4142\bibrangedash 4156}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1109/TMTT.2021.3075689
+      \endverb
+      \keyw{imprimir}
+    \endentry
+    \entry{lathi2006sinais}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=ba7069648b5a3d3ec32aa3112eaf6ff6}{%
+           family={Lathi},
+           familyi={L\bibinitperiod},
+           given={B.P.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Bookman}%
+      }
+      \strng{namehash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
+      \strng{fullhash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
+      \strng{fullhashraw}{ba7069648b5a3d3ec32aa3112eaf6ff6}
+      \strng{bibnamehash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
+      \strng{authorbibnamehash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
+      \strng{authornamehash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
+      \strng{authorfullhash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
+      \strng{authorfullhashraw}{ba7069648b5a3d3ec32aa3112eaf6ff6}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9788577803910}
+      \field{title}{Sinais e Sistemas Lineares - 2.ed.}
+      \field{year}{2006}
+      \true{nocite}
+      \keyw{imprimir}
+    \endentry
+    \entry{martins2011eficiencia}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=08bfb0bdb7c27f50629597b3398da3cb}{%
+           family={Martins},
+           familyi={M\bibinitperiod},
+           given={Carlos\bibnamedelimb Manuel\bibnamedelimb da\bibnamedelima Silva},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Faculdade de Engenharia da Universidade do Porto}%
+      }
+      \list{location}{1}{%
+        {Porto, Portugal}%
+      }
+      \strng{namehash}{08bfb0bdb7c27f50629597b3398da3cb}
+      \strng{fullhash}{08bfb0bdb7c27f50629597b3398da3cb}
+      \strng{fullhashraw}{08bfb0bdb7c27f50629597b3398da3cb}
+      \strng{bibnamehash}{08bfb0bdb7c27f50629597b3398da3cb}
+      \strng{authorbibnamehash}{08bfb0bdb7c27f50629597b3398da3cb}
+      \strng{authornamehash}{08bfb0bdb7c27f50629597b3398da3cb}
+      \strng{authorfullhash}{08bfb0bdb7c27f50629597b3398da3cb}
+      \strng{authorfullhashraw}{08bfb0bdb7c27f50629597b3398da3cb}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{bookpagination}{sheet}
+      \field{title}{Análise e melhoria da eficiência de amplificadores de potência para aplicações em rádio definido por software}
+      \field{type}{Dissertação de Mestrado}
+      \field{year}{2011}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://repositorio-aberto.up.pt/handle/10216/59438
+      \endverb
+      \verb{url}
+      \verb https://repositorio-aberto.up.pt/handle/10216/59438
+      \endverb
+      \keyw{imprimir}
+    \endentry
+    \entry{mili}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=285216f576905fc7e5c46e3a33a4b23a}{%
+           family={Miliavacca},
+           familyi={M\bibinitperiod},
+           given={Luis},
+           giveni={L\bibinitperiod}}}%
+        {{hash=89ee97353337608734e9fd5894e1d3c8}{%
+           family={Schuartz},
+           familyi={S\bibinitperiod},
+           given={Luis},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{be838796f4c756a334c69244b9cd876e}
+      \strng{fullhash}{be838796f4c756a334c69244b9cd876e}
+      \strng{fullhashraw}{be838796f4c756a334c69244b9cd876e}
+      \strng{bibnamehash}{be838796f4c756a334c69244b9cd876e}
+      \strng{authorbibnamehash}{be838796f4c756a334c69244b9cd876e}
+      \strng{authornamehash}{be838796f4c756a334c69244b9cd876e}
+      \strng{authorfullhash}{be838796f4c756a334c69244b9cd876e}
+      \strng{authorfullhashraw}{be838796f4c756a334c69244b9cd876e}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{SeMicro-PR}
+      \field{month}{06}
+      \field{title}{Análise dos efeitos da saturação do DPD de banda dupla concorrente}
+      \field{year}{2024}
+      \true{nocite}
+      \keyw{imprimir}
+    \endentry
+    \entry{alvarado2019papr}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=0473900c5501e63878c0979a7447111d}{%
+           family={Morales\bibnamedelima Alvarado},
+           familyi={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Carlos\bibnamedelima Ernesto},
+           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Universidade Federal do Paraná}%
+      }
+      \list{location}{1}{%
+        {Curitiba, Paraná, Brasil}%
+      }
+      \strng{namehash}{0473900c5501e63878c0979a7447111d}
+      \strng{fullhash}{0473900c5501e63878c0979a7447111d}
+      \strng{fullhashraw}{0473900c5501e63878c0979a7447111d}
+      \strng{bibnamehash}{0473900c5501e63878c0979a7447111d}
+      \strng{authorbibnamehash}{0473900c5501e63878c0979a7447111d}
+      \strng{authornamehash}{0473900c5501e63878c0979a7447111d}
+      \strng{authorfullhash}{0473900c5501e63878c0979a7447111d}
+      \strng{authorfullhashraw}{0473900c5501e63878c0979a7447111d}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{bookpagination}{sheet}
+      \field{title}{Técnica de redução de fator de crista saturada aplicada a amplificadores de potência linearizados por DPD}
+      \field{type}{Dissertação de Mestrado}
+      \field{year}{2019}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://acervodigital.ufpr.br/handle/1884/63386
+      \endverb
+      \verb{url}
+      \verb https://acervodigital.ufpr.br/handle/1884/63386
+      \endverb
+      \keyw{imprimir}
+    \endentry
+    \entry{oliveira2025fir_complete}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=5e9f4fac25937f79b2d9bc22aa3bc77d}{%
+           family={Oliveira},
+           familyi={O\bibinitperiod},
+           given={C.\bibnamedelimi G.\bibnamedelimi S.},
+           giveni={C\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=49279a22e87cca6d0a96976e6de89030}{%
+           family={Schuartz},
+           familyi={S\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Curitiba}%
+      }
+      \list{organization}{1}{%
+        {SIM}%
+      }
+      \strng{namehash}{9000bbecc09faf93b19caad088ee8fb4}
+      \strng{fullhash}{9000bbecc09faf93b19caad088ee8fb4}
+      \strng{fullhashraw}{9000bbecc09faf93b19caad088ee8fb4}
+      \strng{bibnamehash}{9000bbecc09faf93b19caad088ee8fb4}
+      \strng{authorbibnamehash}{9000bbecc09faf93b19caad088ee8fb4}
+      \strng{authornamehash}{9000bbecc09faf93b19caad088ee8fb4}
+      \strng{authorfullhash}{9000bbecc09faf93b19caad088ee8fb4}
+      \strng{authorfullhashraw}{9000bbecc09faf93b19caad088ee8fb4}
+      \field{extraname}{1}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of Simpósio Sul de Microeletrônica ({SIM} 2025)}
+      \field{month}{maio}
+      \field{title}{{FIR} Filters for {DPD} Saturation Improvement}
+      \field{volume}{1}
+      \field{year}{2025}
+      \true{nocite}
+      \field{pages}{1\bibrangedash 5}
+      \range{pages}{5}
+      \keyw{imprimir}
+    \endentry
+    \entry{oliveira2025otimizacao_emicro}{inproceedings}{}{1}
+      \name{author}{2}{}{%
+        {{hash=5e9f4fac25937f79b2d9bc22aa3bc77d}{%
+           family={Oliveira},
+           familyi={O\bibinitperiod},
+           given={C.\bibnamedelimi G.\bibnamedelimi S.},
+           giveni={C\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=49279a22e87cca6d0a96976e6de89030}{%
+           family={Schuartz},
+           familyi={S\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Curitiba}%
+      }
+      \list{organization}{1}{%
+        {EMICRO}%
+      }
+      \strng{namehash}{9000bbecc09faf93b19caad088ee8fb4}
+      \strng{fullhash}{9000bbecc09faf93b19caad088ee8fb4}
+      \strng{fullhashraw}{9000bbecc09faf93b19caad088ee8fb4}
+      \strng{bibnamehash}{9000bbecc09faf93b19caad088ee8fb4}
+      \strng{authorbibnamehash}{9000bbecc09faf93b19caad088ee8fb4}
+      \strng{authornamehash}{9000bbecc09faf93b19caad088ee8fb4}
+      \strng{authorfullhash}{9000bbecc09faf93b19caad088ee8fb4}
+      \strng{authorfullhashraw}{9000bbecc09faf93b19caad088ee8fb4}
+      \field{extraname}{2}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Anais dos {VIII} Seminários de Microeletrônica do Paraná}
+      \field{title}{Otimização de filtros {FIR} para redução do espalhamento espectral causado pela saturação do sinal em banda dupla concorrente}
+      \field{volume}{8}
+      \field{year}{2025}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
+      \keyw{imprimir}
+    \endentry
+    \entry{oppenheim2013processamento}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=91dbf9ff367cd6c6bb21dadfe228fb18}{%
+           family={Oppenheim},
+           familyi={O\bibinitperiod},
+           given={A.V.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a044dbc8269130b0dbab3ef220d25a5d}{%
+           family={Schafer},
+           familyi={S\bibinitperiod},
+           given={R.W.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Universidades}%
+      }
+      \strng{namehash}{1584e359ca2fac191866dec69fdf8322}
+      \strng{fullhash}{1584e359ca2fac191866dec69fdf8322}
+      \strng{fullhashraw}{1584e359ca2fac191866dec69fdf8322}
+      \strng{bibnamehash}{1584e359ca2fac191866dec69fdf8322}
+      \strng{authorbibnamehash}{1584e359ca2fac191866dec69fdf8322}
+      \strng{authornamehash}{1584e359ca2fac191866dec69fdf8322}
+      \strng{authorfullhash}{1584e359ca2fac191866dec69fdf8322}
+      \strng{authorfullhashraw}{1584e359ca2fac191866dec69fdf8322}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9788581431024}
+      \field{title}{Processamento em Tempo Discreto de Sinais}
+      \field{year}{2013}
+      \true{nocite}
+      \keyw{imprimir}
+    \endentry
+    \entry{artigo2}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=89ee97353337608734e9fd5894e1d3c8}{%
+           family={Schuartz},
+           familyi={S\bibinitperiod},
+           given={Luis},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Universidade Federal do Paraná}%
+      }
+      \list{location}{1}{%
+        {Curitiba, Brasil}%
+      }
+      \strng{namehash}{89ee97353337608734e9fd5894e1d3c8}
+      \strng{fullhash}{89ee97353337608734e9fd5894e1d3c8}
+      \strng{fullhashraw}{89ee97353337608734e9fd5894e1d3c8}
+      \strng{bibnamehash}{89ee97353337608734e9fd5894e1d3c8}
+      \strng{authorbibnamehash}{89ee97353337608734e9fd5894e1d3c8}
+      \strng{authornamehash}{89ee97353337608734e9fd5894e1d3c8}
+      \strng{authorfullhash}{89ee97353337608734e9fd5894e1d3c8}
+      \strng{authorfullhashraw}{89ee97353337608734e9fd5894e1d3c8}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{bookpagination}{sheet}
+      \field{month}{06}
+      \field{note}{Dissertação de Mestrado em Engenharia Elétrica}
+      \field{title}{Saturation Approach for Dual-Band Transmission with Pre-Distortion for PA Efficiency Increase}
+      \field{type}{mathesis}
+      \field{year}{2018}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://acervodigital.ufpr.br/xmlui/handle/1884/57039
+      \endverb
+      \verb{url}
+      \verb https://acervodigital.ufpr.br/xmlui/handle/1884/57039
+      \endverb
+      \keyw{imprimir}
+    \endentry
+    \entry{Artigo1}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=89ee97353337608734e9fd5894e1d3c8}{%
+           family={Schuartz},
+           familyi={S\bibinitperiod},
+           given={Luis},
+           giveni={L\bibinitperiod}}}%
+        {{hash=72be850eca7d4433783a2835fc341f75}{%
+           family={Lima},
+           familyi={L\bibinitperiod},
+           given={Eduardo},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{876df92bff2a49d7a4ee9bdc9ac02033}
+      \strng{fullhash}{876df92bff2a49d7a4ee9bdc9ac02033}
+      \strng{fullhashraw}{876df92bff2a49d7a4ee9bdc9ac02033}
+      \strng{bibnamehash}{876df92bff2a49d7a4ee9bdc9ac02033}
+      \strng{authorbibnamehash}{876df92bff2a49d7a4ee9bdc9ac02033}
+      \strng{authornamehash}{876df92bff2a49d7a4ee9bdc9ac02033}
+      \strng{authorfullhash}{876df92bff2a49d7a4ee9bdc9ac02033}
+      \strng{authorfullhashraw}{876df92bff2a49d7a4ee9bdc9ac02033}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Brazilian Archives of Biology and Technology}
+      \field{month}{06}
+      \field{title}{Saturation Approach for Dual-Band Transmission with Pre-Distortion for PA Efficiency Increase}
+      \field{volume}{67}
+      \field{year}{2024}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.1590/1678-4324-2024230610
+      \endverb
+      \keyw{imprimir}
+    \endentry
+    \entry{sedra2000microeletrônica}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=6a3b22fe544fa58cf6a67562f622e136}{%
+           family={Sedra},
+           familyi={S\bibinitperiod},
+           given={A.S.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d7c5de07714b90ca4c3ded197895c59e}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={K.C.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Makron Books}%
+      }
+      \strng{namehash}{7899d80d0ce5a88c33f764ff6238bd3e}
+      \strng{fullhash}{7899d80d0ce5a88c33f764ff6238bd3e}
+      \strng{fullhashraw}{7899d80d0ce5a88c33f764ff6238bd3e}
+      \strng{bibnamehash}{7899d80d0ce5a88c33f764ff6238bd3e}
+      \strng{authorbibnamehash}{7899d80d0ce5a88c33f764ff6238bd3e}
+      \strng{authornamehash}{7899d80d0ce5a88c33f764ff6238bd3e}
+      \strng{authorfullhash}{7899d80d0ce5a88c33f764ff6238bd3e}
+      \strng{authorfullhashraw}{7899d80d0ce5a88c33f764ff6238bd3e}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9788534610445}
+      \field{title}{Microeletrônica}
+      \field{year}{2000}
+      \true{nocite}
+      \keyw{imprimir}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

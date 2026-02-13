@@ -1,0 +1,16 @@
+\changetocdepth {4}
+\babel@toc {brazil}{}\relax 
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\addvspace {-12\p@ }
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {1}\bfseries \MakeTextUppercase []{INTRODUÇÃO}}{3}{chapter.1}%
+\addvspace {-3\p@ }
+\contentsline {section}{\numberline {1.1}OBJETIVOS}{5}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Gerais}{5}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Específicos}{5}{subsection.1.1.2}%
+\vspace {\cftbeforechapterskip }
+\vspace {-6pt}
+\addvspace {-12\p@ }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\contentsline {chapter}{REFERÊNCIAS}{7}{section*.9}%
+\vspace {4pt}
