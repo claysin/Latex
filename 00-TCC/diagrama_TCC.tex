@@ -21,6 +21,12 @@
 		}
 		]
 		
+		\draw[-, line width=3pt, dotted, color=red] (-1, 4) -- (1, 4);
+		\draw[-, line width=3pt, dotted, color=red] (1, 4) -- (1, -4);
+		\draw[-, line width=3pt, dotted, color=red] (1, -4) -- (-1, -4);
+		\node[below right] at (-1, -4.2) {\textbf{CADENCE}} ;
+		\draw[-, line width=3pt, dotted, color=red] (-1, -4) -- (-1, 4);
+		
 		\node[circulo] (S1) at (0,2.5) {$\sim$};
 		\node[circulo] (S2) at (0,-2.5) {$\sim$};
 		
@@ -31,13 +37,53 @@
 		\filldraw [black] (8.5,0) circle (2pt);
 		\node[retangulos] (sat1) at (8.5, 2.5) {\textbf{Sat}};
 		\node[retangulos] (sat2) at (8.5, -2.5) {\textbf{Sat}};
+		
+		\filldraw [black] (11, 0) circle (2pt);
+		\draw[->, line width=1pt] (9.7,0) -- (10.95,0);
+		\node [above right] at (9,0) {\textbf{Coef}};
+		
 		\node[retangulos] (fir1) at (11, 2.5) {\textbf{FIR}};
 		\node[retangulos] (fir2) at (11, -2.5) {\textbf{FIR}};
+		
+		\draw[->, line width=1pt] (11,0) -- (fir1.south);
+		\draw[->, line width=1pt] (11,0) -- (fir2.north);
+		
 		\node[retangulos] (dpd1) at (13.5, 2.5) {\textbf{DPD}};
 		\node[retangulos] (dpd2) at (13.5, -2.5) {\textbf{DPD}};
 		
 		%Linhas
 		\draw[->, line width=1pt] (dpd1.east) -- (15.5,2.5);
 		\draw[->, line width=1pt] (dpd2.east) -- (15.5,-2.5) ;
+		
+		\draw[-, line width=1pt] (S1.east) -- (3,2.5);
+		\draw[->, line width=1pt] (3,2.5) -- (Env.north);
+		
+		\draw[-, line width=1pt] (S2.east) -- (3,-2.5);
+		\draw[->, line width=1pt] (3,-2.5) -- (Env.south);
+		
+		\draw[->, line width=1pt] (1.5,0) -- (Env.west);
+		\node[above right] at (1.5,0) {$L$};
+		
+		\draw[->, line width=1pt] (Env.east) -- (int.west);
+		
+		\draw[->, line width=1pt] (int.east) -- (8.45,0);
+		\draw[->, line width=1pt] (8.5,0) -- (sat1.south);
+		\draw[->, line width=1pt] (8.5,0) -- (sat2.north);
+		
+		\draw[->, line width=1pt] (sat1.east) -- (fir1.west);
+		
+		\draw[->, line width=1pt] (sat2.east) -- (fir2.west);
+		
+		\draw[->, line width=1pt] (fir1.east) -- (dpd1.west);
+		
+		\draw[->, line width=1pt] (fir2.east) -- (dpd2.west);
+		
+		\draw[-, line width=1pt] (12.1, 2.5) -- (12.1,-0.5);
+		\draw[-, line width=1pt] (12.1,-0.5) -- (13.5, -0.5);
+		\draw[->, line width=1pt] (13.5, -0.5) -- (dpd2.north);
+		
+		\draw[-, line width=1pt] (12.4, -2.5) -- (12.4,0.5);
+		\draw[-, line width=1pt] (12.4,0.5) -- (13.5, 0.5);
+		\draw[->, line width=1pt] (13.5, 0.5) -- (dpd1.south);
 		
 	\end{tikzpicture}
