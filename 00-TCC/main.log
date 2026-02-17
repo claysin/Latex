@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.7)  15 FEB 2026 19:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.7)  16 FEB 2026 17:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2299,12 +2299,8 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4 <./fig/Linearidade_PA_DPD.pdf>]) (02-Desenvolvimento.tex (diagrama_TCC.tex)
-
-Overfull \hbox (41.46564pt too wide) in paragraph at lines 89--5
- [][] 
- []
-
-[5]) [6]
+ [5])
+[6]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -2342,28 +2338,34 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 60447 strings out of 467866
- 1346999 string characters out of 5418326
- 2540255 words of memory out of 5000000
- 88260 multiletter control sequences out of 15000+600000
- 652725 words of font info for 166 fonts, out of 8000000 for 9000
+ 60485 strings out of 467866
+ 1347539 string characters out of 5418326
+ 2543255 words of memory out of 5000000
+ 88281 multiletter control sequences out of 15000+600000
+ 656756 words of font info for 180 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,12n,121p,1360b,4312s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\clays\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
 1000.pk><C:/Users/clays/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmmi10.pfb><C:/Users/clays/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmmi6.pfb><C:/Users/clays/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmmi9.pfb><C:/Users/clays/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/clays/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/clays/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/clays/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/clays
-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/cl
-ays/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users
-/clays/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (10 pages, 619202 bytes).
+ic/amsfonts/cm/cmmi12.pfb><C:/Users/clays/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmmi6.pfb><C:/Users/clays/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/clays/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/clays/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/clays/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/clay
+s/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Use
+rs/clays/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+<C:/Users/clays/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb><C:/Users/clays/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmsy6.pfb><C:/Users/clays/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmsy8.pfb><C:/Users/clays/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/urw/helvetic/uhvb8a.pfb><C:/Users/clays/AppData/Local/Programs/MiKTeX/fonts
+/type1/urw/helvetic/uhvr8a.pfb><C:/Users/clays/AppData/Local/Programs/MiKTeX/fo
+nts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on main.pdf (10 pages, 663864 bytes).
 PDF statistics:
- 247 PDF objects out of 1000 (max. 8388607)
+ 272 PDF objects out of 1000 (max. 8388607)
  36 named destinations out of 1000 (max. 500000)
- 35507 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 41651 words of extra memory for PDF output out of 42996 (max. 10000000)
 
