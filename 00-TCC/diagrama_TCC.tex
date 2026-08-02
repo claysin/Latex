@@ -1,0 +1,124 @@
+
+	\begin{tikzpicture}[
+		scale=0.8,
+		transform shape,
+		retangulos/.style={
+			draw, 
+			rectangle, 
+			minimum width=1.2cm, 
+			minimum height=1.2cm,
+			align=center, 
+			line width = 1pt
+		},
+		circulo/.style={
+			draw,
+			circle,
+			minimum size=1cm,
+			inner sep=0pt,      
+			line width = 1pt,              
+			align=center,       
+			fill=white          
+		}
+		]
+		
+		\draw[-, line width=3pt, dotted, color=red] (-1, 4) -- (1, 4);
+		\draw[-, line width=3pt, dotted, color=red] (1, 4) -- (1, -4);
+		\draw[-, line width=3pt, dotted, color=red] (1, -4) -- (-1, -4);
+		\draw[-, line width=3pt, dotted, color=red] (-1, -4) -- (-1, 4);
+		\node[below right] at (-1, -4.2) {\textbf{CADENCE}} ;
+		
+		\draw[-, line width=3pt, dotted, color=red] (1.5, 4) -- (7, 4);
+		\draw[-, line width=3pt, dotted, color=red] (7, 4) -- (7,-4);
+		\draw[-, line width=3pt, dotted, color=red] (7,-4) -- (1.5,-4);
+		\draw[-, line width=3pt, dotted, color=red] (1.5,-4) -- (1.5,4);
+		\node [below right] at (4.25,-4.2) {\textbf{PYTHON}};
+
+		\draw[-, line width=3pt, dotted, color=red] (7.5, 4) -- (14.5, 4);
+		\draw[-, line width=3pt, dotted, color=red] (14.5, 4) -- (14.5,-4);
+		\draw[-, line width=3pt, dotted, color=red] (14.5,-4) -- (7.5,-4);
+		\draw[-, line width=3pt, dotted, color=red] (7.5,-4) -- (7.5,4);
+		\node [below right] at (11,-4.2) {\textbf{FPGA}};
+		
+		
+		
+		\node[circulo] (S1) at (0,2.5) {$\sim$};
+		\node[circulo] (S2) at (0,-2.5) {$\sim$};
+		
+		\node[retangulos] (Env) at (3,0) {\textbf{Env}};
+		\node[retangulos] (int) at (5.5,0) {$f->i$};
+		\node[retangulos] (Coef) at (5.5,2.5) {\textbf{Coef}};
+		
+		\filldraw [black] (8.5,0) circle (2pt);
+		\node[retangulos] (sat1) at (8.5, 2.5) {\textbf{Sat}};
+		\node[retangulos] (sat2) at (8.5, -2.5) {\textbf{Sat}};
+		
+		\filldraw [black] (11, 0) circle (2pt);
+		\draw[->, line width=1pt] (9.7,0) -- (10.95,0);
+		\node [above right] at (9,0) {\textbf{Coef}};
+		
+		\node[retangulos] (fir1) at (11, 2.5) {\textbf{FIR}};
+		\node[retangulos] (fir2) at (11, -2.5) {\textbf{FIR}};
+		
+		\draw[->, line width=1pt] (11,0) -- (fir1.south);
+		\draw[->, line width=1pt] (11,0) -- (fir2.north);
+		
+		\node[retangulos] (dpd1) at (13.5, 2.5) {\textbf{DPD}};
+		\node[retangulos] (dpd2) at (13.5, -2.5) {\textbf{DPD}};
+		
+		%Linhas
+		\draw[->, line width=1pt] (dpd1.east) -- (15.5,2.5);
+		\draw[->, line width=1pt] (dpd2.east) -- (15.5,-2.5) ;
+		
+		\draw[-, line width=1pt] (S1.east) -- (3,2.5);
+		\draw[->, line width=1pt] (3,2.5) -- (Env.north);
+		
+		\draw[-, line width=1pt] (S2.east) -- (3,-2.5);
+		\draw[->, line width=1pt] (3,-2.5) -- (Env.south);
+		
+		\draw[->, line width=1pt] (1.5,0) -- (Env.west);
+		\node[above right] at (1.5,0) {$L$};
+		
+		\draw[->, line width=1pt] (Env.east) -- (int.west);
+		
+		\draw[->, line width=1pt] (int.east) -- (8.45,0);
+		\draw[->, line width=1pt] (8.5,0) -- (sat1.south);
+		\draw[->, line width=1pt] (8.5,0) -- (sat2.north);
+		
+		\draw[->, line width=1pt] (sat1.east) -- (fir1.west);
+		
+		\draw[->, line width=1pt] (sat2.east) -- (fir2.west);
+		
+		\draw[->, line width=1pt] (fir1.east) -- (dpd1.west);
+		
+		\draw[->, line width=1pt] (fir2.east) -- (dpd2.west);
+		
+		\draw[-, line width=1pt] (12.1, 2.5) -- (12.1,-0.5);
+		\draw[-, line width=1pt] (12.1,-0.5) -- (13.5, -0.5);
+		\draw[->, line width=1pt] (13.5, -0.5) -- (dpd2.north);
+		
+		\draw[-, line width=1pt] (12.4, -2.5) -- (12.4,0.5);
+		\draw[-, line width=1pt] (12.4,0.5) -- (13.5, 0.5);
+		\draw[->, line width=1pt] (13.5, 0.5) -- (dpd1.south);
+		
+		\begin{scope}[font=\Large] 
+			
+			\node [above left] at (3,2.5) {$x_1[n]$};
+			\node [below left] at (3,-2.5) {$x_2[n]$};
+			
+			\node [above right] at (3.6, 0) {$z[n]$};
+			
+			\node [above right] at (7.5, 0) {$z'[n]$};
+			
+			\node [above right] at (9.25, 2.5) {$x_{1s}[n]$};
+			\node [below right] at (9.25, -2.5) {$x_{2s}[n]$};
+			
+			\node [above right] at (10, 0) {$h[n]$};
+			
+			\node [above right] at (11.6, 2.5) {$x_{1f}[n]$};
+			\node [below right] at (11.6, -2.5) {$x_{2f}[n]$};
+			
+			\node [above right] at (14.7, 2.5) {$x'_{1f}[n]$};
+			\node [below right] at (14.7, -2.5) {$x'_{2f}[n]$};
+			
+		\end{scope}
+	\end{tikzpicture}
