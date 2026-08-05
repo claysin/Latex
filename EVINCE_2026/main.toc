@@ -6,9 +6,26 @@
 \contentsline {chapter}{\chapternumberline {1}\bfseries \MakeTextUppercase []{INTRODUÇÃO}}{4}{chapter.1}%
 \addvspace {0\p@ }
 \contentsline {section}{\numberline {1.1}Objetivos}{5}{section.1.1}%
+\addvspace {-10\p@ }
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {2}\bfseries \MakeTextUppercase []{REVISÃO DA LITERATURA}}{6}{chapter.2}%
+\addvspace {0\p@ }
+\contentsline {section}{\numberline {2.1}Saturação}{6}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Banda única}{6}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Banda Dupla}{7}{subsection.2.1.2}%
+\addvspace {0\p@ }
+\contentsline {section}{\numberline {2.2}Filtros FIR}{8}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Projeto de um filtro FIR}{9}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Ordem do filtro e número de coeficientes}{10}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Parâmetros de qualidade}{11}{subsection.2.2.3}%
+\addvspace {-10\p@ }
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {3}\bfseries \MakeTextUppercase []{MATERIAIS E MÉTODOS}}{12}{chapter.3}%
+\addvspace {0\p@ }
+\contentsline {section}{\numberline {3.1}Metodologia}{12}{section.3.1}%
 \vspace {\cftbeforechapterskip }
 \vspace {-6pt}
 \addvspace {-10\p@ }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{REFERÊNCIAS}{6}{section*.16}%
+\contentsline {chapter}{REFERÊNCIAS}{13}{section*.12}%
 \vspace {4pt}
