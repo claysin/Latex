@@ -1,10 +1,10 @@
 \chapter{MATERIAIS E MÉTODOS}
 
-Este capítulo detalha o percurso metodológico e os recursos empregados ao longo da pesquisa, abordando desde as ferramentas de software utilizadas até o fluxo de processamento e análise dos sinais.
+Este capítulo detalha a metodologia e os recursos empregados ao longo da pesquisa, abordando desde as ferramentas de software utilizadas até o fluxo de processamento e análise dos sinais.
 
-A parte prática do trabalho apoiou-se integralmente em simulações e rotinas computacionais. A base do desenvolvimento — incluindo a implementação do modelo de saturação do DPD e o tratamento das amostras — foi construída na linguagem Python, utilizando a IDE \textit{PyCharm}. O ambiente foi estruturado com bibliotecas de referência para computação científica: \texttt{NumPy} e \texttt{SciPy} para as operações matemáticas e de processamento de sinais (aproveitando funções como \texttt{ifilter} e \texttt{firwin}), \texttt{Pandas} para a manipulação dos conjuntos de dados e \texttt{Matplotlib} para o suporte gráfico básico.
+A parte prática do trabalho apoiou-se integralmente em simulações e rotinas computacionais. A base do desenvolvimento, incluindo a implementação do modelo de saturação do DPD e o tratamento das amostras, foi construída na linguagem Python, utilizando a IDE \textit{PyCharm}. O ambiente foi estruturado com bibliotecas de referência para computação científica: \texttt{NumPy} e \texttt{SciPy} para as operações matemáticas e de processamento de sinais, \texttt{Pandas} para a manipulação dos conjuntos de dados e \texttt{Matplotlib} para a plotagem dos gráficos.
 
-Os sinais analisados, referentes aos padrões de comunicação LTE e Wi-Fi, foram disponibilizados pela universidade e extraídos do Cadence Virtuoso. Essa mesma plataforma foi utilizada para aferir a qualidade da filtragem por meio do Erro Vetorial Médio (EVM), tirando proveito da ferramenta de análise já embutida no software para simplificar a obtenção da métrica.
+Os sinais analisados, referentes aos padrões de comunicação LTE e Wi-Fi, foram disponibilizados pela universidade e extraídos do Cadence Virtuoso. Esse mesmo  software foi utilizada para aferir a qualidade da filtragem por meio do Erro Vetorial Médio (EVM), tirando proveito da ferramenta para simplificar a obtenção da métrica.
 
 \section{Metodologia}
 
@@ -13,13 +13,13 @@ O desenvolvimento deste estudo seguiu um fluxo de trabalho ordenado, estruturado
 \begin{enumerate}
 	\item \textbf{Aquisição dos dados:} Extração dos sinais de teste no Cadence Virtuoso. Os testes consideraram os padrões LTE e Wi-Fi operando com uma largura de banda de 20 MHz e amostragem de 120 MHz.
 	
-\item \textbf{Tratamento dos sinais (Python):} Etapa central de processamento e otimização do algoritmo, composta por:
+\item \textbf{Tratamento dos sinais em Python:} Etapa central de processamento e otimização do algoritmo, composta por:
 \begin{itemize}
 	\item Interpolação e adequação da taxa de amostragem dos sinais originais;
 	\item Cálculo da envoltória complexa equivalente das formas de onda;
 	\item Execução do modelo de saturação de amplitude para o cenário de banda dupla;
 	\item Separação e redistribuição do excedente do sinal utilizando o método de repartição proporcional de soma;
-	\item Geração da resposta ao impulso inicial (palpite) a partir da Transformada Discreta de Fourier Inversa (IDFT) das máscaras espectrais normativas do LTE e Wi-Fi;
+	\item Geração da resposta ao impulso inicial a partir da Transformada Discreta de Fourier Inversa (IDFT) das máscaras espectrais normativas do LTE e Wi-Fi;
 	\item Otimização iterativa dos coeficientes do filtro FIR ($C=9$) por meio do método de Powell, visando a minimização do erro e a contenção do espalhamento espectral;
 	\item Execução da filtragem digital final utilizando os coeficientes otimizados;
 	\item Exportação das formas de onda processadas em arquivos de extensão \texttt{.csv} para posterior validação.
