@@ -1,17 +1,17 @@
-[0] Config.pm:328> INFO - This is Biber 2.21
-[0] Config.pm:331> INFO - Logfile is 'main.blg'
-[93] biber-MSWIN64:342> INFO - === 
-[127] Biber.pm:421> INFO - Reading 'main.bcf'
-[223] Biber.pm:1002> INFO - Found 11 citekeys in bib section 0
-[235] Biber.pm:4487> INFO - Processing section 0
-[245] Biber.pm:4678> INFO - Looking for bibtex file 'referencias.bib' for section 0
-[291] bibtex.pm:1713> INFO - LaTeX decoding ...
-[306] bibtex.pm:1519> INFO - Found BibTeX data source 'referencias.bib'
-[405] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[405] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[405] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
-[405] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
-[418] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[423] bbl.pm:779> INFO - Output to main.bbl
-[424] Biber.pm:132> WARN - legacy month field 'maio' in entry 'oliveira2025fir_complete' is not an integer - this will probably not sort properly.
-[424] Biber.pm:134> INFO - WARNINGS: 1
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'main.blg'
+[94] biber:340> INFO - === qui ago  6, 2026, 17:28:11
+[112] Biber.pm:419> INFO - Reading 'main.bcf'
+[198] Biber.pm:979> INFO - Found 12 citekeys in bib section 0
+[214] Biber.pm:4419> INFO - Processing section 0
+[226] Biber.pm:4610> INFO - Looking for bibtex file 'referencias.bib' for section 0
+[228] bibtex.pm:1713> INFO - LaTeX decoding ...
+[246] bibtex.pm:1519> INFO - Found BibTeX data source 'referencias.bib'
+[403] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[403] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[404] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
+[404] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
+[425] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[431] bbl.pm:763> INFO - Output to main.bbl
+[431] Biber.pm:131> WARN - legacy month field 'maio' in entry 'oliveira2025fir_complete' is not an integer - this will probably not sort properly.
+[431] Biber.pm:133> INFO - WARNINGS: 1
