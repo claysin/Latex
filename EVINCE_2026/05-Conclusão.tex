@@ -1,0 +1,11 @@
+\chapter{CONCLUSÃO}
+
+Este trabalho apresentou o desenvolvimento e a otimização de um filtro FIR empregado na mitigação do espalhamento espectral ocasionado pelo processo de saturação de sinais em banda dupla concorrente. A utilização do método de Powell para a otimização iterativa dos coeficientes demonstrou ser uma estratégia  eficaz para satisfazer as restrições espectrais com a viabilidade de implementação em \textit{hardware}.
+
+A definição de um filtro com apenas 9 coeficientes ($C = 9$) provou ser capaz de atender aos limites das máscaras, garantindo uma significativa redução da demanda computacional, preservando um desempenho espectral adequado..
+
+No que tange à integridade da informação transmitida, o sistema otimizado assegurou a preservação das características fundamentais de amplitude e fase do sinal. A métrica de \textit{Error Vector Magnitude} (EVM) evidenciou um impacto praticamente nulo na qualidade da modulação: para o Canal 1, o EVM apresentou uma elevação marginal de $7,13\%$ (sem filtro) para $7,26\%$ (com filtro otimizado), ao passo que, no Canal 2, o valor permaneceu constante em $8,02\%$ em ambos os cenários.
+
+Adicionalmente, a análise da relação de Potência de Pico por Potência Média (PAPR) atestou a eficácia do controle da amplitude do sinal. O sinal de entrada original (não-saturado) exibia uma PAPR na envoltória equivalente de $9,09\text{ dB}$. Com o processamento e a filtragem, a PAPR da envoltória equivalente estabeleceu-se em $7,29\text{ dB}$. Do ponto de vista individual de cada banda, a PAPR do Canal 1 reduziu de $8,43\text{ dB}$ (entrada) para $8,09\text{ dB}$ (filtrado), enquanto o Canal 2 foi atenuado de $8,24\text{ dB}$ para $6,31\text{ dB}$.
+
+Conclui-se, portanto, que a técnica de saturação em banda dupla, associada ao processo de separação de sinais e filtragem otimizada, atinge com êxito os objetivos propostos. A solução garante a redução do espalhamento espectral dentro dos limites normativos, impactando de forma mínima as métricas de EVM e PAPR, consolidando uma aplicação com objetivos de minimizar o custo computacional, possibilitando uma implementação física.

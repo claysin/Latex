@@ -26,9 +26,21 @@
 \contentsline {chapter}{\chapternumberline {3}\bfseries \MakeTextUppercase []{MATERIAIS E MÉTODOS}}{14}{chapter.3}%
 \addvspace {0\p@ }
 \contentsline {section}{\numberline {3.1}Metodologia}{14}{section.3.1}%
+\addvspace {-10\p@ }
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {4}\bfseries \MakeTextUppercase []{RESULTADOS}}{15}{chapter.4}%
+\addvspace {0\p@ }
+\contentsline {section}{\numberline {4.1}Otimização dos Coeficientes do Filtro}{15}{section.4.1}%
+\addvspace {0\p@ }
+\contentsline {section}{\numberline {4.2}Análise da Envoltória no Domínio do Tempo}{15}{section.4.2}%
+\addvspace {0\p@ }
+\contentsline {section}{\numberline {4.3}Desempenho dos Sinais Individuais (Banda Dupla)}{17}{section.4.3}%
+\addvspace {-10\p@ }
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {5}\bfseries \MakeTextUppercase []{CONCLUSÃO}}{18}{chapter.5}%
 \vspace {\cftbeforechapterskip }
 \vspace {-6pt}
 \addvspace {-10\p@ }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{REFERÊNCIAS}{15}{section*.13}%
+\contentsline {chapter}{REFERÊNCIAS}{19}{section*.18}%
 \vspace {4pt}
