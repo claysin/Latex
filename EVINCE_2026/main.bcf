@@ -2454,8 +2454,7 @@
     <bcf:citekey order="9" intorder="1">sedra2000microeletrônica</bcf:citekey>
     <bcf:citekey order="10" intorder="1">oppenheim2013processamento</bcf:citekey>
     <bcf:citekey order="11" intorder="1">oppenheim2013processamento</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">lathi2006sinais</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">powell1964efficient</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">powell1964efficient</bcf:citekey>
     <bcf:citekeycount count="1">8070682</bcf:citekeycount>
     <bcf:citekeycount count="1">martins2011eficiencia</bcf:citekeycount>
     <bcf:citekeycount count="1">9427989</bcf:citekeycount>
@@ -2466,7 +2465,6 @@
     <bcf:citekeycount count="1">artigo2</bcf:citekeycount>
     <bcf:citekeycount count="1">sedra2000microeletrônica</bcf:citekeycount>
     <bcf:citekeycount count="1">oppenheim2013processamento</bcf:citekeycount>
-    <bcf:citekeycount count="1">lathi2006sinais</bcf:citekeycount>
     <bcf:citekeycount count="1">powell1964efficient</bcf:citekeycount>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
