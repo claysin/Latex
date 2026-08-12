@@ -44,6 +44,17 @@ O comportamento das envoltórias é mais bem explorado pela Figura \ref{fig:envo
 	\label{fig:envoltoria_mascara}
 \end{figure}
 
+Quando analisado a curva de PSD, Densidade Espectral de Potência, é possível observar por meio da Figura \ref{fig:psd_otimizado} que o espectro de frequência do sinal filtrado é limitado dentro dos limites desenhados pela norma. A frequência do sinal é atenuado conforme se afasta da frequência central, no caso em banda base de zero hertz. 
+
+\begin{figure}[H]
+	\centering
+	\caption{Comportamento da Densidade Espectral de Potência da envoltória equivalente}
+	\includegraphics[width=0.9\linewidth]{fig/psd_otimizado.pdf}
+	\label{fig:psd_otimizado}
+\end{figure}
+
+
+
 \section{Desempenho dos Sinais Individuais (Banda Dupla)}
 
 Dado que o sistema processa um sinal composto por duas portadoras distintas, é imprescindível garantir que a recuperação e o tratamento do sinal excedente preservem a integridade de cada banda individualmente. 
@@ -56,3 +67,36 @@ A Figura \ref{fig:sinais_separados} detalha o comportamento no domínio do tempo
 	\includegraphics[width=0.9\linewidth]{fig/compara_envoltoria_sinais_otimizado_separados.pdf}
 	\label{fig:sinais_separados}
 \end{figure}
+
+As Tabelas \ref{tab1} e \ref{tab2} resume, respectivamente, os indicadores de EVM  e PAPR avaliados nas etapas de saturação e filtragem. A análise dessas métricas demonstra que a arquitetura proposta proporcionou um tratamento adequado ao sinal, sem acarretar degradação na qualidade da modulação. No que tange ao EVM, o Canal 1 (Wi-Fi) exibiu uma ligeira melhoria, apresentando uma redução de 0,13 pontos percentuais após a filtragem, enquanto o Canal 2 (LTE) permaneceu inalterado quando comparado ao sinal apenas saturado.
+
+\renewcommand{\arraystretch}{1.3} 
+\begin{table}[ht!]
+	\centering
+	\small
+	\caption{Resultados do EVM para os sinais saturados e filtrados dos canais 1 e 2.}
+	\begin{tabular}{cccc}
+		\toprule
+		& \textbf{Com filtro} & \textbf{Sem filtro} \\
+		\midrule
+		\textbf{Canal 1} & 7,13\% & 7,26\% \\
+		\textbf{Canal 2} & 8,02\% & 8,02\% \\
+		\bottomrule
+	\end{tabular}
+	\label{tab1}
+\end{table}
+
+Em relação à PAPR, a avaliação individual de cada canal revelou variações marginais, o que atesta a preservação da integridade das informações em ambas as bandas. Por outro lado, ao observar a envoltória complexa equivalente, constata-se que a filtragem introduziu um acréscimo de 1,03 dB na PAPR em comparação ao sinal estritamente saturado. Esse comportamento indica que, embora o filtro restitua uma pequena fração dos picos originais para conter o espalhamento espectral, o sistema como um todo ainda mantém um valor de amplitude média elevada.
+
+\begin{table}[H]
+	\centering
+	\small
+	\caption{PAPR dos sinais não-saturado, saturado e filtrado dos canais 1, 2 e envoltória equivalente.}
+	\begin{tabular}{c|ccc} \toprule
+		& \textbf{\begin{tabular}[c]{@{}c@{}}PAPR\\ Canal 1\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}PAPR\\ Canal 2\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}PAPR\\ Envoltória Eq.\end{tabular}} \\ \midrule
+		\textbf{Não-saturado} & 8,43 dB & 8,24 dB & 9,09 dB \\
+		\textbf{Saturado} & 8,89 dB & 8,03 dB & 5,28 dB \\
+		\textbf{Filtrado} & 8,09 dB & 7,29 dB & 6,31 dB \\  \bottomrule
+	\end{tabular}
+	\label{tab2}
+\end{table}

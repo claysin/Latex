@@ -20,6 +20,7 @@ Na operação em banda única (1D), a modelagem da saturação é mais direta, v
 		x(n), & \text{se } |x(n)| \le L \\
 		L \exp j\angle x(n), & \text{se } |x(n)| > L
 	\end{cases}
+	\label{eq:saturação_1D}
 \end{equation}
 
 \begin{itemize}
@@ -29,7 +30,7 @@ Na operação em banda única (1D), a modelagem da saturação é mais direta, v
 	\item $\angle x(n)$: Fase instantânea do sinal.
 \end{itemize}
 
-A equação acima descreve analiticamente o mecanismo de saturação. Em cada instante discreto $n$, a amplitude instantânea do sinal é comparada ao limiar $L$. Quando o sinal se encontra dentro dessa margem operacional ($|x(n)| \le L$), sua amplitude é preservada. Por outro lado, caso a magnitude exceda esse limite, o sinal sofre ceifamento, assumindo a amplitude máxima permitida $L$. É imprescindível destacar que a fase $\angle x(n)$ é mantida, um requisito crítico para assegurar a integridade da informação transmitida. 
+A equação \ref{eq:saturação_1D} descreve analiticamente o mecanismo de saturação. Em cada instante discreto $n$, a amplitude instantânea do sinal é comparada ao limiar $L$. Quando o sinal se encontra dentro dessa margem operacional ($|x(n)| \le L$), sua amplitude é preservada. Por outro lado, caso a magnitude exceda esse limite, o sinal sofre ceifamento, assumindo a amplitude máxima permitida $L$. É imprescindível destacar que a fase $\angle x(n)$ é mantida, um requisito crítico para assegurar a integridade da informação transmitida. 
 
 A energia correspondente à porção ceifada do sinal é perdida e convertida em distorção não linear, modificando a forma de onda original. Contudo, a aplicação dessa técnica justifica-se pelo controle imposto ao sistema. Em vez de submeter o amplificador (PA) a picos elevados de tensão, o ceifamento prévio assume o controle dessa compressão. Portanto, o método assegura a preservação da fase da informação, aceitando-se a perda de uma fração da energia contida na amplitude.
 
@@ -39,7 +40,7 @@ A transmissão em banda dupla (2D) é uma técnica que viabiliza a utilização 
 O processo de saturação em banda dupla baseia-se nos mesmos princípios estabelecidos para a transmissão em banda única. Inicialmente, obtém-se a envoltória complexa equivalente, que engloba as contribuições de fase e frequência de cada portadora. O sinal resultante pode ser expresso matematicamente pela equação \cite{Artigo1}:
 
 \begin{equation}
-	x(n) = x_1(n) \exp\left( \frac{-j\Delta\omega(n-1)}{f_s} \right) + x_2(n) \exp\left( \frac{j\Delta\omega(n-1)}{f_s} \right).
+	x(n) = x_1(n) \exp\left( \frac{-j\Delta\omega(n-1)}{f_s} \right) + x_2(n) \exp\left( \frac{j\Delta\omega(n-1)}{f_s} \right),
 \end{equation}
 
 \noindent onde $x_1(n)$ e $x_2(n)$ representam os sinais em banda base dos dois canais, $f_1$ e $f_2$ são as frequências portadoras, e $f_s$ é a frequência de amostragem.
@@ -52,20 +53,11 @@ Uma abordagem eficaz consiste na aplicação da \textbf{técnica de repartição
 	x_{ic}(n) = 
 	\begin{cases}
 		x_i(n), & \text{se } |x(n)| \leq L \\[6pt]
-		\left( \frac{|x_i(n)| - z(n)}{2} \right) \exp(j\angle x_i(n)), & \text{se } |x(n)| > L
+		\left( |x_i(n)| - \frac{z(n)}{2} \right) \exp(j\angle x_i(n)), & \text{se } |x(n)| > L
 	\end{cases}
 \end{equation}
 
 Com a aplicação desse método, estabelece-se que, se a envoltória equivalente ultrapassar o limiar ($|x(n)| > L$), a amplitude do canal é atenuada por meio da subtração de metade do excedente ($\frac{z(n)}{2}$, em que $z(n) = |x(n)| - L$) de sua amplitude original $|x_i(n)|$. Cabe ressaltar que a fase do sinal permanece inalterada durante esse processo, resguardando as características espectrais fundamentais dos canais transmitidos. Essa estratégia viabiliza um controle mais preciso da distorção introduzida pela limitação de amplitude, conservando a qualidade de transmissão em ambas as bandas de frequência.
-
-
-\begin{figure}[!htpb]
-	\centering
-	\caption{ENVOLTÓRIA EM BANDA DUPLA SATURADA}
-	\includegraphics[width=0.75\linewidth]{fig/saturado.pdf}
-	\caption*{FONTE: AUTOR}
-	\label{sat}
-\end{figure}
 
 \section{Filtros FIR}
 No âmbito do processamento de sinais, os filtros seletivos em frequência desempenham um papel central, sendo empregados para proporcionar a propagação de componentes espectrais inseridas em faixas específicas, enquanto atenuam ou bloqueiam as demais. Ao contrário dos sistemas analógicos, que manipulam grandezas contínuas no tempo mediante circuitos e componentes físicos \cite{sedra2000microeletrônica}, os filtros em tempo discreto atua em rotinas e algoritmos aplicadas a sequências numéricas amostradas. Uma arquitetura digital típica, o sinal contínuo é primeiramente convertido em dados discretos por meio de um conversor analógico-digital (ADC), processado pelo algoritmo de filtragem e, se necessário, reconvertido ao domínio analógico através de um conversor digital-analógico (DAC). O princípio de funcionamento desses sistemas fundamenta-se em conceitos matemáticos consolidados, como: operação de convolução, as equações de diferenças e a transformada de Fourier, nos quais a resposta gerada reflete a combinação entre a amostra corrente e registros de estados anteriores \cite{oppenheim2013processamento}.
@@ -91,10 +83,10 @@ Todavia, o aumento na complexidade do sistema via incremento de coeficientes res
 \begin{itemize}
 	\item \textbf{Agravamento do custo computacional:} o cálculo de cada amostra de saída demanda a execução de $C$ multiplicações e $(C-1)$ adições.
 	\item \textbf{Incremento na latência intrínseca:} o atraso de grupo do filtro aumenta, exigindo cautela em aplicações com requisitos estritos de tempo real.
-	\item \textbf{Maior consumo de recursos de memória:} exige-se um *buffer* mais extenso para o armazenamento dos estados anteriores da variável de entrada.
+	\item \textbf{Maior consumo de recursos de memória:} exige-se um \textit{buffer} mais extenso para o armazenamento dos estados anteriores da variável de entrada.
 \end{itemize}
 
-Diante exposto, a síntese do filtro FIR requer um otimização, buscando melhorar o desempenho espectral com a viabilidade dos recursos de *hardware* ou processamento disponíveis, modulada pela escolha de $M$ e $w[n]$.
+Diante exposto, a síntese do filtro FIR requer um otimização, buscando melhorar o desempenho espectral com a viabilidade dos recursos de \textit{hardware} ou processamento disponíveis, modulada pela escolha de $M$ e $w[n]$.
 
 \subsection{Parâmetros de qualidade}
 O primeiro parâmetro utilizado para analise da qualidade da implementação no sistema é o PAPR. Com essa analise a relação da potência de pico do sinal em relação a sua potência média, em termos matemáticos:
@@ -116,9 +108,9 @@ O EVM leva em conta diversas imperfeições do sinal, dentre elas: Ruido de fase
 
 
 \section{Método de Powell}
-No contexto da otimização de sistemas, o método de Powell consolida-se como uma técnica de busca direta para a minimização de funções não lineares \cite{powell1964efficient}. Sua principal vantagem reside na não utilização do cálculo analítico ou numérico de derivadas. Esse aspecto é de suma importância, especialmente quando a função custo descreve fenômenos complexos, sistemas quantizados ou rotinas de simulação que apresentam descontinuidades ou ruído acentuado.
+No contexto da otimização de sistemas, o método de \textit{Powell} consolida-se como uma técnica de busca direta para a minimização de funções não lineares \cite{powell1964efficient}. Sua principal vantagem reside na não utilização do cálculo analítico ou numérico de derivadas. Esse aspecto é de suma importância, especialmente quando a função custo descreve fenômenos complexos, sistemas quantizados ou rotinas de simulação que apresentam descontinuidades ou ruído acentuado.
 
-A base teórica do algoritmo de Powell se baseia na construção iterativa de um conjunto de direções de busca mutuamente conjugadas em relação à matriz Hessiana da função objetivo. Para um espaço de busca $n$-dimensional contendo uma função $f(\mathbf{x})$, o procedimento é inicializado a partir de uma estimativa $\mathbf{x}_0$ e de um conjunto de vetores linearmente independentes, usualmente a base ortonormal canônica $\mathbf{U} = \{\mathbf{u}_1, \dots, \mathbf{u}_n\}$. 
+A base teórica do algoritmo de \textit{Powell} se baseia na construção iterativa de um conjunto de direções de busca mutuamente conjugadas em relação à matriz Hessiana da função objetivo. Para um espaço de busca $n$-dimensional contendo uma função $f(\mathbf{x})$, o procedimento é inicializado a partir de uma estimativa $\mathbf{x}_0$ e de um conjunto de vetores linearmente independentes, usualmente a base ortonormal canônica $\mathbf{U} = \{\mathbf{u}_1, \dots, \mathbf{u}_n\}$. 
 
 O ciclo iterativo do método pode ser descrito por meio da seguinte formulação:
 \begin{itemize}
@@ -131,10 +123,10 @@ O ciclo iterativo do método pode ser descrito por meio da seguinte formulação
 	\item \textbf{Atualização da base de busca:} O conjunto de direções é reestruturado pela exclusão de uma das direções originais (tipicamente a que gerou o maior decréscimo) e pela inclusão do vetor $\mathbf{d}$, otimizando a varredura para a iteração subsequente.
 \end{itemize}
 
-A vantagem método de Powell consiste no fato de que, se aplicado a uma função quadrática de $n$ variáveis, o algoritmo alcançará o mínimo global em $n$ iterações, visto que os vetores de deslocamento $\mathbf{d}$ gerados tornam-se progressivamente conjugados.
+A vantagem método de \textit{Powell} consiste no fato de que, se aplicado a uma função quadrática de $n$ variáveis, o algoritmo alcançará o mínimo global em $n$ iterações, visto que os vetores de deslocamento $\mathbf{d}$ gerados tornam-se progressivamente conjugados.
 
 \subsection{Aplicação do Método de Powell e Inicialização}
-No contexto deste trabalho, o método de Powell foi empregado para a otimização dos coeficientes do filtro FIR. O objetivo principal do algoritmo de otimização consistiu em minimizar o erro entre a envoltória do sinal desejado e a envoltória efetivamente obtida após o processo de filtragem. Para orientar o algoritmo, a função de custo (função objetivo) foi definida matematicamente pelo erro quadrático em cada instante de amostragem:
+No contexto deste trabalho, o método de \textit{Powell} foi empregado para a otimização dos coeficientes do filtro FIR. O objetivo principal do algoritmo de otimização consistiu em minimizar o erro entre a envoltória do sinal desejado e a envoltória efetivamente obtida após o processo de filtragem. Para orientar o algoritmo, a função de custo (função objetivo) foi definida matematicamente pelo erro quadrático em cada instante de amostragem:
 \begin{equation}
 	e[n] = \big( f[n] - s[n] \big)^2
 \end{equation}
@@ -144,23 +136,23 @@ Tendo em vista que algoritmos de busca direta dependem intimamente do ponto de p
 
 \begin{figure}[H]
 	\centering
-	\caption{Mascaras da Norma}
+	\caption{Máscaras da Norma}
 	\includegraphics[width=0.75\linewidth]{fig/Máscaras_unidas.pdf}
 	\caption*{FONTE: AUTOR}
-	\label{fig:mascaras_unidas}
+	\label{fig:mascaras_norma}
 \end{figure}
 
-Como pode ser observado na Figura \ref{fig:mascaras_unidas}, as máscaras de emissão das normas impõem limites rigorosos de espalhamento espectral (em dB). Para a extração do palpite inicial, essas máscaras foram previamente normalizadas para apresentar ganho unitário e, em seguida, mapeadas para o domínio do tempo por meio da Transformada Discreta de Fourier Inversa (IDFT), resultando nas respostas ao impulso teóricas de cada padrão. 
+Como pode ser observado na Figura \ref{fig:mascaras_norma}, as máscaras de emissão das normas impõem limites rigorosos de espalhamento espectral (em dB). Para a extração do palpite inicial, essas máscaras foram previamente normalizadas para apresentar ganho unitário e, em seguida, mapeadas para o domínio do tempo por meio da Transformada Discreta de Fourier Inversa (IDFT), resultando nas respostas ao impulso teóricas de cada padrão, como observado na Figura \ref{fig:mascaras_unidas}. 
 
 \begin{figure}[H]
 	\centering
 	\caption{Resposta ao impulso das máscaras}
-	\includegraphics[width=0.75\linewidth]{fig/resposta_ao_impulso.pdf}
+	\includegraphics[width=0.8\linewidth]{fig/resposta_ao_impulso.pdf}
 	\caption*{FONTE: AUTOR}
 	\label{fig:mascaras_unidas}
 \end{figure}
 
-O vetor médio dessas duas respostas originou o conjunto inicial de coeficientes passado ao método de Powell, fixando desde o princípio o comprimento restrito do filtro em $C = 9$ amostras. A partir desse palpite embasado na norma, o método iterou sobre as direções de busca computando a função custo $e[n]$, ajustando o conjunto de coeficientes e preservando aqueles que demonstraram maior capacidade de minimizar o erro, até que o critério de convergência fosse satisfeito.
+O vetor médio dessas duas respostas originou o conjunto inicial de coeficientes passado ao método de \textit{Powell}, fixando desde o princípio o comprimento restrito do filtro em $C = 9$ amostras. A partir desse palpite embasado na norma, o método iterou sobre as direções de busca computando a função custo $e[n]$, ajustando o conjunto de coeficientes e preservando aqueles que demonstraram maior capacidade de minimizar o erro, até que o critério de convergência fosse satisfeito.
 
 
 

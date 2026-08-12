@@ -126,33 +126,6 @@
       \endverb
       \keyw{Convolution;Complexity theory;Neurons;Predistortion;Convolutional neural networks;Training;Intermodulation distortion;Convolutional neural network (CNN);digital predistortion (DPD);intermodulation distortion (IMD);multiband transmitter;power amplifier (PA) nonlinearity}
     \endentry
-    \entry{lathi2006sinais}{book}{}
-      \name{author}{1}{}{%
-        {{hash=ba7069648b5a3d3ec32aa3112eaf6ff6}{%
-           family={Lathi},
-           familyi={L\bibinitperiod},
-           given={B.P.},
-           giveni={B\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Bookman}%
-      }
-      \strng{namehash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
-      \strng{fullhash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
-      \strng{bibnamehash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
-      \strng{authorbibnamehash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
-      \strng{authornamehash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
-      \strng{authorfullhash}{ba7069648b5a3d3ec32aa3112eaf6ff6}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{9788577803910}
-      \field{title}{Sinais e Sistemas Lineares - 2.ed.}
-      \field{year}{2006}
-    \endentry
     \entry{martins2011eficiencia}{thesis}{}
       \name{author}{1}{}{%
         {{hash=08bfb0bdb7c27f50629597b3398da3cb}{%

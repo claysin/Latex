@@ -8,7 +8,10 @@ A preservação das características do sinal requer que o amplificador atue em 
 
 A pré-distorção digital atua como um modelo posicionado antes do amplificador de potência na cadeia de transmissão, projetado para modelar o inverso da função característica do PA. Em termos operacionais, o DPD modela o sinal ao introduzir uma distorção, de modo que a resposta combinada do pré-distorcedor e do amplificador resulte em um sistema linear \cite{alvarado2019papr}. Este condicionamento é imprescindível para resguardar a máscara espectral do sinal, atenuando os produtos de intermodulação e as emissões fora de banda que causam interferência em canais adjacentes. Desse modo, o DPD não apenas garante o cumprimento dos rigorosos requisitos regulatórios de espectro, mas também permite que o PA opere em regiões de maior eficiência, garantindo um balanço ideal entre linearidade e consumo energético.
 
-\begin{figure}[!htpb]
+Conforme a Figura \ref{dpd_pa}, a linearização do sistema pode ser observada por meio do comportamento de três estágios: a inserção prévia de distorção pelo DPD, a distorção natural imposta pelo PA e a saída combinada, que idealmente resulta em uma resposta linear. Operando como a função inversa do amplificador, o DPD viabiliza o cumprimento dos rigorosos requisitos de qualidade espectral e viabiliza operações mais eficientes.
+Apesar dos ganhos promovidos pela pré-distorção, a manutenção da eficiência energética do transmissor em patamares aceitáveis exige o uso de abordagens adicionais. Nesse contexto, destacam-se as técnicas dedicadas à redução da Relação Potência de Pico a Potência Média (PAPR, do inglês \textit{Peak-to-Average Power Ratio}), visto que elevados picos de sinal forçam o amplificador a operar em regiões menos eficientes para evitar o ceifamento da onda.
+
+\begin{figure}[H]
 	\centering
 	\caption{LINEARIDADE DPD E PA}
 	\includegraphics[width=0.75\linewidth]{fig/Linearidade_PA_DPD.pdf}
@@ -16,10 +19,10 @@ A pré-distorção digital atua como um modelo posicionado antes do amplificador
 	\label{dpd_pa}
 \end{figure}
 
-Conforme a Figura \ref{dpd_pa}, a linearização do sistema pode ser observada por meio do comportamento de três estágios: a inserção prévia de distorção pelo DPD, a distorção natural imposta pelo PA e a saída combinada, que idealmente resulta em uma resposta linear. Operando como a função inversa do amplificador, o DPD viabiliza o cumprimento dos rigorosos requisitos de qualidade espectral e viabiliza operações mais eficientes.
-Apesar dos ganhos promovidos pela pré-distorção, a manutenção da eficiência energética do transmissor em patamares aceitáveis exige o uso de abordagens adicionais. Nesse contexto, destacam-se as técnicas dedicadas à redução da Relação Potência de Pico a Potência Média (PAPR, do inglês Peak-to-Average Power Ratio), visto que elevados picos de sinal forçam o amplificador a operar em regiões menos eficientes para evitar o ceifamento da onda.
-
 Para atenuar os elevados níveis de PAPR, uma estratégia recorrente é o ceifamento do sinal antes de ser enviado ao DPD. O princípio elementar dessa técnica é o \textit{hard clipping}, onde a tensão do sinal é truncada ao atingir um limiar específico. Ao operar com uma única banda, a limitação é simplificada, visto que a amplitude corresponde à envoltória isolada do sinal. Em contrapartida, em arranjos de múltiplas bandas, como a coexistência de um sinal Wi-Fi (2,4 GHz) e LTE (3,5 GHz) abordada neste trabalho, a envoltória composta deriva da sobreposição espectral, inviabilizando a análise individual das portadoras. Diante disso, a literatura consolida duas vertentes principais para a aplicação do ceifamento: a abordagem da soma e a abordagem da divisão. Deve-se ressaltar, contudo, que essa truncagem abrupta induz o espalhamento espectral, gerando componentes de frequência  fora da banda de interesse. Tal espalhamento pode infringir normas regulatórias, provocando interferência de canal adjacente e comprometendo a integridade das comunicações de sinais que se encontram em frequências próximas.
+
+
+A Figura \ref{SISTEMA PROPOSTO COM FILTROS.} exemplifica a implementação proposta, dado que a saturação do sinal ocasiona um espalhamento espectral, espalhando a frequência além dos limites impostos, a solução é a implementação de um filtro FIR, \textit{Finite Impulse Response}, localizado antes do pré-distorsor para conter o sinal dentro de uma faixa especificada. Esta estratégia foi validada na literatura por \cite{oliveira2025fir_complete}, apresentando bons resultados na contenção das emissões fora de banda. Contudo, a presente aplicação identifica uma oportunidade de aprimoramento focada na redução da ordem do filtro implementado.
 
 \begin{figure}[H]
 	\centering
@@ -29,10 +32,14 @@ Para atenuar os elevados níveis de PAPR, uma estratégia recorrente é o ceifam
 	\label{SISTEMA PROPOSTO COM FILTROS.}
 \end{figure}
 
-
-A imagem acima exemplifica a implementação proposta, dado que a saturação do sinal ocasiona um espalhamento espectral, espalhando a frequência além dos limites impostos, a solução é a implementação de um filtro FIR, \textit{Finite Impulse Response}, localizado antes do pré-distorsor para conter o sinal dentro de uma faixa especificada. Esta estratégia foi validada na literatura por \cite{oliveira2025fir_complete}, apresentando bons resultados na contenção das emissões fora de banda. Contudo, a presente aplicação identifica uma oportunidade de aprimoramento focada na redução da ordem do filtro implementado.
-
 \section{Objetivos}
-O presente trabalho tem como objetivos principais a redução  do tamanho do filtro sem comprometer a funcionalidade utilizando técnicas de síntese dos filtros com base nas restrições das normas e em otimização não linear.
+O presente trabalho tem como objetivo principal a redução  do tamanho do filtro sem comprometer a funcionalidade utilizando técnicas de síntese dos filtros com base nas restrições das normas e em otimização não linear.
+\subsection{Objetivos Específicos}
+Para os objetivos específicos, tem-se:
+\begin{itemize}
+	\item Redução do número de coeficientes na implementação do filtro;
+	\item Não alteração dos resultados alcançados com a implementação do filtro, de forma a manter os valores já alcançados;
+	\item Validar a implementação dos resultados no domínio do tempo.
+\end{itemize}
 
 

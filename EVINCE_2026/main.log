@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.1.1)  10 AUG 2026 18:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.1.1)  12 AUG 2026 18:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1874,11 +1874,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'brazil'.
-(./main.aux
-
-LaTeX Warning: Label `fig:mascaras_unidas' multiply defined.
-
-)
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
@@ -2089,23 +2085,34 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
 (./01-Introdução.tex [3
 
 ]
-<fig/Linearidade_PA_DPD.pdf, id=103, 982.87201pt x 361.35pt>
+<fig/Linearidade_PA_DPD.pdf, id=106, 982.87201pt x 361.35pt>
 File: fig/Linearidade_PA_DPD.pdf Graphic file (type pdf)
 <use fig/Linearidade_PA_DPD.pdf>
-Package pdftex.def Info: fig/Linearidade_PA_DPD.pdf  used on input line 14.
+Package pdftex.def Info: fig/Linearidade_PA_DPD.pdf  used on input line 17.
 (pdftex.def)             Requested size: 354.0pt x 130.14655pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4
 
- <./fig/Linearidade_PA_DPD.pdf>] (./tik.tex)) (./02-Referências Bibliográfica
-s.tex
-[5]
+]
+(./tik.tex) [5 <./fig/Linearidade_PA_DPD.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 4
+0.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
+File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `phv' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+)
+(./02-Referências Bibliográficas.tex [6]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./fig/saturado_grafico.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<fig/saturado_grafico.pdf, id=154, 368.37625pt x 293.095pt>
+<fig/saturado_grafico.pdf, id=161, 368.37625pt x 293.095pt>
 File: fig/saturado_grafico.pdf Graphic file (type pdf)
 <use fig/saturado_grafico.pdf>
 Package pdftex.def Info: fig/saturado_grafico.pdf  used on input line 9.
@@ -2113,48 +2120,35 @@ Package pdftex.def Info: fig/saturado_grafico.pdf  used on input line 9.
 
 Underfull \vbox (badness 3128) has occurred while \output is active []
 
- [6
+ [7
 
- <./fig/saturado_grafico.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 2
-6.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
-File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `phv' (encoding: TS1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
- [7]
-<fig/saturado.pdf, id=182, 462.52798pt x 346.89601pt>
-File: fig/saturado.pdf Graphic file (type pdf)
-<use fig/saturado.pdf>
-Package pdftex.def Info: fig/saturado.pdf  used on input line 65.
-(pdftex.def)             Requested size: 354.0pt x 265.51219pt.
- [8 <./fig/saturado.pdf>]
+ <./fig/saturado_grafico.pdf>] [8]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./fig/transição_filtro_ideal_real.pdf
 ): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<fig/transição_filtro_ideal_real.pdf, id=236, 589.20125pt x 319.1925pt>
+<fig/transição_filtro_ideal_real.pdf, id=195, 589.20125pt x 319.1925pt>
 File: fig/transição_filtro_ideal_real.pdf Graphic file (type pdf)
 <use fig/transição_filtro_ideal_real.pdf>
 Package pdftex.def Info: fig/transição_filtro_ideal_real.pdf  used on input l
-ine 78.
+ine 70.
 (pdftex.def)             Requested size: 354.0pt x 191.7751pt.
-[9 <./fig/transição_filtro_ideal_real.pdf>] [10]
-<fig/Máscaras_unidas.pdf, id=260, 702.625pt x 412.54124pt>
+[9] [10 <./fig/transição_filtro_ideal_real.pdf>] [11]
+<fig/Máscaras_unidas.pdf, id=229, 702.625pt x 412.54124pt>
 File: fig/Máscaras_unidas.pdf Graphic file (type pdf)
 <use fig/Máscaras_unidas.pdf>
-Package pdftex.def Info: fig/Máscaras_unidas.pdf  used on input line 148.
+Package pdftex.def Info: fig/Máscaras_unidas.pdf  used on input line 140.
 (pdftex.def)             Requested size: 354.0pt x 207.85641pt.
- [11]
-<fig/resposta_ao_impulso.pdf, id=270, 721.69624pt x 322.20375pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+<fig/resposta_ao_impulso.pdf, id=239, 721.69624pt x 322.20375pt>
 File: fig/resposta_ao_impulso.pdf Graphic file (type pdf)
 <use fig/resposta_ao_impulso.pdf>
-Package pdftex.def Info: fig/resposta_ao_impulso.pdf  used on input line 158.
-(pdftex.def)             Requested size: 354.0pt x 158.04346pt.
+Package pdftex.def Info: fig/resposta_ao_impulso.pdf  used on input line 150.
+(pdftex.def)             Requested size: 377.60144pt x 168.57936pt.
 )
-(./03-Materiais e Métodos.tex [12 <./fig/Máscaras_unidas.pdf> <./fig/resposta
+(./03-Materiais e Métodos.tex [13 <./fig/Máscaras_unidas.pdf> <./fig/resposta
 _ao_impulso.pdf>]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
 .
@@ -2166,46 +2160,54 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 )
-(./04-Resultados.tex [13
+(./04-Resultados.tex [14
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-<fig/coeficientes_otimizados.pdf, id=388, 407.5225pt x 296.10625pt>
+<fig/coeficientes_otimizados.pdf, id=357, 407.5225pt x 296.10625pt>
 File: fig/coeficientes_otimizados.pdf Graphic file (type pdf)
 <use fig/coeficientes_otimizados.pdf>
 Package pdftex.def Info: fig/coeficientes_otimizados.pdf  used on input line 12
 .
 (pdftex.def)             Requested size: 377.60144pt x 274.37743pt.
- [14
+ [15
 
  <./fig/coeficientes_otimizados.pdf>]
-<fig/compara_envoltoria.pdf, id=428, 847.165pt x 484.81125pt>
+<fig/compara_envoltoria.pdf, id=397, 847.165pt x 484.81125pt>
 File: fig/compara_envoltoria.pdf Graphic file (type pdf)
 <use fig/compara_envoltoria.pdf>
 Package pdftex.def Info: fig/compara_envoltoria.pdf  used on input line 25.
 (pdftex.def)             Requested size: 354.0pt x 202.58366pt.
-<fig/compara_envoltoria_otimizada.pdf, id=430, 847.165pt x 484.81125pt>
+<fig/compara_envoltoria_otimizada.pdf, id=399, 847.165pt x 484.81125pt>
 File: fig/compara_envoltoria_otimizada.pdf Graphic file (type pdf)
 <use fig/compara_envoltoria_otimizada.pdf>
 Package pdftex.def Info: fig/compara_envoltoria_otimizada.pdf  used on input li
 ne 34.
 (pdftex.def)             Requested size: 354.0pt x 202.58366pt.
-<fig/envoltoria_comparação_mascara.pdf, id=432, 1157.32375pt x 536.0025pt>
+<fig/envoltoria_comparação_mascara.pdf, id=401, 1157.32375pt x 536.0025pt>
 File: fig/envoltoria_comparação_mascara.pdf Graphic file (type pdf)
 <use fig/envoltoria_comparação_mascara.pdf>
 Package pdftex.def Info: fig/envoltoria_comparação_mascara.pdf  used on input
  line 43.
 (pdftex.def)             Requested size: 424.79712pt x 196.73932pt.
- [15 <./fig/compara_envoltoria.pdf> <./fig/compara_envoltoria_otimizada.pdf>]
-<fig/compara_envoltoria_sinais_otimizado_separados.pdf, id=539, 949.5475pt x 45
+ [16 <./fig/compara_envoltoria.pdf> <./fig/compara_envoltoria_otimizada.pdf>]
+<fig/psd_otimizado.pdf, id=509, 989.6975pt x 338.26375pt>
+File: fig/psd_otimizado.pdf Graphic file (type pdf)
+<use fig/psd_otimizado.pdf>
+Package pdftex.def Info: fig/psd_otimizado.pdf  used on input line 52.
+(pdftex.def)             Requested size: 424.79712pt x 145.18733pt.
+<fig/compara_envoltoria_sinais_otimizado_separados.pdf, id=511, 949.5475pt x 45
 4.69875pt>
 File: fig/compara_envoltoria_sinais_otimizado_separados.pdf Graphic file (type 
 pdf)
 <use fig/compara_envoltoria_sinais_otimizado_separados.pdf>
 Package pdftex.def Info: fig/compara_envoltoria_sinais_otimizado_separados.pdf 
- used on input line 56.
+ used on input line 67.
 (pdftex.def)             Requested size: 424.79712pt x 203.41917pt.
-) (./05-Conclusão.tex [16 <./fig/envoltoria_comparação_mascara.pdf> <./fig/c
-ompara_envoltoria_sinais_otimizado_separados.pdf>]) [17
+ [17 <./fig/envoltoria_comparação_mascara.pdf> <./fig/psd_otimizado.pdf>]) (.
+/05-Conclusão.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18 <./fig/compara_envoltoria_sinais_otimizado_separados.pdf>] [19]) [20
 
 ]
 
@@ -2213,9 +2215,9 @@ Package biblatex Warning: Month out of range or not an integer
 (biblatex)                at entry 'oliveira2025fir_complete' on input line 46.
 
 
-[18
+[21
 
-] [19]
+] [22]
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
@@ -2226,52 +2228,39 @@ enddocument/afterlastpage: lastpage setting LastPage.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56578 strings out of 474222
- 1206670 string characters out of 5748734
- 2335799 words of memory out of 5000000
- 77562 multiletter control sequences out of 15000+600000
- 594249 words of font info for 235 fonts, out of 8000000 for 9000
+ 56641 strings out of 474222
+ 1207316 string characters out of 5748734
+ 2336090 words of memory out of 5000000
+ 77577 multiletter control sequences out of 15000+600000
+ 599823 words of font info for 263 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,12n,121p,1659b,4454s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,14n,121p,1659b,4454s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf
-/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/he
-lvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro
-8a.pfb>
-Output written on main.pdf (19 pages, 568810 bytes).
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/shar
+e/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helveti
+c/uhvro8a.pfb>
+Output written on main.pdf (22 pages, 568190 bytes).
 PDF statistics:
- 832 PDF objects out of 1000 (max. 8388607)
- 410 compressed objects within 5 object streams
- 79 named destinations out of 1000 (max. 500000)
- 45912 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 864 PDF objects out of 1000 (max. 8388607)
+ 430 compressed objects within 5 object streams
+ 84 named destinations out of 1000 (max. 500000)
+ 54112 words of extra memory for PDF output out of 61914 (max. 10000000)
 
